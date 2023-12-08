@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+ 
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 * {
 	margin: 0;
@@ -12,14 +13,13 @@
 :root{
 	--baseFont: #3C1C0F;
 	--placeholderFont: #0000009E;
-  
+
 	--box-shadow: #733F2640;
-  
+
 	--inputBg: #F9F5E5;
-  
+
 	--baseBackground: #F2E6BE;
 }
-
 
 
 body {
@@ -38,13 +38,15 @@ body {
 
 section {
 	width: 100%;
-	max-width: 420px;
-	min-height: 400px;
+	max-width: 650px;
+	min-height: 550px;
+	font-size: 22px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: 1rem;
-	background-color: rgba(0, 0, 0, 0.4);
+	padding: 15px;
+	border-radius: 15px;
+	background-color: var(--baseBackground);
 }
 
 form {
@@ -57,7 +59,7 @@ form {
 
 a,
 a:visited {
-	color: #fff;
+	color: var(--baseFont);
 }
 
 input[type='text'],
@@ -66,8 +68,11 @@ button,
 textarea {
 	font-family: 'Nunito', sans-serif;
 	font-size: 22px;
-	padding: 0.25rem;
+	padding: 5px 10px;
 	border-radius: 0.5rem;
+	outline: none;
+	border: 1px solid var(--box-shadow);
+	box-shadow: 3px 3px 3px 3px var(--box-shadow);
 }
 
 label,
@@ -99,28 +104,159 @@ button {
 	left: -9999px;
 }
 
-.hide {
-	display: none;
-}
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-.valid {
-	color: limegreen;
-	margin-left: 0.25rem;
-}
-
-.invalid {
-	color: red;
-	margin-left: 0.25rem;
-}
-
-.errmsg {
-	background-color: lightpink;
-	color: firebrick;
-	font-weight: bold;
-	padding: 0.5rem;
-	margin-bottom: 0.5rem;
-}
-
-.line {
-	display: inline-block;
-}
+ :root{
+	 --baseFont: #3C1C0F;
+	 --placeholderFont: #0000009E;
+ 
+	 --box-shadow: #733F2640;
+ 
+	 --inputBg: #F9F5E5;
+ 
+	 --baseBackground: #F2E6BE;
+ }
+ 
+ 
+ 
+ 
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ html {
+   font-family: 'Nunito', sans-serif;
+   font-size: 22px;
+   color: #fff;
+ }
+ 
+ body {
+   min-height: 100vh;
+   background-color: var(--baseBackground);
+ }
+ 
+ .App {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   padding: 1rem 0.5rem;
+ }
+ 
+ section {
+   width: 100%;
+   max-width: 450px;
+   min-height: 400px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   padding: 1rem;
+   background-color: var(--box-shadow);
+   border-radius: 15px;
+ }
+ 
+ form {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   flex-grow: 1;
+   padding-bottom: 1rem;
+ }
+ 
+ a,
+ a:visited {
+   color: #fff;
+ }
+ 
+ input[type='text'],
+ input[type='password'],
+ button,
+ textarea {
+   font-family: 'Nunito', sans-serif;
+   font-size: 22px;
+   padding: 0.25rem;
+   border-radius: 0.5rem;
+   border: 1px solid transparent;
+   transition: all 0.3s;
+ }
+ 
+ button:hover{
+	 background-color: var(--box-shadow);
+	 color: white;
+	 cursor: pointer;
+ }
+ 
+ label,
+ button {
+   margin-top: 1rem;
+ }
+ 
+ button {
+   padding: 0.5rem;
+ }
+ 
+ .instructions {
+   font-size: 0.75rem;
+   border-radius: 0.5rem;
+   background: var(--baseFont);
+   color: #fff;
+   padding: 0.25rem;
+   position: relative;
+   bottom: -10px;
+ }
+ 
+ .instructions>svg {
+   margin-right: 0.25rem;
+ }
+ 
+ .offscreen {
+   position: absolute;
+   left: -9999px;
+ }
+ 
+ .hide {
+   display: none;
+ }
+ 
+ .valid {
+   color: rgb(31, 163, 31);
+   margin-left: 0.25rem;
+ }
+ 
+ .invalid {
+   color: rgb(199, 96, 96);
+   margin-left: 0.25rem;
+ }
+ 
+ .errmsg {
+   color: rgb(199, 96, 96);
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+ }
+ 
+ .line {
+   display: inline-block;
+ }
+ 
+ 
+ 
+ input:-webkit-autofill,
+ input:-webkit-autofill:hover,
+ input:-webkit-autofill:focus,
+ textarea:-webkit-autofill,
+ textarea:-webkit-autofill:hover,
+ textarea:-webkit-autofill:focus,
+ select:-webkit-autofill,
+ select:-webkit-autofill:hover,
+ select:-webkit-autofill:focus {
+   border: 1px solid transparent;
+   -webkit-text-fill-color: var(--baseFont);
+   -webkit-box-shadow: 0 0 0px 1000px white inset;
+   transition: background-color 5000s ease-in-out 0s;
+   outline: none;
+ }
+ 
