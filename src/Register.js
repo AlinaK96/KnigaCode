@@ -3,7 +3,6 @@ import {faCheck, faTimes, faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import axios from './api/axios';
-import Home from './components/pages/Home'
 
 const USER_REGEX = /^[A-Za-zА-Яа-я][A-Za-zА-Яа-я0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[0-9]).{6,24}$/;
@@ -15,7 +14,7 @@ const Register = () => {
 	const errRef = useRef();
 
 	const [user, setUser] = useState('');
-	const [token, setToken] = useState('');
+	const [setToken] = useState('');
 
 	const [validName, setValidName] = useState(false);
 	const [userFocus, setUserFocus] = useState(false);
@@ -29,7 +28,7 @@ const Register = () => {
 	const [matchFocus, setMatchFocus] = useState(false);
 
 	const [errMsg, setErrMsg] = useState('');
-	const [success, setSuccess] = useState(false);
+	const [setSuccess] = useState(false);
 
 	useEffect(() => {
 		userRef.current.focus();
@@ -54,7 +53,7 @@ const Register = () => {
 		const v1 = USER_REGEX.test(user);
 		const v2 = PWD_REGEX.test(pwd);
 		if (!v1 || !v2) {
-			setErrMsg('Invalid Entry');
+			setErrMsg('Ошибка входа');
 			return;
 		}
 		try {
@@ -79,8 +78,8 @@ const Register = () => {
 			setUser('');
 			setPwd('');
 			setMatchPwd('');
-			
 			window.location.href = '/home'
+			
 		} catch (err) {
 			if (!err?.response) {
 				setErrMsg('Ошибка сервера');

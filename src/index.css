@@ -99,6 +99,8 @@ button {
 	left: -9999px;
 }
 
+/* проверка пароля */
+
 .hide {
 	display: none;
 }
@@ -112,8 +114,10 @@ button {
 	color: red;
 	margin-left: 0.25rem;
 }
+ 
+/* сообщение об ошибке при регистрации */
 
-.errmsg {
+.errmsg { 
 	background-color: lightpink;
 	color: firebrick;
 	font-weight: bold;

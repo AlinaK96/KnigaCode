@@ -1,9 +1,7 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 import axios from './api/axios';
-import {Context} from './context/context'
 
 import AuthContext from './context/AuthProvider';
-import Home from './components/pages/Home'
 
 const LOGIN_URL = '/auth';
 
@@ -16,8 +14,8 @@ const Login = () => {
 	const [user, setUser] = useState('');
 	const [pwd, setPwd] = useState('');
 	const [errMsg, setErrMsg] = useState('');
-	const [success, setSuccess] = useState(false);
-	const [token, setToken] = useState('');
+	const [setSuccess] = useState(false);
+	const [setToken] = useState('');
 
 	useEffect(() => {
 		userRef.current.focus();
