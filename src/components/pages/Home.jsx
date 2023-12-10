@@ -46,22 +46,21 @@ const Home = () => {
         }
         
     }
-   
 
     return (
         <>
-             <div> Профиль </div>
+          <div> Профиль </div>
             <button onClick={Logout} >Выйти</button>
 
             
-             {successLog ? (
+            {successLog ? (
                 <p>Выход из аккаунта</p>
             ) : (
                 <p>В аккаунте</p>
             )
             } 
         </>
-     );
+    );
 }
 
 export default Home;
