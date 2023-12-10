@@ -19,23 +19,19 @@ const Header = () => {
         {id: '/forecast', title: 'Прогноз', link: '/forecast'},
     ]
 
-
-
     return (
         <div className='header'>
             <NavLink to='/'> 
-              <img src={Logo} alt="главная" />
+              <img src={Logo} alt="главная" title='Главная' />
             </NavLink>
 
             {headerLinks.map((link) =>
               <CustomLink link={link}  key={link.id}></CustomLink> 
             )}
 
-            <NavLink to='/register' className='link'>Войти / Зарегистрироваться</NavLink>
-
-            <NavLink to='/home' className='link'>
-              <img src={User} alt="Профиль" />
-              Профиль
+            <NavLink to='/'> 
+              <img src={User} alt="Профиль" title='Профиль' />
+              <span style={{visibility:'hidden'}}>Профиль</span>
             </NavLink>
         </div>
     );
