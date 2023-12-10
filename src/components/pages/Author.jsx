@@ -1,9 +1,10 @@
 import React from "react"
+import Header from "../blocks/header/Header";
 
 const Author = () => {
     return (
         <div>
-            автор
+            <Header />
         </div>
     )
 };

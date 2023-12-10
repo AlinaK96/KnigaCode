@@ -1,0 +1,37 @@
+button{
+    cursor: pointer;
+    transition: all .3s ease-in;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+  
+.customBtn{
+    border: 1px solid rgba(0, 0, 0, 0.40);
+    background: var(--inputBg);
+    box-shadow: 0px 4px 4px 0px var(--box-shadow);
+    text-align: center;
+    font-size: 15px;
+    padding: 5px 15px;
+}
+
+.customBtn.disabled{
+    color: var(--disabled);
+    pointer-events: none; 
+    color: #bbb7b7;
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+.customBtn:hover{
+    background-color: var(--border-primary);
+}
+
+.customBtn:active{
+    background-color:var(--baseFont);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.customBtn:active svg path{
+    fill: white;
+}

@@ -21,13 +21,14 @@ function App() {
 
 	return (
 		<main className="App">
+			
 			<Router>
 				<Routes>
-					<Route path="/" exact element={<Register />} />
+					<Route path="/register" exact element={<Register />} />
 					<Route path="/login" exact element={<Login/>} />
 					<Route path="/home" element={<Home />} />
 					<Route path="/author" element={<Author />} />
-					<Route path="/calculation" element={<Calculation />} />
+					<Route path="/" element={<Calculation />} />
 					<Route path="/consultaion" element={<Consultation />} />
 					<Route path="/contacts" element={<Contacts />} />
 					<Route path="/book" element={<Book />} />
