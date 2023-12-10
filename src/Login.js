@@ -62,7 +62,7 @@ const Login = () => {
 	};
 
 	return (
-		<>
+		<div className='form__cotainer'>
 				<section>
 					<p
 						ref={errRef}
@@ -102,7 +102,7 @@ const Login = () => {
 						</span>
 					</p>
 				</section>
-		</>
+		</div>
 	);
 };
 

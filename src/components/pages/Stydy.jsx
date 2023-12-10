@@ -1,10 +1,15 @@
 import React from "react"
-
+import Header from "../blocks/header/Header";
+import Footer from "../blocks/footer/Footer";
 const Study = () => {
     return (
-        <div>
+        <>
+            <Header />
+            <div className="content">
                 Study
-        </div>
+            </div>
+            <Footer />
+        </>
     )
 };
 

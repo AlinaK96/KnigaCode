@@ -93,7 +93,7 @@ const Register = () => {
 	};
 
 	return (
-		<>
+		<div className='form__cotainer'>
 				<section >
 					<p
 						ref={errRef}
@@ -216,7 +216,7 @@ const Register = () => {
 						</span>
 					</p>
 				</section>
-		</>
+		</div>
 	);
 };
 

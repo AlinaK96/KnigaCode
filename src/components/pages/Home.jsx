@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 
+import Header from '../blocks/header/Header'
 
 const Home = () => {
   const token = localStorage.getItem('token')
@@ -48,7 +49,11 @@ const Home = () => {
     }
 
     return (
-        <>
+      <>
+        <Header />
+        <div className="content">
+
+        
           <div> Профиль </div>
             <button onClick={Logout} >Выйти</button>
 
@@ -59,6 +64,7 @@ const Home = () => {
                 <p>В аккаунте</p>
             )
             } 
+          </div>
         </>
     );
 }

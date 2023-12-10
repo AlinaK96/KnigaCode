@@ -10,6 +10,7 @@
 	--inputBg: #F9F5E5;
 
 	--baseBackground: #F2E6BE;
+	--formBackground: #2c1912;
 }
 
  * {
@@ -25,16 +26,24 @@ html {
 
 body {
 	min-height: 100vh;
-	background-color: var(--baseBackground);
+	background-image: url('../public/img/png/fon_b.jpg');
 }
 
-.App {
+.form__cotainer{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 5%;
+}
+
+.App {
 	min-height: 100vh;
-	padding: 1rem 0.5rem;
+}
+
+.content{
+    color: white;
+    padding: 25px 0;
 }
 
 section {
@@ -46,8 +55,14 @@ section {
 	flex-direction: column;
 	justify-content: flex-start;
 	padding: 1rem;
-	background-color: var(--box-shadow);
+	background-color: var(--formBackground);
 	border-radius: 15px;
+	color: white;
+}
+
+section a,
+section a:visited {
+	color: white;
 }
 
 form {
@@ -56,11 +71,6 @@ form {
 	justify-content: space-evenly;
 	flex-grow: 1;
 	padding-bottom: 1rem;
-}
-
-a,
-a:visited {
-    color: #fff;
 }
 
 input[type='text'],

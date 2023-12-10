@@ -4,10 +4,13 @@ import Footer from "../blocks/footer/Footer";
 
 const Author = () => {
     return (
-        <div>
+        <>
             <Header />
+            <div className="content">
+                Author
+            </div>
             <Footer />
-        </div>
+        </>
     )
 };
 

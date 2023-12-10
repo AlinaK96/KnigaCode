@@ -1,10 +1,16 @@
 import React from "react"
+import Header from "../blocks/header/Header";
+import Footer from "../blocks/footer/Footer";
 
 const Calculation = () => {
     return (
-        <div>
-                calc
-        </div>
+            <>
+                <Header />
+                <div className="content">
+                    Calc
+                </div>
+                <Footer />
+            </>
     )
 };
 
