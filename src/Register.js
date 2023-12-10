@@ -209,7 +209,8 @@ const Register = () => {
 						</button>
 					</form>
 					<p>
-
+						Уже есть аккаунт?
+						<br />
 						<span className="line">
 							<a href="/login">Войти в аккаунт</a>
 						</span>

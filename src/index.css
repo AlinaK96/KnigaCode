@@ -148,3 +148,21 @@ button {
 	transition: background-color 5000s ease-in-out 0s;
 	outline: none;
 }
+
+.header,
+.footer{
+    box-sizing: border-box;
+    padding: 10px 0;
+    width: 100%;
+    background-color: var(--baseBackground);
+    box-shadow: 0px 4px 4px 0px var(--baseBackground);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer{
+    box-shadow: 4px 0px 0px 4px var(--baseBackground);
+    position: relative;
+    bottom: 0;
+}

@@ -8,15 +8,15 @@ import Button from '../../UI/button/Button';
 
 const Header = () => {
 
-
     const headerLinks = [
         {id: '/author', title: 'Об авторе', link: '/author'},
-        {id: '/calculate', title: 'Калькулятор', link: '/calculate'},
+        {id: '/calculate', title: 'Калькулятор', link: '/'},
         {id: '/match', title: 'Совместимость', link: '/match'},
         {id: '/study', title: 'Обучение', link: '/study'},
-        {id: '/consultation', title: 'Заказать консультацию', link: '/consultation'},
-        {id: '/day', title: 'Расчёт на день', link: '/day'},
-        //{id: '/profile', title: 'Профиль', link: '/profile'}
+        {id: '/consultaion', title: 'Заказать консультацию', link: '/consultaion'},
+        {id: '/parents', title: 'Дети-родители', link: '/parents'},
+        {id: '/forecast', title: 'Прогноз', link: '/forecast'},
+        {id: '/register', title: 'Войти / Зарегистрироваться', link: '/register'},
     ]
 
 
@@ -29,13 +29,7 @@ const Header = () => {
 
             {headerLinks.map((link) =>
                 <CustomLink link={link}  key={link.id}></CustomLink> 
-             )}
-
-             <Button>
-                <span>Войти / Зарегистрироваться</span>
-             </Button>
-
-
+            )}
         </div>
     );
 }
