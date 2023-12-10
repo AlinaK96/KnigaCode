@@ -50,8 +50,8 @@ const Home = () => {
 
     return (
         <>
-             <div> Барбоскин.гав</div>
-            <button onClick={Logout} >Покинуть барбоскина :(</button>
+             <div> Профиль </div>
+            <button onClick={Logout} >Выйти</button>
 
             
              {successLog ? (

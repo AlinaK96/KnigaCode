@@ -1,110 +1,4 @@
- 
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	color: var(--baseFont);
-}
-
-:root{
-	--baseFont: #3C1C0F;
-	--placeholderFont: #0000009E;
-
-	--box-shadow: #733F2640;
-
-	--inputBg: #F9F5E5;
-
-	--baseBackground: #F2E6BE;
-}
-
-
-body {
-	min-height: 100vh;
-	background-color: var(--inputBg);
-}
-
-.App {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	padding: 1rem 0.5rem;
-}
-
-section {
-	width: 100%;
-	max-width: 650px;
-	min-height: 550px;
-	font-size: 22px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	padding: 15px;
-	border-radius: 15px;
-	background-color: var(--baseBackground);
-}
-
-form {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	flex-grow: 1;
-	padding-bottom: 1rem;
-}
-
-a,
-a:visited {
-	color: var(--baseFont);
-}
-
-input[type='text'],
-input[type='password'],
-button,
-textarea {
-	font-family: 'Nunito', sans-serif;
-	font-size: 22px;
-	padding: 5px 10px;
-	border-radius: 0.5rem;
-	outline: none;
-	border: 1px solid var(--box-shadow);
-	box-shadow: 3px 3px 3px 3px var(--box-shadow);
-}
-
-label,
-button {
-	margin-top: 1rem;
-}
-
-button {
-	padding: 0.5rem;
-	cursor: pointer;
-}
-
-.instructions {
-	font-size: 0.75rem;
-	border-radius: 0.5rem;
-	background: #000;
-	color: #fff;
-	padding: 0.25rem;
-	position: relative;
-	bottom: -10px;
-}
-
-.instructions > svg {
-	margin-right: 0.25rem;
-}
-
-.offscreen {
-	position: absolute;
-	left: -9999px;
-}
-
- */
  @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
  :root{
@@ -130,7 +24,7 @@ button {
  html {
    font-family: 'Nunito', sans-serif;
    font-size: 22px;
-   color: #fff;
+   color: var(--baseFont);
  }
  
  body {
