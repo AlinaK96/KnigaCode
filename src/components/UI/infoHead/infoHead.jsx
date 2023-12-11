@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './infoHGead.module.css'
+import classes from './infoHead.module.css'
 
 const InfoHead = ({content}) => {
     return (
