@@ -55,6 +55,7 @@ const Home = () => {
 
         
           <div> Профиль </div>
+          <p>мои курсы</p>
             <button onClick={Logout} >Выйти</button>
 
             

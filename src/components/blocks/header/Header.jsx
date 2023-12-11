@@ -15,10 +15,9 @@ const Header = () => {
         {id: '/best', title: 'Доска почёта', link: '/best'},
         {id: '/calculate', title: 'Калькулятор', link: '/'},
         {id: '/match', title: 'Совместимость', link: '/match'},
-        {id: '/study', title: 'Обучение', link: '/study'},
-        {id: '/consultaion', title: 'Заказать консультацию', link: '/consultaion'},
         {id: '/parents', title: 'Дети-родители', link: '/parents'},
         {id: '/forecast', title: 'Прогноз', link: '/forecast'},
+
     ]
 
     return (

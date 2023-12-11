@@ -4,11 +4,17 @@ import CustomLink from '../../UI/customLink/customLink';
 const Footer = () => {
 
     const footerLinks = [
+        {id: '/consultaion', title: 'Заказать консультацию', link: '/consultaion'},
+        {id: '/study', title: 'Обучение', link: '/study'},
+        {id: 'book', title: 'Книга', link: '/book'},
+        {id: 'stars', title: 'Картотека', link: '/stars'},
+        {id: 'video', title: 'Видео', link: '/video'},
+
         {id: 'feedback', title: 'Отзывы', link: '/feedback'},
         {id: 'contacts', title: 'Контакты', link: '/contacts'},
-        {id: 'video', title: 'Видео', link: '/video'},
-        {id: 'stars', title: 'Картотека', link: '/stars'},
-        {id: 'book', title: 'Книга', link: '/book'},
+        
+
+
         {id: 'support', title: 'Поддержка', link: '/support'},
     ]
 

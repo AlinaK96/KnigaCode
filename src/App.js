@@ -28,7 +28,6 @@ function App() {
 					<Route path="/register" exact element={<Register />} />
 					<Route path="/login" exact element={<Login/>} />
 					<Route path="/home" element={<Home />} />
-
                     <Route path="/method" element={<Method />} />
                     <Route path="/author" element={<Author />} /> 
                     <Route path="/best" element={<Best />} />
