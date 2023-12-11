@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import Home from './components/pages/Home';
 import Author from './components/pages/Author';
+import Method from './components/pages/Method';
+import Best from './components/pages/Best'
 import Calculation from './components/pages/Calculation'
 import Consultation from './components/pages/Consultation'
 import Contacts from './components/pages/Contacts'
@@ -27,7 +29,9 @@ function App() {
 					<Route path="/login" exact element={<Login/>} />
 					<Route path="/home" element={<Home />} />
 
-                    <Route path="/author" element={<Author />} />
+                    <Route path="/method" element={<Method />} />
+                    <Route path="/author" element={<Author />} /> 
+                    <Route path="/best" element={<Best />} />
 					<Route path="/" element={<Calculation />} />
 					<Route path="/consultaion" element={<Consultation />} />
 					<Route path="/contacts" element={<Contacts />} />

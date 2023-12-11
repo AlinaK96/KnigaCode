@@ -27,7 +27,7 @@ const Home = () => {
         };
     
         fetchData();
-      }, [token]);
+      }, []);
 
 
 
