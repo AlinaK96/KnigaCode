@@ -1,4 +1,4 @@
-
+@import './app.css';
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 :root{
@@ -13,7 +13,7 @@
 	--formBackground: #2c1912;
 }
 
- * {
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -29,48 +29,17 @@ body {
 	background-image: url('../public/img/png/fon_b.jpg');
 }
 
-.form__cotainer{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-top: 5%;
-}
-
 .App {
 	min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .content{
     color: white;
     padding: 25px 0;
-}
-
-section {
-	font-size: 22px;
-	width: 100%;
-	max-width: 450px;
-	min-height: 400px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	padding: 1rem;
-	background-color: var(--formBackground);
-	border-radius: 15px;
-	color: white;
-}
-
-section a,
-section a:visited {
-	color: white;
-}
-
-form {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	flex-grow: 1;
-	padding-bottom: 1rem;
 }
 
 input[type='text'],
@@ -86,9 +55,9 @@ textarea {
 }
 
 button:not(:disabled):hover{
-		background-color: var(--box-shadow);
-		color: white;
-		cursor: pointer;
+	background-color: var(--box-shadow);
+	color: white;
+	cursor: pointer;
 }
 
 label,
@@ -100,78 +69,3 @@ button {
     padding: 0.5rem;
 }
 
-.instructions {
-	font-size: 0.75rem;
-	border-radius: 0.5rem;
-	background: var(--baseFont);
-	color: #fff;
-	padding: 0.25rem;
-	position: relative;
-	bottom: -10px;
-}
-
-.instructions>svg {
-    margin-right: 0.25rem;
-}
-
-.offscreen {
-	position: absolute;
-	left: -9999px;
-}
-
-.hide {
-    display: none;
-}
-
-.valid {
-	color: rgb(31, 163, 31);
-	margin-left: 0.25rem;
-}
-
-.invalid {
-	color: rgb(199, 96, 96);
-	margin-left: 0.25rem;
-}
-
-.errmsg {
-	color: rgb(199, 96, 96);
-	font-weight: bold;
-	margin-bottom: 0.5rem;
-}
-
-.line {
-	display: inline-block;
-}
-
- input:-webkit-autofill,
- input:-webkit-autofill:hover,
- input:-webkit-autofill:focus,
- textarea:-webkit-autofill,
- textarea:-webkit-autofill:hover,
- textarea:-webkit-autofill:focus,
- select:-webkit-autofill,
- select:-webkit-autofill:hover,
- select:-webkit-autofill:focus {
-	border: 1px solid transparent;
-	-webkit-text-fill-color: var(--baseFont);
-	-webkit-box-shadow: 0 0 0px 1000px white inset;
-	transition: background-color 5000s ease-in-out 0s;
-	outline: none;
-}
-
-.header,
-.footer{
-    box-sizing: border-box;
-    width: 100%;
-    background-color: var(--baseBackground);
-    box-shadow: 0px 4px 4px 0px var(--baseBackground);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.footer{
-    position: relative;
-    bottom: 0;
-	padding: 10px 0;
-}
