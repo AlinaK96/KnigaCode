@@ -26,7 +26,7 @@ const HOME_URL = 'http://172.30.9.164/home'
         };
     
         fetchData();
-      }, [token]);
+      }, []);
 
 
 
@@ -51,6 +51,7 @@ const HOME_URL = 'http://172.30.9.164/home'
 
     return (
         <>
+          <div className="content">
              <div> Барбоскин.гав</div>
             <button onClick={Logout} >Покинуть барбоскина :(</button>
 
@@ -61,6 +62,7 @@ const HOME_URL = 'http://172.30.9.164/home'
                 <p>В аккаунте</p>
             )
             } 
+            </div>
         </>
      );
 }

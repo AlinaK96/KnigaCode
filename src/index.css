@@ -1,14 +1,5 @@
- 
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	color: var(--baseFont);
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 :root{
 	--baseFont: #3C1C0F;
@@ -19,34 +10,59 @@
 	--inputBg: #F9F5E5;
 
 	--baseBackground: #F2E6BE;
+	--formBackground: #2c1912;
 }
 
+ * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Nunito', sans-serif;
+	color: var(--baseFont);
+}
 
 body {
 	min-height: 100vh;
-	background-color: var(--inputBg);
+	background-image: url('../public/img/png/fon_b.jpg');
 }
 
-.App {
+.form__cotainer{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 5%;
+}
+
+.App {
 	min-height: 100vh;
-	padding: 1rem 0.5rem;
+}
+
+.content{
+    color: white;
+    padding: 25px 0;
 }
 
 section {
-	width: 100%;
-	max-width: 650px;
-	min-height: 550px;
 	font-size: 22px;
+	width: 100%;
+	max-width: 450px;
+	min-height: 400px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: 15px;
+	padding: 1rem;
+	background-color: var(--formBackground);
 	border-radius: 15px;
-	background-color: var(--baseBackground);
+	color: white;
+}
+
+section a,
+section a:visited {
+	color: white;
 }
 
 form {
@@ -57,46 +73,45 @@ form {
 	padding-bottom: 1rem;
 }
 
-a,
-a:visited {
-	color: var(--baseFont);
-}
-
 input[type='text'],
 input[type='password'],
 button,
 textarea {
 	font-family: 'Nunito', sans-serif;
 	font-size: 22px;
-	padding: 5px 10px;
+	padding: 0.25rem;
 	border-radius: 0.5rem;
-	outline: none;
-	border: 1px solid var(--box-shadow);
-	box-shadow: 3px 3px 3px 3px var(--box-shadow);
+	border: 1px solid transparent;
+	transition: all 0.3s;
+}
+
+button:not(:disabled):hover{
+		background-color: var(--box-shadow);
+		color: white;
+		cursor: pointer;
 }
 
 label,
 button {
-	margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 button {
-	padding: 0.5rem;
-	cursor: pointer;
+    padding: 0.5rem;
 }
 
 .instructions {
 	font-size: 0.75rem;
 	border-radius: 0.5rem;
-	background: #000;
+	background: var(--baseFont);
 	color: #fff;
 	padding: 0.25rem;
 	position: relative;
 	bottom: -10px;
 }
 
-.instructions > svg {
-	margin-right: 0.25rem;
+.instructions>svg {
+    margin-right: 0.25rem;
 }
 
 .offscreen {
@@ -104,146 +119,30 @@ button {
 	left: -9999px;
 }
 
- */
- @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+.hide {
+    display: none;
+}
 
- :root{
-	 --baseFont: #3C1C0F;
-	 --placeholderFont: #0000009E;
- 
-	 --box-shadow: #733F2640;
- 
-	 --inputBg: #F9F5E5;
- 
-	 --baseBackground: #F2E6BE;
- }
- 
- 
- 
- 
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
- 
- html {
-   font-family: 'Nunito', sans-serif;
-   font-size: 22px;
-   color: #fff;
- }
- 
- body {
-   min-height: 100vh;
-   background-color: var(--baseBackground);
- }
- 
- .App {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
-   padding: 1rem 0.5rem;
- }
- 
- section {
-   width: 100%;
-   max-width: 450px;
-   min-height: 400px;
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   padding: 1rem;
-   background-color: var(--box-shadow);
-   border-radius: 15px;
- }
- 
- form {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-evenly;
-   flex-grow: 1;
-   padding-bottom: 1rem;
- }
- 
- a,
- a:visited {
-   color: #fff;
- }
- 
- input[type='text'],
- input[type='password'],
- button,
- textarea {
-   font-family: 'Nunito', sans-serif;
-   font-size: 22px;
-   padding: 0.25rem;
-   border-radius: 0.5rem;
-   border: 1px solid transparent;
-   transition: all 0.3s;
- }
- 
- button:hover{
-	 background-color: var(--box-shadow);
-	 color: white;
-	 cursor: pointer;
- }
- 
- label,
- button {
-   margin-top: 1rem;
- }
- 
- button {
-   padding: 0.5rem;
- }
- 
- .instructions {
-   font-size: 0.75rem;
-   border-radius: 0.5rem;
-   background: var(--baseFont);
-   color: #fff;
-   padding: 0.25rem;
-   position: relative;
-   bottom: -10px;
- }
- 
- .instructions>svg {
-   margin-right: 0.25rem;
- }
- 
- .offscreen {
-   position: absolute;
-   left: -9999px;
- }
- 
- .hide {
-   display: none;
- }
- 
- .valid {
-   color: rgb(31, 163, 31);
-   margin-left: 0.25rem;
- }
- 
- .invalid {
-   color: rgb(199, 96, 96);
-   margin-left: 0.25rem;
- }
- 
- .errmsg {
-   color: rgb(199, 96, 96);
-   font-weight: bold;
-   margin-bottom: 0.5rem;
- }
- 
- .line {
-   display: inline-block;
- }
- 
- 
- 
+.valid {
+	color: rgb(31, 163, 31);
+	margin-left: 0.25rem;
+}
+
+.invalid {
+	color: rgb(199, 96, 96);
+	margin-left: 0.25rem;
+}
+
+.errmsg {
+	color: rgb(199, 96, 96);
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
+
+.line {
+	display: inline-block;
+}
+
  input:-webkit-autofill,
  input:-webkit-autofill:hover,
  input:-webkit-autofill:focus,
@@ -253,10 +152,27 @@ button {
  select:-webkit-autofill,
  select:-webkit-autofill:hover,
  select:-webkit-autofill:focus {
-   border: 1px solid transparent;
-   -webkit-text-fill-color: var(--baseFont);
-   -webkit-box-shadow: 0 0 0px 1000px white inset;
-   transition: background-color 5000s ease-in-out 0s;
-   outline: none;
- }
- 
+	border: 1px solid transparent;
+	-webkit-text-fill-color: var(--baseFont);
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	transition: background-color 5000s ease-in-out 0s;
+	outline: none;
+}
+
+.header,
+.footer{
+    box-sizing: border-box;
+    padding: 10px 0;
+    width: 100%;
+    background-color: var(--baseBackground);
+    box-shadow: 0px 4px 4px 0px var(--baseBackground);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer{
+    box-shadow: 4px 0px 0px 4px var(--baseBackground);
+    position: relative;
+    bottom: 0;
+}
