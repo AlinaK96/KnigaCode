@@ -3,19 +3,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Login from './Login';
 import Home from './components/pages/Home';
-// import Author from './components/pages/Author';
-// import Calculation from './components/pages/Calculation'
-// import Consultation from './components/pages/Consultation'
-// import Contacts from './components/pages/Contacts'
-// import Book from './components/pages/Book';
-// import Feedback from './components/pages/Feedback'
-// import Forecast from './components/pages/Forecast'
-// import Match from './components/pages/Match'
-// import Parents from './components/pages/Parents'
-// import Stars from './components/pages/Stars'
-// import Study from './components/pages/Stydy'
-// import Support from './components/pages/Support'
-// import Video from './components/pages/Video'
+import Author from './components/pages/Author';
+import Calculation from './components/pages/Calculation'
+import Consultation from './components/pages/Consultation'
+import Contacts from './components/pages/Contacts'
+import Book from './components/pages/Book';
+import Feedback from './components/pages/Feedback'
+import Forecast from './components/pages/Forecast'
+import Match from './components/pages/Match'
+import Parents from './components/pages/Parents'
+import Stars from './components/pages/Stars'
+import Study from './components/pages/Stydy'
+import Support from './components/pages/Support'
+import Video from './components/pages/Video'
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
 					<Route path="/register" exact element={<Register />} />
 					<Route path="/login" exact element={<Login/>} />
 					<Route path="/home" element={<Home />} />
-{/* 
+
                     <Route path="/author" element={<Author />} />
 					<Route path="/" element={<Calculation />} />
 					<Route path="/consultaion" element={<Consultation />} />
@@ -39,7 +39,7 @@ function App() {
 					<Route path="/stars" element={<Stars />} />
 					<Route path="/study" element={<Study />} />
 					<Route path="/support" element={<Support />} />
-					<Route path="/video" element={<Video />} /> */}
+					<Route path="/video" element={<Video />} />
 				</Routes>
 			</Router>
 		</main>

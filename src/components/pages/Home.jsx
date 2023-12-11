@@ -1,12 +1,14 @@
-import React, {useContext, useState, useEffect} from 'react';
-import {Context} from '../../context/context'
+import React, {useState, useEffect} from 'react';
 import axios from 'axios'
-const Home = () => {
-const token = localStorage.getItem('token')
-const role = localStorage.getItem('roles')
-const [successLog, setSuccessLog] = useState(false);
 
-const HOME_URL = 'http://172.30.9.164/home'
+import Header from '../blocks/header/Header'
+
+const Home = () => {
+  const token = localStorage.getItem('token')
+  const role = localStorage.getItem('roles')
+  const [successLog, setSuccessLog] = useState(false);
+
+  const HOME_URL = 'http://172.30.9.164/home'
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,7 +18,6 @@ const HOME_URL = 'http://172.30.9.164/home'
                 Authorization: `Bearer ${token}`,
               },
             });
-            console.log(response.data);
           } catch (error) {
             if(error.response?.status === 401){
                 window.location.href = '/login'
@@ -26,13 +27,12 @@ const HOME_URL = 'http://172.30.9.164/home'
         };
     
         fetchData();
-      }, []);
+      }, [token]);
 
 
 
 
     const Logout = async () => {
-        
         try {
             const response = await fetch("http://172.30.9.164/logout", {
             method: "GET",
@@ -40,31 +40,33 @@ const HOME_URL = 'http://172.30.9.164/home'
                 "Authorization": `Bearer ${token},`,
               },
             })
-        setSuccessLog(true)
-        window.location.href = '/login'
+              setSuccessLog(true)
+              window.location.href = '/login'
         } catch (err){
             console.log(err);
         }
         
     }
-   
 
     return (
-        <>
-          <div className="content">
-             <div> Барбоскин.гав</div>
-            <button onClick={Logout} >Покинуть барбоскина :(</button>
+      <>
+        <Header />
+        <div className="content">
+
+        
+          <div> Профиль </div>
+            <button onClick={Logout} >Выйти</button>
 
             
-             {successLog ? (
+            {successLog ? (
                 <p>Выход из аккаунта</p>
             ) : (
                 <p>В аккаунте</p>
             )
             } 
-            </div>
+          </div>
         </>
-     );
+    );
 }
 
 export default Home;

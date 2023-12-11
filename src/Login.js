@@ -100,7 +100,7 @@ const Login = () => {
 						Нет аккаунта?
 						<br />
 						<span className="line">
-							<a href="/">Зарегистрироваться</a>
+							<a href="/register">Зарегистрироваться</a>
 						</span>
 					</p>
 				</section>
