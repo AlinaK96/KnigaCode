@@ -21,7 +21,9 @@
 	background-repeat: no-repeat;
 	background-size: 97vw;
 	width: 97vw;
-	height: 1150px; 
+	height: 1150px;
+	display: flex; 
+	justify-content: space-evenly;
 }
 
 .form__cotainer{
@@ -116,4 +118,23 @@ select:-webkit-autofill:focus {
 	-webkit-box-shadow: 0 0 0px 1000px white inset;
 	transition: background-color 5000s ease-in-out 0s;
 	outline: none;
+}
+
+
+
+.rightPage,
+.leftPage{
+	display: flex;
+	flex-direction: column;
+	width: 45%;
+	margin-top: 50px;
+	color: var(--baseFont);
+	align-items: center;
+
+}
+
+.leftPage img,
+.rightPage img{
+	width: 350px;
+	height: 350px;
 }

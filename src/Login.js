@@ -36,7 +36,7 @@ const Login = () => {
 				JSON.stringify({ 
 					'username': user,
 					'password': pwd
-				 }),
+				}),
 				{
 					headers: { 'Content-Type': 'application/json' }
 
