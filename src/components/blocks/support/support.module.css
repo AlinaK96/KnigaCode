@@ -1,0 +1,7 @@
+.add__supItem{
+    margin-left: 20px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
