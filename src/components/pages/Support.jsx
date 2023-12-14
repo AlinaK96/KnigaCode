@@ -47,7 +47,7 @@ const Support = () => {
                 <InfoHead content='Мы подготовили для вас ответы на самые часто задаваемые вопросы' />
                 <div className="book">
                     {errMsg}
-                    <div>
+                    <div className={classes.support__data}>
                         {support.map((item, index) =>
                         <SupportItem item={item} key={index} ></SupportItem> 
                         )}

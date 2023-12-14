@@ -3,9 +3,9 @@ import classes from './support.module.css'
 
 const SupportItem = (props) => {
     return (
-        <div>
-            {props.item.question}
-            {props.item.answer}
+        <div >
+            <h3>{props.item.question}</h3>
+            <p>{props.item.answer}</p>
         </div>
     );
 }
