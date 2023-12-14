@@ -151,3 +151,13 @@ select:-webkit-autofill:focus {
 	width: 350px;
 	height: 350px;
 }
+
+.colums{
+	box-sizing: border-box;
+	margin-top: 60px;
+	display: grid;
+    grid-template-columns: repeat(2, 750px);
+	gap: 30px;
+	overflow: auto;
+	height: 1000px;
+}

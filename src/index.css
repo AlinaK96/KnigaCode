@@ -55,8 +55,8 @@ textarea {
 }
 
 button:not(:disabled):hover{
-	background-color: var(--box-shadow);
-	color: white;
+	background-color: var(--baseBackground);
+	color: var(--baseFont);
 	cursor: pointer;
 }
 

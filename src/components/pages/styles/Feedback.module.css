@@ -1,0 +1,15 @@
+.header__addBtn{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    align-items:  flex-start ;
+    gap: 25px;
+}
+
+.header__addBtn button{
+    font-size: 19px;
+    padding: 7px 45px;
+    margin: 0;
+    border-radius: 20px;
+}
+

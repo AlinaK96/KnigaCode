@@ -12,12 +12,12 @@
     pointer-events: none;
     transform: 0.5s;
 }
-  
+
 .modal.active{
     opacity: 1;
     pointer-events: all;
 }
-  
+
 .modal__content{
     color: var(--baseFont);
     width: 700px;
@@ -29,7 +29,7 @@
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
@@ -40,7 +40,7 @@
 .modal__header Button{
     position: absolute;
     right: 15px;
-    top: 15px;
+    top: -5px;
 }
 
 
@@ -48,10 +48,10 @@
 .modal__content.active{
     transform: scale(1);
 }
-  
+
 .modal__frame{
-    width: 85%;
-    height: 85%;
+    width: 95%;
+    height: 87%;
     border: 1px solid var(--baseFont);
     background: var(--baseBackground);
     text-align: center;
@@ -61,8 +61,8 @@
     justify-content: center;
     gap: 20px;
 }
-  
-  
+
+
 .modalBtn__content{
     display: flex;
     justify-content: space-between;
@@ -70,9 +70,9 @@
     align-items: flex-end;
     padding-right: 25px;
 }
-  
+
 .modal__data{
-  display: flex;
-  flex-direction: column;
-  padding: 5px 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 25px;
 }

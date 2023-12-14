@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios";
+import classes from './styles/Feedback.module.css'
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
@@ -15,9 +16,7 @@ const Feedback = () => {
 
     const Feedback_URL = 'http://172.30.9.164/feedback'
 
-  const token = localStorage.getItem('token')
-
-
+    const token = localStorage.getItem('token')
     const [modalActive, setModalActive] = useState(false)
     const [feedback, setFeedback] = useState([{}])
     const [errMsg, setErrMsg] = ('')
@@ -53,21 +52,24 @@ const Feedback = () => {
         <>
             <Header />
             <div className="content">
-                <InfoHead content='Отзывы' />
+                <div className={classes.header__addBtn}>
+                    <InfoHead content='Отзывы' />
+                    {isLoggedIn && 
+                        <div> 
+                            <Button className='customBtn' onClick={() => setModalActive(true)} >
+                                <span>Добавить отзыв</span>
+                            </Button>
+                        </div>
+                    }
+                </div>
                 <div className="book">
                     {errMsg}
-                    <div>
+                    <div className="colums">
                         {feedback.map((item, index) => 
                             <FeedbackItem item={item} key={index} />
                         )}
                     </div>
                 </div>
-
-                    {isLoggedIn && 
-                        <Button className='customBtn' onClick={() => setModalActive(true)} >
-                            <span>Добавить отзыв</span>
-                        </Button>
-                    }
             </div>
             <Footer />
 
@@ -83,7 +85,6 @@ const Feedback = () => {
                 </div>
 
                 <div className='modalBtn__content'>
-
                     <Button 
                         className='customBtn' 
                         onClick={ () => {
