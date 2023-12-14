@@ -15,6 +15,9 @@ const Feedback = () => {
 
     const Feedback_URL = 'http://172.30.9.164/feedback'
 
+  const token = localStorage.getItem('token')
+
+
     const [modalActive, setModalActive] = useState(false)
     const [feedback, setFeedback] = useState([{}])
     const [errMsg, setErrMsg] = ('')
@@ -38,9 +41,11 @@ const Feedback = () => {
         }, []);
 
     const sendFeedback = async () => {
-        console.log(feedbackText);
-        axios.get(`http://172.30.9.164/feedback?username=${feedbackUser}&data=${feedbackText}`)
-        setFeedbackUser('');
+        axios.get(`http://172.30.9.164/feedback/add?username=${feedbackUser}&data=${feedbackText}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
         setFeedbackText('');
     }
 

@@ -7,6 +7,8 @@ import Footer from "../blocks/footer/Footer";
 import InfoHead from "../UI/infoHead/infoHead";
 import SupportItem from "../blocks/support/supportBlock";
 
+import Input from '../UI/input/Input'
+
 const Support = () => {
 
     const SUPPORT_URL = 'http://172.30.9.164/support'
@@ -45,8 +47,17 @@ const Support = () => {
             <Header />
             <div className="content">
                 <InfoHead content='Мы подготовили для вас ответы на самые часто задаваемые вопросы' />
+                <div>
+                    <Input 
+                        type='search'
+                        placeholder='Поиск...'
+                    />
+                    <a href="#!">Задать вопрос</a>
+                </div>
+
                 <div className="book">
                     {errMsg}
+                    
                     <div className={classes.support__data}>
                         {support.map((item, index) =>
                         <SupportItem item={item} key={index} ></SupportItem> 
