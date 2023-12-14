@@ -18,12 +18,20 @@
 .book{
 	margin: 0 auto;
     background-image: url('../public/img/png/book.png');
-	background-repeat: no-repeat;
-	background-size: 97vw;
-	width: 97vw;
-	height: 1150px;
+
 	display: flex; 
-	justify-content: space-evenly;
+	justify-content: space-evenly; 
+	background-size: 97vw;
+	width:97vw;
+    height: 1150px;
+
+    border-radius: 20px;
+    background-size: contain;
+	background-repeat: no-repeat;
+    background-position: center top;
+
+	overflow: auto;
+	box-sizing: border-box;
 }
 
 .form__cotainer{
@@ -124,6 +132,7 @@ select:-webkit-autofill:focus {
 
 .rightPage,
 .leftPage{
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -132,6 +141,8 @@ select:-webkit-autofill:focus {
 	color: var(--baseFont);
 	font-size: 22px;
 	align-items: center;
+	overflow: auto;
+	height: 1000px;
 
 }
 
