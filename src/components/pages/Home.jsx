@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 
 import Header from '../blocks/header/Header'
+import Footer from '../blocks/footer/Footer';
 
 const Home = () => {
   const token = localStorage.getItem('token')
@@ -17,7 +18,9 @@ const Home = () => {
             headers: {
                 Authorization: `Bearer ${token}`,
               },
+              
             });
+            setSuccessLog(true)
           } catch (error) {
             if(error.response?.status === 401){
                 window.location.href = '/login'
@@ -65,6 +68,8 @@ const Home = () => {
                 <p>В аккаунте</p>
             )
             } 
+          
+          <Footer />
           </div>
         </>
     );

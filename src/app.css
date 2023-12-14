@@ -126,9 +126,11 @@ select:-webkit-autofill:focus {
 .leftPage{
 	display: flex;
 	flex-direction: column;
-	width: 45%;
-	margin-top: 50px;
+	gap: 20px;
+	width: 43%;
+	margin-top: 60px;
 	color: var(--baseFont);
+	font-size: 22px;
 	align-items: center;
 
 }

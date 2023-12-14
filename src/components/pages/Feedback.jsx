@@ -39,7 +39,7 @@ const Feedback = () => {
 
     const sendFeedback = async () => {
         console.log(feedbackText);
-        axios.get(`http://172.30.9.164/feedback/add?username=${feedbackUser}&data=${feedbackText}`)
+        axios.get(`http://172.30.9.164/feedback?username=${feedbackUser}&data=${feedbackText}`)
         setFeedbackUser('');
         setFeedbackText('');
     }
