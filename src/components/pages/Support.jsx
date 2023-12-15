@@ -15,7 +15,8 @@ const Support = () => {
     const SUPPORT_URL = 'http://172.30.9.164/support'
 
     const [support, setSupport] = useState([{}])
-    const [errMsg, setErrMsg] = ('')
+    const [foundItem, setfoundItem] = useState(support);
+    let [errMsg, setErrMsg] = ('')
     const [supportQuestion, setSupportQuestion] = useState('')
     const [supportAnswer, setSupportAnswer] = useState('')
     const isAdmin = true
@@ -43,6 +44,19 @@ const Support = () => {
         setSupportQuestion('');
     }
 
+    const [searchLine, setSearchLine] = useState('');
+    const filter = (e) => {
+        const keyword = e.target.value;
+        if (keyword !== '') {
+            const results = support.filter((item) => {
+            return item.question.toLowerCase().startsWith(keyword.toLowerCase());
+        });
+            setfoundItem(results);
+        } else {
+            setfoundItem(support);
+        }
+        setSearchLine(keyword);
+    };
     return (
         <>
             <Header />
@@ -51,18 +65,20 @@ const Support = () => {
                 <div className={classes.header__addBtn}>
                     <Input 
                         type='search'
-                        placeholder='Поиск...'
+                        placeholder='Найти вопрос...'
+                        onChange={(e) => filter(e)}
                     />
                     <a href="https://you.com/" target="blank" className="customLink">Задать вопрос</a>
                 </div>
 
                 <div className="book">
                     {errMsg}
-                    
                     <div className={classes.support__data}>
-                        {support.map((item, index) =>
-                        <SupportItem item={item} key={index} ></SupportItem> 
-                        )}
+                        {foundItem.length == 1 ? 
+                            (support.map((item, index) => (
+                                <SupportItem item={item} key={index} ></SupportItem> 
+                            ))) : foundItem.map((item, index) => (
+                                <SupportItem item={item} key={index} ></SupportItem>))}
                     </div>
                 </div>  
 
