@@ -45,6 +45,7 @@ const Feedback = () => {
                 Authorization: `Bearer ${token}`,
             }
         })
+        sendFeedback([{}])
         setFeedbackText('');
     }
 
