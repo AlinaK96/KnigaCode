@@ -94,15 +94,13 @@ const Login = () => {
 							value={pwd}
 							required
 						/>
-						<button>Войти</button>
+						<button
+							className='customBtn'
+						>Войти</button>
 					</form>
-					<p>
-						Нет аккаунта?
-						<br />
 						<span className="line">
-							<a href="/register">Зарегистрироваться</a>
+							<a href="/register"> Нет аккаунта? <br></br>Зарегистрироваться</a>
 						</span>
-					</p>
 				</section>
 		</div>
 	);

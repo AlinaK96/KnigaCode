@@ -203,6 +203,7 @@ const Register = () => {
 						</p>
 
 						<button
+							className='customBtn'
 							disabled={!validName || !validPwd || !validMatch ? true : false}
 						>
 							Зарегистрироваться

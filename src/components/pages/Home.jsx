@@ -59,13 +59,15 @@ const Home = () => {
         
           <div> Профиль </div>
           <p>мои курсы</p>
-            <button onClick={Logout} >Выйти</button>
+            <button 
+            className='customBtn'
+              onClick={Logout} >Выйти</button>
 
             
             {successLog ? (
-                <p>Выход из аккаунта</p>
+                <a>Выход из аккаунта</a>
             ) : (
-                <p>В аккаунте</p>
+                <a>В аккаунте</a>
             )
             } 
           
