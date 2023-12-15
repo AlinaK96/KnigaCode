@@ -8,6 +8,7 @@ import InfoHead from "../UI/infoHead/infoHead";
 import SupportItem from "../blocks/support/supportBlock";
 
 import Input from '../UI/input/Input'
+import Button from "../UI/button/Button";
 
 const Support = () => {
 
@@ -83,7 +84,7 @@ const Support = () => {
                         required
                     />
 
-                    <button onClick={handleSubmit} >Добавить</button> 
+                    <Button onClick={handleSubmit} className='customBtn' >Добавить</Button> 
                 </div> }
             </div>
             <Footer />

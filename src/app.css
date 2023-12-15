@@ -156,7 +156,7 @@ select:-webkit-autofill:focus {
 	box-sizing: border-box;
 	margin-top: 60px;
 	display: grid;
-    grid-template-columns: repeat(2, 770px);
+    grid-template-columns: repeat(2, 43vw);
 	gap: 40px;
 	overflow: auto;
 	height: 1000px;

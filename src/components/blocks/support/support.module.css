@@ -1,9 +1,12 @@
 .add__supItem{
     margin-left: 20px;
-    width: 75%;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+}
+
+.add__supItem input{
+    margin-bottom: 10px;
 }
 
 h3,
