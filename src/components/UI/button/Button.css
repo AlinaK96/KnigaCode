@@ -35,3 +35,19 @@ button{
 .customBtn:active svg path{
     fill: white;
 }
+
+.customLink{
+    color: var(--baseFont);
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.40);
+    background: var(--inputBg);
+    box-shadow: 0px 4px 4px 0px var(--box-shadow);
+    text-align: center;
+    font-size: 15px;
+    padding: 5px 15px;
+}
+
+.customLink:hover{
+    background-color: var(--baseBackground);
+}

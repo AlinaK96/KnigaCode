@@ -4,7 +4,7 @@
     opacity: 0;
     z-index: -1;
 }
-  
+
 .custom__checkbox {
     position: relative;
     top: -20px;
@@ -15,7 +15,7 @@
     border: 2px solid var(--baseFont);
     right: 25px;
 }
-  
+
 .custom__checkbox::before {
     content: "";
     display: block;
@@ -32,18 +32,18 @@
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
-  
+
 .checkbox:checked + .custom__checkbox::before {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
 }
-  
+
 .labelType {
     font-size: 16px;
     cursor: pointer;
     margin-left: 35px;
 }
-  
+
 .labelType:hover .custom__checkbox,
 .labelType:focus .custom__checkbox {
     border: 2px solid var(--baseFont);
@@ -55,18 +55,20 @@
 }
 
 input{
+    width: 90%;
     outline: none;
     border-radius: 5px;
     border: 1px solid var(--border-primary);
     color: #000;
     font-size: 16px;
-    padding: 5px;
+    padding: 10px;
+    background-color: var(--inputBg);
 }
-  
+
 input:disabled{
     background: var(--inputBackground);
 }
-  
+
 input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
@@ -77,8 +79,7 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
 }
-  
-  
+
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"] {
@@ -104,4 +105,11 @@ textarea {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background-image: url('../../../../public/img/svg/cross_zf7bhpmbpvg7.svg');
 }

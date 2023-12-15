@@ -19,3 +19,12 @@ p{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+.header__addBtn{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    align-items:  center ;
+    gap: 25px;
+    margin-bottom: 10px;
+}
