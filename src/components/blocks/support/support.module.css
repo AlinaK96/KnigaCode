@@ -32,3 +32,23 @@ p{
 .header__addBtn input{
     width: 90%;
 }
+
+.support_block {
+    margin-left: 15px;
+}
+
+.support_block p{
+    background-color: rgba(115, 63, 38, 0.25);
+    font-size: 18px;
+    padding: 5px 10px;
+    margin: 10px;
+    text-align: justify;
+    border-radius: 10px;
+}
+
+.support_block span{
+    color: var(--baseFont);
+    font-weight: 800;
+    position: relative;
+    left: 90%;
+}

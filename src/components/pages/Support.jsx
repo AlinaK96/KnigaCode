@@ -94,7 +94,7 @@ const Support = () => {
                     />
                     <textarea 
                         id="supportAnswer" 
-                        cols="20" rows="10" 
+                        cols="20" rows="5" 
                         placeholder="Добавить ответ"
                         onChange={(e) => setSupportAnswer(e.target.value)}
                         value={supportAnswer}
