@@ -1,0 +1,77 @@
+/* @media (max-width: 1600px) {
+    .rightPage,
+    .leftPage{
+        height: 850px;
+    }
+} */
+
+@media (min-width: 1900px) {
+    .book{
+        width: 80vw;
+    }
+
+    .rightPage,
+    .leftPage{
+        height: 850px;
+    }
+}
+
+@media (min-width:2000px) and (max-width: 2100px) {
+    .rightPage,
+    .leftPage{
+        height: 885px;
+    }
+}
+
+@media (min-width: 2300px) {
+    .book{
+        width: 78vw;
+    }
+    .rightPage,
+    .leftPage{
+        height: 1000px;
+    }
+}
+
+
+@media (min-width: 2500px) {
+    .book{
+        width: 75vw;
+    }
+    .rightPage,
+    .leftPage{
+        height: 1000px;
+    }
+}
+
+@media (min-width: 2600px) {
+    .book{
+        width: 71vw;
+    }
+    .rightPage,
+    .leftPage{
+        height: 1000px;
+    }
+}
+
+
+@media (min-width: 2700px) {
+    .book{
+        width: 68vw;
+    }
+    .rightPage,
+    .leftPage{
+        height: 1000px;
+    }
+}
+
+@media (min-width: 2800px) {
+    .book{
+        width: 64vw;
+    }
+
+    .rightPage,
+    .leftPage{
+        height: 1000px;
+    }
+}
