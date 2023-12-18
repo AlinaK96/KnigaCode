@@ -81,9 +81,3 @@ const Video = () => {
 };
 
 export default Video;
-
-// {foundItem.length == 1 ? 
-//     (support.map((item, index) => (
-//         <SupportItem item={item} key={index} ></SupportItem> 
-//     ))) : foundItem.map((item, index) => (
-//         <SupportItem item={item} key={index} ></SupportItem>))}

@@ -74,11 +74,12 @@ const Support = () => {
                 <div className="book">
                     {errMsg}
                     <div className={classes.support__data}>
-                        {foundItem.length == 1 ? 
+                        {foundItem.length === 1 ? 
                             (support.map((item, index) => (
                                 <SupportItem item={item} key={index} ></SupportItem> 
                             ))) : foundItem.map((item, index) => (
                                 <SupportItem item={item} key={index} ></SupportItem>))}
+                        
                     </div>
                 </div>  
 
@@ -89,7 +90,7 @@ const Support = () => {
                         onChange={(e) => setSupportQuestion(e.target.value)}
                         value={supportQuestion}
                         required
-                        placeholder="Добавить вопрос" 
+                        placeholder="Добавить новый вопрос" 
                     />
                     <textarea 
                         id="supportAnswer" 
@@ -100,7 +101,7 @@ const Support = () => {
                         required
                     />
 
-                    <Button onClick={handleSubmit} className='customBtn' >Добавить</Button> 
+                    <Button onClick={handleSubmit} className='customBtn' >Отправить в базу данных</Button> 
                 </div> }
             </div>
             <Footer />
