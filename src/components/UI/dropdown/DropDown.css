@@ -1,6 +1,6 @@
 select{
     outline: none;
-    border:  1px solid var(--border-primary);
+    border:  1px solid transparent;
     font-size: 14px;
     padding: 5px;
     border-radius: 4px;
@@ -15,6 +15,6 @@ option{
 }
 
 option:disabled{
-    color: var(--placeholder);
+    color: grey;
 }
 

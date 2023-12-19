@@ -40,7 +40,7 @@ function App() {
 					<Route path="/stars" element={<Stars />} />
 					<Route path="/study" element={<Study />} />
 					<Route path="/support" element={<Support />} />
-					<Route path="/video" element={<Video />} />
+					<Route path="/video" element={<Video />} /> 
 				</Routes>
 			</Router>
 		</main>

@@ -6,7 +6,7 @@ import DropDownOption from './DropDownOption';
 
 export default function Dropdown({dropDownOption, updated}) {
 
-  const [selected, setSelected] = useState('Миссия');
+  const [selected, setSelected] = useState();
 
   let updatedText
   
