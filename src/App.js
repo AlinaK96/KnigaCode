@@ -1,7 +1,7 @@
-import Register from './Register';
+import Register from './components/pages/Register';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Login from './Login';
+import Login from './components/pages/Login';
 import Home from './components/pages/Home';
 import Author from './components/pages/Author';
 import Best from './components/pages/Best'

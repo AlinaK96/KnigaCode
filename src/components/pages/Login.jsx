@@ -1,11 +1,9 @@
 import { useRef, useState, useEffect, useContext } from 'react';
-import axios from './api/axios';
-import {Context} from './context/context'
+import axios from '../../api/axios';
 
-import AuthContext from './context/AuthProvider';
-import Home from './components/pages/Home'
+import AuthContext from '../../context/AuthProvider';
 
-const LOGIN_URL = '/auth';
+const LOGIN_URL = '/profile/auth';
 
 const Login = () => {
 	

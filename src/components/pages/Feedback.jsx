@@ -14,12 +14,12 @@ import Textarea from '../UI/input/TextArea'
 
 const Feedback = () => {
 
-    const Feedback_URL = 'http://172.30.9.164/feedback'
+    const Feedback_URL = 'http://172.30.9.164/feedback/get'
 
     const token = localStorage.getItem('token')
     const [modalActive, setModalActive] = useState(false)
     const [feedback, setFeedback] = useState([{}])
-    const [errMsg, setErrMsg] = ('')
+    const [errMsg, setErrMsg] = useState('')
     const [feedbackUser, setFeedbackUser] = useState('Алина')
     const [feedbackText, setFeedbackText] = useState('')
     const isLoggedIn = true
@@ -44,6 +44,9 @@ const Feedback = () => {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
+        })
+        .then(response => {
+            setFeedback(response.data)
         })
         setFeedbackText('');
     }

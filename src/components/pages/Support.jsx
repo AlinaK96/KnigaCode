@@ -12,11 +12,11 @@ import Button from "../UI/button/Button";
 
 const Support = () => {
 
-    const SUPPORT_URL = 'http://172.30.9.164/support'
+    const SUPPORT_URL = 'http://172.30.9.164/support/get'
 
     const [support, setSupport] = useState([{}])
     const [foundItem, setfoundItem] = useState(support);
-    let [errMsg, setErrMsg] = ('')
+    const [errMsg, setErrMsg] = useState('')
     const [supportQuestion, setSupportQuestion] = useState('')
     const [supportAnswer, setSupportAnswer] = useState('')
     const isAdmin = true
@@ -39,7 +39,10 @@ const Support = () => {
 
 
     const handleSubmit = async () => {
-        axios.get(`http://172.30.9.164/support?question=${supportQuestion}&answer=${supportAnswer}`)
+        axios.get(`http://172.30.9.164/support/add?question=${supportQuestion}&answer=${supportAnswer}`)
+        .then(response => {
+            setSupport(response.data);
+        })
         setSupportAnswer('');
         setSupportQuestion('');
     }
