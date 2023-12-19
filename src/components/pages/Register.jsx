@@ -6,7 +6,7 @@ import axios from '../../api/axios';
 
 const USER_REGEX = /^[A-Za-zА-Яа-я][A-Za-zА-Яа-я0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,24}$/;
-const REGISTER_URL = '/register';
+const REGISTER_URL = '/profile/registration';
 
 const Register = () => {
 	
@@ -79,7 +79,7 @@ const Register = () => {
 			setPwd('');
 			setMatchPwd('');
 			
-			window.location.href = '/home'
+			window.location.href = '/'
 		} catch (err) {
 			if (!err?.response) {
 				setErrMsg('Ошибка сервера');

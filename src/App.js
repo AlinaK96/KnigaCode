@@ -26,7 +26,7 @@ function App() {
 				<Routes>
 					<Route path="/register" exact element={<Register />} />
 					<Route path="/login" exact element={<Login/>} />
-					<Route path="/home" element={<Home />} />
+					<Route path="/profile" element={<Home />} />
                     <Route path="/author" element={<Author />} /> 
                     <Route path="/best" element={<Best />} />
 					<Route path="/" element={<Calculation />} />

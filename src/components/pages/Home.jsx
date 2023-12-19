@@ -9,7 +9,8 @@ const Home = () => {
   const role = localStorage.getItem('roles')
   const [successLog, setSuccessLog] = useState(false);
 
-  const HOME_URL = 'http://172.30.9.164/home'
+  const HOME_URL = 'http://172.30.9.164/profile'
+  const LOGOUT_URL = 'http://172.30.9.164/profile/logout'
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,6 +24,7 @@ const Home = () => {
             setSuccessLog(true)
           } catch (error) {
             if(error.response?.status === 401){
+              setSuccessLog(false)
                 window.location.href = '/login'
             }
             console.error(error);
@@ -37,7 +39,7 @@ const Home = () => {
 
     const Logout = async () => {
         try {
-            const response = await fetch("http://172.30.9.164/logout", {
+            const response = await fetch(LOGOUT_URL, {
             method: "GET",
               headers: {
                 "Authorization": `Bearer ${token},`,
@@ -67,7 +69,7 @@ const Home = () => {
             {successLog ? (
                 <a>Выход из аккаунта</a>
             ) : (
-                <a>В аккаунте</a>
+                <a>не в аккаунте</a>
             )
             } 
           

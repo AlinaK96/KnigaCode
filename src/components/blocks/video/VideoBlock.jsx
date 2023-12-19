@@ -1,13 +1,14 @@
 import React from "react"
 
-const VideoBlock = (props) => {
+const VideoBlock = ({video}) => {
+
     return (
         <>
             <div>
-                 <h3>{props.item.title}</h3> 
+                <h3>{video.title}</h3> 
                 <div>
-                    {/* <iframe  src="https://www.youtube.com/embed/${props.item.url}" /> */}
-                     {props.item.description} 
+                    {/* <iframe  src="https://www.youtube.com/embed/${video.url}" /> */}
+                    {video.description} 
                 </div>
             </div>
         </>
