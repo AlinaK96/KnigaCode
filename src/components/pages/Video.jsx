@@ -122,7 +122,7 @@ const Video = () => {
                 </div>
             </div>
 
-            {isAdmin && 
+            {/* {isAdmin && 
                 <div className={classes.add__video}>
 
                     <div className={classes.add__supItem}>
@@ -188,7 +188,8 @@ const Video = () => {
                         <Button onClick={addSubcategory} className='customBtn' >Отправить название подкатегории в базу данных</Button> 
                     </div>
 
-                </div> }
+                </div> 
+                } */}
         </div>
         <Footer />
     </>
