@@ -20,7 +20,7 @@ const Video = () => {
     const [errMsg, setErrMsg] = useState('')
 
     const [videoCategory, setVideoCategory] = useState([{}])
-    // const [videoSubcategory, setVideoSubcategory] = useState([{}])
+    const [videoSubcategory, setVideoSubcategory] = useState([{}])
 
     const [categoryName, setCategoryName] = useState()
     const [subcategoryName, setSubcategoryName] = useState()
@@ -79,8 +79,20 @@ const Video = () => {
 
     const chooseCategory = (option) => {
         setCategoryName(option);
+
+            const fetchData = async () => {
+                
+                const response = await fetch(`http://172.30.9.164/video/category/subcategory/get?category=${option}`);
+                const data = await response.json();
+                setVideoSubcategory(data)
+            };
+            fetchData()
     };
 
+
+    const chooseSubCategory = (option) => {
+        setSubcategoryName(option)
+    }
 
 
     return (
@@ -117,14 +129,7 @@ const Video = () => {
                         <h2>Добавить видео</h2>
                         <Dropdown handleOptionChange={chooseRole} option={role} />
                         <Dropdown handleOptionChange={chooseCategory} option={videoCategory} />
-                        <input 
-                            type="text" 
-                            id="SubcategoryName" 
-                            onChange={(e) => setSubcategoryName(e.target.value)}
-                            value={subcategoryName}
-                            required
-                            placeholder="Название подкатегории" 
-                        />
+                        <Dropdown handleOptionChange={chooseSubCategory} option={videoSubcategory} />
                         <input 
                             type="text" 
                             id="videoTitle" 
@@ -170,15 +175,6 @@ const Video = () => {
 
                     <div className={classes.add__supItem}>
                         <h2>Добавить подкатегорию</h2>
-
-                        {/* <input 
-                            type="text" 
-                            id="categoryName" 
-                            onChange={(e) => setCategoryName(e.target.value)}
-                            value={categoryName}
-                            required
-                            placeholder="Название категории" 
-                        /> */}
                         <Dropdown handleOptionChange={chooseCategory} option={videoCategory} />
 
                         <input 

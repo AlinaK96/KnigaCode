@@ -29,7 +29,7 @@ const Header = () => {
               <CustomLink link={link}  key={link.id}></CustomLink> 
             )}
 
-            <NavLink to='/home'> 
+            <NavLink to='/profile'> 
               <img src={User} alt="Профиль" title='Профиль' />
               <span style={{visibility:'hidden'}}>Профиль</span>
             </NavLink>

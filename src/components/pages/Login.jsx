@@ -25,8 +25,7 @@ const Login = () => {
 		setErrMsg('');
 	}, [user, pwd]);
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
+	const handleSubmit = async () => {
 
 		try {
 			const response = await axios.post(
@@ -49,7 +48,7 @@ const Login = () => {
 			setUser('');
 			setPwd('');
 			setSuccess(true);	
-			window.location.href = '/home'
+			window.location.href = '/'
 
 		} catch (err) {
 			if (!err?.response) {

@@ -17,8 +17,7 @@ const Support = () => {
     const [support, setSupport] = useState([{}])
     const [foundItem, setfoundItem] = useState(support);
     const [errMsg, setErrMsg] = useState('')
-    const [supportQuestion, setSupportQuestion] = useState('')
-    const [supportAnswer, setSupportAnswer] = useState('')
+
     const isAdmin = true
 
     useEffect(() => {
@@ -38,14 +37,7 @@ const Support = () => {
     }, []);
 
 
-    const handleSubmit = async () => {
-        axios.get(`http://172.30.9.164/support/add?question=${supportQuestion}&answer=${supportAnswer}`)
-        .then(response => {
-            setSupport(response.data);
-        })
-        setSupportAnswer('');
-        setSupportQuestion('');
-    }
+
 
     const [searchLine, setSearchLine] = useState('');
     const filter = (e) => {
@@ -86,26 +78,6 @@ const Support = () => {
                     </div>
                 </div>  
 
-                {isAdmin && <div className={classes.add__supItem}>
-                    <input 
-                        type="text" 
-                        id="supportQuestion" 
-                        onChange={(e) => setSupportQuestion(e.target.value)}
-                        value={supportQuestion}
-                        required
-                        placeholder="Добавить новый вопрос" 
-                    />
-                    <textarea 
-                        id="supportAnswer" 
-                        cols="20" rows="5" 
-                        placeholder="Добавить ответ"
-                        onChange={(e) => setSupportAnswer(e.target.value)}
-                        value={supportAnswer}
-                        required
-                    />
-
-                    <Button onClick={handleSubmit} className='customBtn' >Отправить в базу данных</Button> 
-                </div> }
             </div>
             <Footer />
         </>

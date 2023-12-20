@@ -18,7 +18,7 @@ const CategoryItem = ({ category, onToggle, isCollapsed }) => {
     function openVideo(e) {
         const filteredCat = e.target.innerText;
         const fetchData = async () => {
-            const response = await fetch(`http://172.30.9.164/video/category/subcategory/get?category=${filteredCat}`);
+            const response = await fetch(`http://172.30.9.164/video/get?subcategory=${filteredCat}`);
             const data = await response.json()
             console.log(data);
         };

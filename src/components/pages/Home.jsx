@@ -23,10 +23,10 @@ const Home = () => {
             });
             setSuccessLog(true)
           } catch (error) {
-            if(error.response?.status === 401){
-              setSuccessLog(false)
+              if(error.response?.status !== 200) {
+                setSuccessLog(false)
                 window.location.href = '/login'
-            }
+            }  
             console.error(error);
           }
         };
