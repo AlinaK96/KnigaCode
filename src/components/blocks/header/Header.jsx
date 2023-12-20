@@ -10,7 +10,7 @@ import CustomLink from '../../UI/customLink/customLink';
 const Header = () => {
 
     const headerLinks = [
-        {id: '/author', title: 'Об авторе', link: '/author'},
+        {id: '/author', title: 'О системе', link: '/author'},
         {id: '/best', title: 'Доска почёта', link: '/best'},
         {id: '/calculate', title: 'Калькулятор', link: '/'},
         {id: '/match', title: 'Совместимость', link: '/match'},

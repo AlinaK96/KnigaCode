@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Dropdown({ handleOptionChange, option }) {
+function ChildComponent({ handleOptionChange, option }) {
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleChange = (event) => {
@@ -11,9 +11,10 @@ function Dropdown({ handleOptionChange, option }) {
 
   return (
     <div>
+
         <select value={selectedOption} onChange={handleChange}>
-            {option.map((item, index) => 
-                <option key={index} value={item.title}>{item.title}</option>
+            {option.map((item) => 
+                <option value={item.category}>{item.category}</option>
             )}
 
         </select>    
@@ -22,4 +23,4 @@ function Dropdown({ handleOptionChange, option }) {
   );
 }
 
-export default Dropdown;
+export default ChildComponent;

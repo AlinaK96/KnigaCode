@@ -152,14 +152,8 @@ select:-webkit-autofill:focus {
 }
 
 .leftPage img{
-	width: 500px;
-	height: 500px;
-}
-
-.rightPage img{
-	float: left;
-	width: 350px;
-	height: 350px;
+	width: 400px;
+	height: 400px;
 }
 
 .colums{

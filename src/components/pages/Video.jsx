@@ -9,6 +9,7 @@ import Input from '../UI/input/Input'
 import VideoBlock from "../blocks/video/VideoBlock";
 
 import Button from "../UI/button/Button";
+import Dropdown from "../UI/dropdown/Dropdown";
 
 import classes from '../blocks/video/Video.module.css'
 import CategoryList from "../blocks/video/CategoryList";
@@ -19,7 +20,7 @@ const Video = () => {
     const [errMsg, setErrMsg] = useState('')
 
     const [videoCategory, setVideoCategory] = useState([{}])
-    const [videoSubcategory, setVideoSubcategory] = useState([{}])
+    // const [videoSubcategory, setVideoSubcategory] = useState([{}])
 
     const [categoryName, setCategoryName] = useState()
     const [subcategoryName, setSubcategoryName] = useState()
@@ -44,6 +45,7 @@ const Video = () => {
     const [videoTitle, setVideoTitle] = useState('')
     const [videoURL, setVideoURL] = useState('')
     const [videoDescription, setVideoDescription] = useState('')
+    const [userRole, setUserRole] = useState('')
 
     const addCategory = async () => {
         axios.get(`http://172.30.9.164/video/category/add?category=${categoryName}`)
@@ -57,13 +59,28 @@ const Video = () => {
     }
 
     const addVideo = async () => {
-        // axios.get(`http://172.30.9.164/video/category/subcategory/add?category=${categoryName}&subcategory=${subcategoryName}`)
+        axios.get(`http://172.30.9.164/video/add?category=${categoryName}&subcategory=${subcategoryName}&title=${videoTitle}&URL=${videoURL}&description=${videoDescription}&role=${userRole}`)
         setSubcategoryName('')
         setCategoryName('')
         setVideoTitle('')
         setVideoURL('')
         setVideoDescription('')
     }
+
+    const role = [
+        { title: 'Зарегистрированный пользователь'},
+        { title: 'Незарегистрированный пользователь' },
+        { title: 'Студент'},
+    ];
+
+    const chooseRole = (option) => {
+        setUserRole(option);
+    };
+
+    const chooseCategory = (option) => {
+        setCategoryName(option);
+    };
+
 
 
     return (
@@ -98,14 +115,8 @@ const Video = () => {
 
                     <div className={classes.add__supItem}>
                         <h2>Добавить видео</h2>
-                        <input 
-                            type="text" 
-                            id="categoryName" 
-                            onChange={(e) => setCategoryName(e.target.value)}
-                            value={categoryName}
-                            required
-                            placeholder="Название категории" 
-                        />
+                        <Dropdown handleOptionChange={chooseRole} option={role} />
+                        <Dropdown handleOptionChange={chooseCategory} option={videoCategory} />
                         <input 
                             type="text" 
                             id="SubcategoryName" 
@@ -160,14 +171,16 @@ const Video = () => {
                     <div className={classes.add__supItem}>
                         <h2>Добавить подкатегорию</h2>
 
-                        <input 
+                        {/* <input 
                             type="text" 
                             id="categoryName" 
                             onChange={(e) => setCategoryName(e.target.value)}
                             value={categoryName}
                             required
                             placeholder="Название категории" 
-                        />
+                        /> */}
+                        <Dropdown handleOptionChange={chooseCategory} option={videoCategory} />
+
                         <input 
                             type="text" 
                             id="SubcategoryName" 

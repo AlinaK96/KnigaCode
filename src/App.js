@@ -17,6 +17,7 @@ import Stars from './components/pages/Stars'
 import Study from './components/pages/Stydy'
 import Support from './components/pages/Support'
 import Video from './components/pages/Video'
+import Edit from './components/pages/Edit';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
 					<Route path="/study" element={<Study />} />
 					<Route path="/support" element={<Support />} />
 					<Route path="/video" element={<Video />} /> 
+					<Route path="/edit" element={<Edit/>} /> 
 				</Routes>
 			</Router>
 		</main>
