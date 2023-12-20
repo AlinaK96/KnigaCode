@@ -40,8 +40,6 @@ const Video = () => {
         fetchData();
         }, []);
 
-    const isAdmin = true
-
     const [videoTitle, setVideoTitle] = useState('')
     const [videoURL, setVideoURL] = useState('')
     const [videoDescription, setVideoDescription] = useState('')
