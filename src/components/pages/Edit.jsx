@@ -12,10 +12,12 @@ import Dropdown from "../UI/dropdown/Dropdown";
 const Edit = () => {
 
     const isAdmin = true
+    const [errMsg, setErrMsg] = useState('')
+
 
     //видео
     const VIDEO_URL = 'http://172.30.9.164/video/category/get'
-    const [errMsg, setErrMsg] = useState('')
+    
 
     const [categoryName, setCategoryName] = useState('')
     const [subcategoryName, setSubcategoryName] = useState('')
@@ -28,8 +30,6 @@ const Edit = () => {
     const [videoDescription, setVideoDescription] = useState('')
     const [userRole, setUserRole] = useState('')
 
-
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -37,15 +37,13 @@ const Edit = () => {
                 setVideoCategory(response.data);
             } catch (error) {
                 if(error.response?.status === 404){
-                    setErrMsg('Ничего не найдено');
+                    setErrMsg('Категории для видео не найдены');
                 }
                 console.error(error);
             }
         };
         fetchData();
         }, []);
-
-
 
     const addCategory = async () => {
         axios.get(`http://172.30.9.164/video/category/add?category=${categoryName}`)
@@ -110,12 +108,12 @@ const Edit = () => {
                 <InfoHead content='Редактировать страницы'/>
 
 
-                <div className={classes.edit}>
-                    <h3>Блок "Видео"</h3>
-                    <div>
+                <div className={classes.editContent}>
+                    <h2>Блок "Видео"</h2>
+                    <div className={classes.editVideo}>
 
                         <div className={classes.edit}>
-                            <h2>Добавить видео</h2>
+                            <h3>Добавить видео</h3>
                             <Dropdown handleOptionChange={chooseRole} option={role} />
                             <Dropdown handleOptionChange={chooseCategory} option={videoCategory} />
                             <Dropdown handleOptionChange={chooseSubCategory} option={videoSubcategory} />
@@ -139,7 +137,7 @@ const Edit = () => {
 
                             <textarea 
                                 id="videoDescription" 
-                                cols="20" rows="5" 
+                                cols="20" rows="3" 
                                 placeholder="Добавить описание"
                                 onChange={(e) => setVideoDescription(e.target.value)}
                                 value={videoDescription}
@@ -150,7 +148,7 @@ const Edit = () => {
                         </div>
 
                         <div className={classes.edit}>
-                            <h2>Добавить категорию</h2>
+                            <h3>Добавить категорию</h3>
                             <input 
                                 type="text" 
                                 id="categoryName" 
@@ -163,7 +161,7 @@ const Edit = () => {
                         </div>
 
                         <div className={classes.edit}>
-                            <h2>Добавить подкатегорию</h2>
+                            <h3>Добавить подкатегорию</h3>
                             <Dropdown handleOptionChange={chooseCategory} option={videoCategory} />
 
                             <input 
@@ -180,8 +178,9 @@ const Edit = () => {
                     </div> 
                 </div> 
 
-                <div className={classes.edit}>
-                    <h3>Блок "Поддержка"</h3>
+                <div className={classes.editContent}>
+                    <h2>Блок "Поддержка"</h2>
+                    <div className={classes.edit}>
                         <input 
                             type="text" 
                             id="supportQuestion" 
@@ -192,7 +191,7 @@ const Edit = () => {
                         />
                         <textarea 
                             id="supportAnswer" 
-                            cols="20" rows="5" 
+                            cols="20" rows="3" 
                             placeholder="Добавить ответ"
                             onChange={(e) => setSupportAnswer(e.target.value)}
                             value={supportAnswer}
@@ -200,6 +199,7 @@ const Edit = () => {
                         />
 
                         <Button onClick={handleSubmit} className='customBtn' >Отправить в базу данных</Button> 
+                    </div>
                 </div>
 
             </div>

@@ -1,9 +1,11 @@
 select{
     outline: none;
+    width: 100%;
     border:  1px solid transparent;
-    font-size: 14px;
+    font-size: 16sspx;
     padding: 5px;
     border-radius: 4px;
+    background-color: white;
 }
 
 select > option:checked { 
