@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from "react"
 import axios from "axios";
-import classes from '../blocks/support/support.module.css'
+import classes from '../../blocks/support/support.module.css'
 
-import Header from "../blocks/header/Header";
-import Footer from "../blocks/footer/Footer";
-import InfoHead from "../UI/infoHead/infoHead";
-import SupportItem from "../blocks/support/supportBlock";
+import Header from "../../blocks/header/Header";
+import Footer from "../../blocks/footer/Footer";
+import InfoHead from "../../UI/infoHead/infoHead";
+import SupportItem from "../../blocks/support/supportBlock";
 
-import Input from '../UI/input/Input'
-import Button from "../UI/button/Button";
+import Input from '../../UI/input/Input'
 
 const Support = () => {
 
@@ -35,9 +34,6 @@ const Support = () => {
     
         fetchData();
     }, []);
-
-
-
 
     const [searchLine, setSearchLine] = useState('');
     const filter = (e) => {

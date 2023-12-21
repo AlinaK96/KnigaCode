@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios";
-import classes from './styles/Feedback.module.css'
+import classes from '../styles/Feedback.module.css'
 
-import Header from "../blocks/header/Header";
-import Footer from "../blocks/footer/Footer";
-import InfoHead from "../UI/infoHead/infoHead";
+import Header from "../../blocks/header/Header";
+import Footer from "../../blocks/footer/Footer";
+import InfoHead from "../../UI/infoHead/infoHead";
 
-import FeedbackItem from '../blocks/feedback/FeedbackItem'
+import FeedbackItem from '../../blocks/feedback/FeedbackItem'
 
-import Button from '../UI/button/Button'
-import PopUp from '../UI/popUp/PopUp'
-import Textarea from '../UI/input/TextArea'
+import Button from '../../UI/button/Button'
+import PopUp from '../../UI/popUp/PopUp'
+import Textarea from '../../UI/input/TextArea'
 
 const Feedback = () => {
 

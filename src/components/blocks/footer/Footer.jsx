@@ -6,16 +6,18 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => {
 
     const isAdmin = true
+    const isStudent = true
 
     const footerLinks = [
-        {id: '/consultaion', title: 'Заказать консультацию', link: '/consultaion'},
-        {id: '/study', title: 'Обучение', link: '/study'},
+        {id: 'consultaion', title: 'Консультация', link: '/consultaion'},
+        {id: 'study', title: 'Обучение', link: '/study'},
         {id: 'book', title: 'Книга', link: '/book'},
-        {id: 'stars', title: 'Картотека', link: '/stars'},
+        {id: 'archive', title: 'Альманах', link: '/archive'},
+        {id: 'stars', title: 'Звёзды', link: '/stars'},
         {id: 'video', title: 'Видео', link: '/video'},
-        {id: 'feedback', title: 'Отзывы', link: '/feedback'},
-        {id: 'contacts', title: 'Контакты', link: '/contacts'},
-        {id: 'support', title: 'Поддержка', link: '/support'},
+        //{id: 'feedback', title: 'Отзывы', link: '/feedback'},
+        //{id: 'contacts', title: 'Контакты', link: '/contacts'},
+        //{id: 'support', title: 'Поддержка', link: '/support'},
     ]
 
     return (
@@ -24,10 +26,16 @@ const Footer = () => {
                 <CustomLink link={link}  key={link.id}></CustomLink> 
             )}
 
+            {isStudent &&
+            <NavLink to='/edu' className='link'> 
+                <span>Обучение</span>
+            </NavLink>}
+
             {isAdmin &&
-            <NavLink to='/edit'> 
+            <NavLink to='/edit' className='link'> 
                 <span>Редактировать страницы</span>
             </NavLink>}
+
 
         </div>
     );

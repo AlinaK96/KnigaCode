@@ -1,7 +1,7 @@
 import React from "react"
-import Header from '../blocks/header/Header'
-import Footer from '../blocks/footer/Footer'
-import InfoHead from "../UI/infoHead/infoHead";
+import Header from '../../blocks/header/Header'
+import Footer from '../../blocks/footer/Footer'
+import InfoHead from "../../UI/infoHead/infoHead";
 import { NavLink } from "react-router-dom";
 
 const Contacts = () => {
