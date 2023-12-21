@@ -17,8 +17,8 @@ const CategoryList = ({category}) => {
 
     return (
         <div>
-            {category.map((category) => (
-                <div >
+            {category.map((category, index) => (
+                <div key={index}>
                     <CategoryItem
                         key={Date.now()}
                         category={category}

@@ -21,13 +21,21 @@ const Video = () => {
 
     const [videoCategory, setVideoCategory] = useState([{}])
 
+    const currentVideo = localStorage.getItem('filteredCat')
+    const [video, setVideo] = useState([{}])
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(VIDEO_URL);
-                setVideoCategory(response.data);
+                const videoCategory = await axios.get(VIDEO_URL);
+                setVideoCategory(videoCategory.data);
+
+                const video = await fetch(`http://172.30.9.164/video/get?subcategory=${currentVideo}`);
+                const data = await video.json()
+                setVideo(data)
+
             } catch (error) {
-                if(error.response?.status === 404){
+                if(error.videoCategory?.status === 404){
                     setErrMsg('Ничего не найдено');
                 }
                 console.error(error);
@@ -54,9 +62,9 @@ const Video = () => {
                 </div>
 
                 <div className="rightPage">
-                    {/* {video.map( (video, index) =>
+                    {video.map( (video, index) =>
                         <VideoBlock video={video} key={index} />
-                    )}*/}
+                    )}
                     
                     {videoCategory.length === 0 && <div>{errMsg}</div>}
 

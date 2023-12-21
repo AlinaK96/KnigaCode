@@ -4,6 +4,7 @@ import classes from './Video.module.css'
 const CategoryItem = ({ category, onToggle, isCollapsed }) => {
 
     const [subcategories, setSubcategories] = useState([]);
+    localStorage.setItem('filteredCat', 'Миссия 1 - “У меня всё под контролем”')
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,6 +18,7 @@ const CategoryItem = ({ category, onToggle, isCollapsed }) => {
 
     function openVideo(e) {
         const filteredCat = e.target.innerText;
+        localStorage.setItem('filteredCat', filteredCat)
         const fetchData = async () => {
             const response = await fetch(`http://172.30.9.164/video/get?subcategory=${filteredCat}`);
             const data = await response.json()
