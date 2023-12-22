@@ -3,7 +3,7 @@ import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
 import InfoHead from "../UI/infoHead/infoHead";
 
-import krug from './img/krug_alfatrim_full.png'
+import krug from './img/krug.png'
 
 
 const Author = () => {

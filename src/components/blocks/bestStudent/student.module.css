@@ -1,0 +1,11 @@
+.img{
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+a{
+    color: var(--baseFont);
+}
