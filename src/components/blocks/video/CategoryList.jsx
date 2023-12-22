@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CategoryItem from "./CategoryItem";
 
-const CategoryList = ({category}) => {
+const CategoryList = ({category, sublink}) => {
 
     const [collapsedCategories, setCollapsedCategories] = useState([]);
 
@@ -20,6 +20,7 @@ const CategoryList = ({category}) => {
             {category.map((category, index) => (
                 <div key={index}>
                     <CategoryItem
+                        sublink={sublink}
                         key={Date.now()}
                         category={category}
                         onToggle={handleCategoryToggle}

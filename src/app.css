@@ -202,3 +202,7 @@ select:-webkit-autofill:focus {
 .header__addBtn input {
 	width: 70%;
 }
+
+.search{
+    width: 100%;
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from './Video.module.css'
 
-const CategoryItem = ({ category, onToggle, isCollapsed }) => {
+const CategoryItem = ({ category, onToggle, isCollapsed, sublink }) => {
 
     const [subcategories, setSubcategories] = useState([]);
     localStorage.setItem('filteredCat', 'Миссия 1 - “У меня всё под контролем”')
@@ -9,7 +9,7 @@ const CategoryItem = ({ category, onToggle, isCollapsed }) => {
     useEffect(() => {
         const fetchData = async () => {
             if (category.title){
-            const response = await fetch(`http://172.30.9.164/video/category/subcategory/get?category=${category.title}`);
+            const response = await fetch(`http://172.30.9.164/${sublink}/category/subcategory/get?category=${category.title}`);
             const data = await response.json();
             setSubcategories(data)}
         };

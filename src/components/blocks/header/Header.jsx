@@ -11,7 +11,7 @@ const Header = () => {
 
     const headerLinks = [
         {id: '/author', title: 'О системе', link: '/author'},
-        {id: '/best', title: 'Доска почёта', link: '/best'},
+        //{id: '/best', title: 'Доска почёта', link: '/best'},
         {id: '/calculate', title: 'Калькулятор', link: '/'},
         {id: '/match', title: 'Совместимость', link: '/match'},
         {id: '/parents', title: 'Дети-родители', link: '/parents'},

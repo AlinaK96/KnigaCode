@@ -51,7 +51,7 @@ const Video = () => {
                         placeholder='Поиск...'
                         className={classes.search}
                     />
-                    <CategoryList category={videoCategory}/>
+                    <CategoryList category={videoCategory} sublink='video' />
                 </div>
 
                 <div className="rightPage">

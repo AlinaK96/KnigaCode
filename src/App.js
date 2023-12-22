@@ -6,7 +6,6 @@ import Register from './components/pages/Register';
 //header
 import Profile from './components/pages/Profile'
 import Author from './components/pages/Author';
-import Best from './components/pages/Best'
 import Calculation from './components/pages/Calculation'
 import Match from './components/pages/Match'
 import Parents from './components/pages/Parents'
@@ -23,6 +22,7 @@ import Edit from './components/pages/Edit';
 import Education from './components/pages/Education';
 
 //extra
+import Best from './components/pages//extra/Best'
 import Support from './components/pages/extra/Support'
 import Feedback from './components/pages/extra/Feedback'
 import Contacts from './components/pages/extra/Contacts'
@@ -39,7 +39,6 @@ function App() {
 
 					<Route path="/profile" element={<Profile />} />
                     <Route path="/author" element={<Author />} /> 
-                    <Route path="/best" element={<Best />} />
 					<Route path="/" element={<Calculation />} />
 					<Route path="/match" element={<Match />} />
 					<Route path="/parents" element={<Parents />} />
@@ -54,9 +53,10 @@ function App() {
 					<Route path="/edu" element={<Education />} />
 					<Route path="/edit" element={<Edit/>} /> 
 
+                    {/* <Route path="/best" element={<Best />} />
 					<Route path="/feedback" element={<Feedback />} />
 					<Route path="/contacts" element={<Contacts />} />
-					<Route path="/support" element={<Support />} />
+					<Route path="/support" element={<Support />} /> */}
 				</Routes>
 			</Router>
 		</main>
