@@ -14,6 +14,41 @@ const Edit = () => {
     const isAdmin = true
     const [errMsg, setErrMsg] = useState('')
 
+    //доска почёта
+
+    const STUDENT_URL = 'http://172.30.9.164/video/add'
+    const [bsName, setbsName] = useState('')
+    const [bsOccupation, setbsOccupation] = useState('')
+    const [bsDescription, setbsDescription] = useState('')
+    const [bsLink, setbsLink] = useState('')
+    const [bsPhone, setbsPhone] = useState('')
+    const [bsImg, setbsImg] = useState('')
+
+    const addStudent = async () => {
+        try {
+            const response = await axios.post (
+                STUDENT_URL,
+                JSON.stringify({
+                    'studentName' : bsName,
+                    'occupation': bsOccupation,
+                    'description': bsDescription,
+                    'link': bsLink,
+                    'phone': bsPhone,
+                    'img': bsImg,
+                }),
+                {headers: { 'Content-Type': 'application/json' }}
+            );
+            setbsName('')
+            setbsOccupation('')
+            setbsDescription('')
+            setbsLink('')
+            setbsPhone('')
+            setbsImg('')
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
 
     //видео
     const VIDEO_URL = 'http://172.30.9.164/video/category/get'
@@ -91,6 +126,7 @@ const Edit = () => {
     }
 
     //support
+    const SUPPORT_URL = 'http://172.30.9.164/support/add?'
     const [supportQuestion, setSupportQuestion] = useState('')
     const [supportAnswer, setSupportAnswer] = useState('')
     const handleSubmit = async () => {
@@ -99,6 +135,25 @@ const Edit = () => {
         setSupportQuestion('');
     }
 
+    // const handleSubmit = async () => {
+    //     try {
+    //         const response = await axios.post (
+    //             SUPPORT_URL,
+    //             JSON.stringify({
+    //                 'question' : supportQuestion,
+    //                 'answer': supportAnswer,
+    //             }),
+    //             {
+	// 				headers: { 'Content-Type': 'application/json' },
+	// 			}
+    //         );
+    //         setSupportAnswer('');
+    //         setSupportQuestion('');
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // }
+
     return (
         <>
             <Header />
@@ -106,6 +161,64 @@ const Edit = () => {
             <div className="content">
             
                 <InfoHead content='Редактировать страницы'/>
+
+                <div className={classes.editContent}>
+                    <h2>Блок "Доска почёта"</h2>
+
+                    <div className={classes.edit}>
+                        <h3>Добавить нового студента</h3>
+                            <input 
+                                type="text" 
+                                id="studentName" 
+                                onChange={(e) => setbsName(e.target.value)}
+                                value={bsName}
+                                required
+                                placeholder="Добавить инициалы студента" 
+                            />
+                            <input 
+                                type="text" 
+                                id="studentOccupation" 
+                                onChange={(e) => setbsOccupation(e.target.value)}
+                                value={bsOccupation}
+                                required
+                                placeholder="Добавить краткое описание" 
+                            />
+                            <textarea
+                                type="text" 
+                                id="studentDescription" 
+                                onChange={(e) => setbsDescription(e.target.value)}
+                                value={bsDescription}
+                                required
+                                placeholder="Добавить развернутое описание" 
+                            />
+                            <input 
+                                type="text" 
+                                id="studentLink" 
+                                onChange={(e) => setbsLink(e.target.value)}
+                                value={bsLink}
+                                required
+                                placeholder="Добавить ссылку на соц.сеть" 
+                            />
+                            <input 
+                                type="text" 
+                                id="studentPhone" 
+                                onChange={(e) => setbsPhone(e.target.value)}
+                                value={bsPhone}
+                                required
+                                placeholder="Добавить телефон студента" 
+                            />
+                            <input 
+                                type="text" 
+                                id="studentImg" 
+                                onChange={(e) => setbsImg(e.target.value)}
+                                value={bsImg}
+                                required
+                                placeholder="Добавить ссылку на фото" 
+                            />
+                            <Button onClick={addStudent} className='customBtn' >Отправить данные студента в базу данных</Button> 
+
+                    </div>
+                </div>
 
 
                 <div className={classes.editContent}>
