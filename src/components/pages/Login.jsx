@@ -36,7 +36,6 @@ const Login = () => {
 				}),
 				{
 					headers: { 'Content-Type': 'application/json' }
-
 				}
 			);
 
@@ -48,7 +47,7 @@ const Login = () => {
 			setUser('');
 			setPwd('');
 			setSuccess(true);	
-			window.location.href = '/'
+			window.location.href = '/profile'
 
 		} catch (err) {
 			if (!err?.response) {

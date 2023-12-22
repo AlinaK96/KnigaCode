@@ -7,7 +7,7 @@ const VideoBlock = ({video}) => {
             <div>
                 <h3>{video.title}</h3> 
                 <div>
-                    <iframe  src="https://www.youtube.com/embed/${video.url}" />
+                    {video.URL}
                     {video.description} 
                 </div>
             </div>

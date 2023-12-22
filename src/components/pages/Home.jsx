@@ -12,27 +12,27 @@ const Home = () => {
   const HOME_URL = 'http://172.30.9.164/profile'
   const LOGOUT_URL = 'http://172.30.9.164/profile/logout'
 
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await axios.get(HOME_URL, { 
-            headers: {
-                Authorization: `Bearer ${token}`,
-              },
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //       try {
+    //         const response = await axios.get(HOME_URL, { 
+    //         headers: {
+    //             Authorization: `Bearer ${token}`,
+    //           },
               
-            });
-            setSuccessLog(true)
-          } catch (error) {
-              if(error.response?.status !== 200) {
-                setSuccessLog(false)
-                window.location.href = '/login'
-            }  
-            console.error(error);
-          }
-        };
+    //         });
+    //         setSuccessLog(true)
+    //       } catch (error) {
+    //           if(error.response?.status !== 200) {
+    //             setSuccessLog(false)
+    //             window.location.href = '/login'
+    //         }  
+    //         console.error(error);
+    //       }
+    //     };
     
-        fetchData();
-      }, []);
+    //     fetchData();
+    //   }, []);
 
 
 

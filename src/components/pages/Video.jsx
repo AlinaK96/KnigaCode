@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios";
+import classes from '../blocks/video/Video.module.css'
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
@@ -8,10 +9,6 @@ import InfoHead from "../UI/infoHead/infoHead";
 import Input from '../UI/input/Input'
 import VideoBlock from "../blocks/video/VideoBlock";
 
-import Button from "../UI/button/Button";
-import Dropdown from "../UI/dropdown/Dropdown";
-
-import classes from '../blocks/video/Video.module.css'
 import CategoryList from "../blocks/video/CategoryList";
 
 const Video = () => {
@@ -43,6 +40,18 @@ const Video = () => {
         };
         fetchData();
         }, []);
+
+        const [collapsedCategories, setCollapsedCategories] = useState([]);
+
+        const handleCategoryToggle = (categoryId) => {
+            if (collapsedCategories.includes(categoryId)) {
+                setCollapsedCategories(
+                    collapsedCategories.filter((id) => id !== categoryId)
+                );
+            } else {
+                setCollapsedCategories([...collapsedCategories, categoryId]);
+            }
+        };
 
 
     return (

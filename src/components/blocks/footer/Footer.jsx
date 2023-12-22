@@ -28,7 +28,7 @@ const Footer = () => {
 
             {isStudent &&
             <NavLink to='/edu' className='link'> 
-                <span>Обучение</span>
+                <span>Курсы</span>
             </NavLink>}
 
             {isAdmin &&
