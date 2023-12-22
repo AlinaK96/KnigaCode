@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+	color: var(--baseFont);
 }
 
 .footer{
@@ -188,4 +189,16 @@ select:-webkit-autofill:focus {
 
 .simplePage h2:first-child{
 	margin-top: 15%;
+}
+
+.header__addBtn{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    align-items:  flex-start ;
+    gap: 25px;
+}
+
+.header__addBtn input {
+	width: 70%;
 }

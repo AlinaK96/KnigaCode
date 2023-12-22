@@ -38,7 +38,7 @@ const Login = () => {
 					headers: { 'Content-Type': 'application/json' }
 				}
 			);
-
+			console.log(response);
 			const accessToken = response?.data?.accessToken;
 			setToken(response?.data?.accessToken)
 			localStorage.setItem('token', accessToken)
@@ -47,7 +47,7 @@ const Login = () => {
 			setUser('');
 			setPwd('');
 			setSuccess(true);	
-			window.location.href = '/profile'
+			// window.location.href = '/profile'
 
 		} catch (err) {
 			if (!err?.response) {

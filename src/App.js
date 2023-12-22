@@ -4,7 +4,7 @@ import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 
 //header
-import Home from './components/pages/Home';
+import Profile from './components/pages/Profile'
 import Author from './components/pages/Author';
 import Best from './components/pages/Best'
 import Calculation from './components/pages/Calculation'
@@ -37,7 +37,7 @@ function App() {
 					<Route path="/register" exact element={<Register />} />
 					<Route path="/login" exact element={<Login/>} />
 
-					<Route path="/profile" element={<Home />} />
+					<Route path="/profile" element={<Profile />} />
                     <Route path="/author" element={<Author />} /> 
                     <Route path="/best" element={<Best />} />
 					<Route path="/" element={<Calculation />} />

@@ -41,19 +41,6 @@ const Video = () => {
         fetchData();
         }, []);
 
-        const [collapsedCategories, setCollapsedCategories] = useState([]);
-
-        const handleCategoryToggle = (categoryId) => {
-            if (collapsedCategories.includes(categoryId)) {
-                setCollapsedCategories(
-                    collapsedCategories.filter((id) => id !== categoryId)
-                );
-            } else {
-                setCollapsedCategories([...collapsedCategories, categoryId]);
-            }
-        };
-
-
     return (
         <>
         <Header />
