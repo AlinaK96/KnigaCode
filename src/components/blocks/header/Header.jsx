@@ -11,11 +11,12 @@ const Header = () => {
 
     const headerLinks = [
         {id: '/author', title: 'О системе', link: '/author'},
-        //{id: '/best', title: 'Доска почёта', link: '/best'},
         {id: '/calculate', title: 'Калькулятор', link: '/'},
         {id: '/match', title: 'Совместимость', link: '/match'},
-        {id: '/parents', title: 'Дети-родители', link: '/parents'},
-        {id: '/forecast', title: 'Прогноз', link: '/forecast'},
+        {id: '/plot', title: 'Сценарии', link: '/plot'},
+        {id: '/name', title: 'Подбор имени', link: '/name'},
+        {id: '/forecast', title: 'Карта дня', link: '/forecast'},
+        {id: '/archive', title: 'Картотека', link: '/archive'},
 
     ]
 

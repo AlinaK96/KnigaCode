@@ -8,7 +8,8 @@ import Profile from './components/pages/Profile'
 import Author from './components/pages/Author';
 import Calculation from './components/pages/Calculation'
 import Match from './components/pages/Match'
-import Parents from './components/pages/Parents'
+import Plot from './components/pages/Plot'
+import Name from './components/pages/Name'
 import Forecast from './components/pages/Forecast'
 
 //footer
@@ -18,14 +19,8 @@ import Book from './components/pages/Book';
 import Archive from './components/pages/Archive';
 import Stars from './components/pages/Stars'
 import Video from './components/pages/Video'
-import Edit from './components/pages/Edit';
 import Education from './components/pages/Education';
 
-//extra
-import Best from './components/pages//extra/Best'
-import Support from './components/pages/extra/Support'
-import Feedback from './components/pages/extra/Feedback'
-import Contacts from './components/pages/extra/Contacts'
 
 
 function App() {
@@ -41,22 +36,17 @@ function App() {
                     <Route path="/author" element={<Author />} /> 
 					<Route path="/" element={<Calculation />} />
 					<Route path="/match" element={<Match />} />
-					<Route path="/parents" element={<Parents />} />
+					<Route path="/plot" element={<Plot />} />
+					<Route path="/name" element={<Name />} />
 					<Route path="/forecast" element={<Forecast />} />
+					<Route path="/archive" element={<Archive />} />
 
 					<Route path="/consultaion" element={<Consultation />} />
 					<Route path="/study" element={<Study />} />
 					<Route path="/book" element={<Book />} />
-					<Route path="/archive" element={<Archive />} />
 					<Route path="/stars" element={<Stars />} />
 					<Route path="/video" element={<Video />} /> 
 					<Route path="/edu" element={<Education />} />
-					<Route path="/edit" element={<Edit/>} /> 
-
-                    {/* <Route path="/best" element={<Best />} />
-					<Route path="/feedback" element={<Feedback />} />
-					<Route path="/contacts" element={<Contacts />} />
-					<Route path="/support" element={<Support />} /> */}
 				</Routes>
 			</Router>
 		</main>

@@ -8,14 +8,13 @@ const Archive = () => {
 
 
     return (
-        <div className='Archive'>
+        <>
             <Header />
             <div className="content">
-                <InfoHead content='Альманах' />
-                альманах
+                <InfoHead content='Картотека' /> 
             </div>
             <Footer />
-        </div>
+        </>
     );
 }
 

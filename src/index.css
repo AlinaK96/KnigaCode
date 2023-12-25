@@ -63,14 +63,7 @@ button:not(:disabled):hover{
 	cursor: pointer;
 }
 
-label,
-button {
-    margin-top: 1rem;
-}
 
-button {
-    padding: 0.5rem;
-}
 
 .none{
 	display: none;

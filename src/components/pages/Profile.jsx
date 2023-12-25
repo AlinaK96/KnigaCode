@@ -127,14 +127,14 @@ const Home = () => {
             <Button 
               className='customBtn'
               onClick={Logout}
-            ><span>Выйти</span>
+            ><span>Выйти из профиля</span>
             </Button>
           </div>
 
           <div className="book">
             <div className="leftPage">
               <h2>Личные данные</h2>
-              <div>
+              <div className={classes.profile}>
                 <div className={classes.profileItem}>
                   <p>Статус: </p> <span>{role}</span>
                 </div>
@@ -211,8 +211,6 @@ const Home = () => {
                     />
                     <a href="https://you.com/" target="blank" className="customLink">Задать вопрос</a>
                 </div>
-                  {errMsg}
-
                     <div>
                         {foundItem.length === 0 ? 
                             (support.map((item, index) => (

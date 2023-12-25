@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
 
-    const isAdmin = true
     const isStudent = true
 
     const footerLinks = [
@@ -15,9 +14,6 @@ const Footer = () => {
         {id: 'archive', title: 'Альманах', link: '/archive'},
         {id: 'stars', title: 'Звёзды', link: '/stars'},
         {id: 'video', title: 'Видео', link: '/video'},
-        //{id: 'feedback', title: 'Отзывы', link: '/feedback'},
-        //{id: 'contacts', title: 'Контакты', link: '/contacts'},
-        //{id: 'support', title: 'Поддержка', link: '/support'},
     ]
 
     return (
@@ -29,11 +25,6 @@ const Footer = () => {
             {isStudent &&
             <NavLink to='/edu' className='link'> 
                 <span>Курсы</span>
-            </NavLink>}
-
-            {isAdmin &&
-            <NavLink to='/edit' className='link'> 
-                <span>Редактировать страницы</span>
             </NavLink>}
 
 
