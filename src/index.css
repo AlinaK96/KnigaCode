@@ -68,3 +68,7 @@ button:not(:disabled):hover{
 .none{
 	display: none;
 }
+
+a{
+	color: inherit;
+}

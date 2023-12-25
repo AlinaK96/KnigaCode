@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import Button from '../button/Button';
-
+import classes from './collapse.module.css'
 const Collapse = ({children, toggle__text}) => {
-    const [open, setOPen] = useState(true);
+    const [open, setOPen] = useState(false);
 
     //let toggle__text
     // if (open) {toggle__text = <span> свернуть</span>;} else {toggle__text = <span> посмотреть</span>}
@@ -11,9 +10,7 @@ const Collapse = ({children, toggle__text}) => {
 
     return (
         <div>
-            <Button onClick={toggle} >
-                {toggle__text}
-            </Button>
+            <p onClick={toggle} className={classes.toggle}> {toggle__text}</p>
             <div>
                 {open && (
                     <div>
