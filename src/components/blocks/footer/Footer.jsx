@@ -11,7 +11,7 @@ const Footer = () => {
         {id: 'consultaion', title: 'Консультация', link: '/consultaion'},
         {id: 'study', title: 'Обучение', link: '/study'},
         {id: 'book', title: 'Книга', link: '/book'},
-        {id: 'archive', title: 'Альманах', link: '/archive'},
+        {id: 'almanac', title: 'Альманах', link: '/almanac'},
         {id: 'stars', title: 'Звёзды', link: '/stars'},
         {id: 'video', title: 'Видео', link: '/video'},
     ]

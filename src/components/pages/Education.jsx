@@ -8,14 +8,14 @@ const Education = () => {
 
 
     return (
-        <div className='Education'>
+        <>
             <Header />
             <div className="content">
                 <InfoHead content='Обучение' />
-                обучение -только для студентов 
+                
             </div>
             <Footer />
-        </div>
+        </>
     );
 }
 

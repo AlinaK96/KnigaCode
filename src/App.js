@@ -20,6 +20,7 @@ import Archive from './components/pages/Archive';
 import Stars from './components/pages/Stars'
 import Video from './components/pages/Video'
 import Education from './components/pages/Education';
+import Almanac from './components/pages/Almanac';
 
 
 
@@ -44,6 +45,7 @@ function App() {
 					<Route path="/consultaion" element={<Consultation />} />
 					<Route path="/study" element={<Study />} />
 					<Route path="/book" element={<Book />} />
+					<Route path='/almanac' element={<Almanac />} />
 					<Route path="/stars" element={<Stars />} />
 					<Route path="/video" element={<Video />} /> 
 					<Route path="/edu" element={<Education />} />
