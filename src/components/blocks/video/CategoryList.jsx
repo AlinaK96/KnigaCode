@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+
 import CategoryItem from "./CategoryItem";
 
 const CategoryList = ({category, sublink}) => {
 
     const [collapsedCategories, setCollapsedCategories] = useState([]);
-
+    
     const handleCategoryToggle = (categoryId) => {
         if (collapsedCategories.includes(categoryId)) {
             setCollapsedCategories(

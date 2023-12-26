@@ -1,11 +1,9 @@
 import React from 'react';
+
 import CustomLink from '../../UI/customLink/customLink';
 import { NavLink } from 'react-router-dom';
 
-
 const Footer = () => {
-
-    const isStudent = true
 
     const footerLinks = [
         {id: 'consultaion', title: 'Консультация', link: '/consultaion'},
@@ -14,6 +12,7 @@ const Footer = () => {
         {id: 'almanac', title: 'Альманах', link: '/almanac'},
         {id: 'stars', title: 'Знаменитости', link: '/stars'},
         {id: 'video', title: 'Видео', link: '/video'},
+        {id: 'edu', title: 'Курсы', link: '/edu'},
     ]
 
     return (
@@ -21,13 +20,6 @@ const Footer = () => {
             {footerLinks.map((link) =>
                 <CustomLink link={link}  key={link.id}></CustomLink> 
             )}
-
-            {isStudent &&
-            <NavLink to='/edu' className='link'> 
-                <span>Курсы</span>
-            </NavLink>}
-
-
         </div>
     );
 }

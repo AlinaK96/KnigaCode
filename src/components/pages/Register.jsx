@@ -68,7 +68,6 @@ const Register = () => {
 					headers: { 'Content-Type': 'application/json' },
 				}
 			);
-
 			const accessToken = response?.data?.accessToken;
 			setToken(response?.data?.accessToken)
 			localStorage.setItem('token', accessToken)
@@ -78,7 +77,6 @@ const Register = () => {
 			setUser('');
 			setPwd('');
 			setMatchPwd('');
-			
 			window.location.href = '/'
 		} catch (err) {
 			if (!err?.response) {
@@ -203,7 +201,7 @@ const Register = () => {
 						</p>
 
 						<button
-							className='customBtn'
+							className='customBtn register'
 							disabled={!validName || !validPwd || !validMatch ? true : false}
 						>
 							Зарегистрироваться

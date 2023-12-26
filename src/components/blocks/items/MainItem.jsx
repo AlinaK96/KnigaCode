@@ -1,18 +1,19 @@
 import React from 'react'
+
 import Collapse from '../../UI/collapse/Collapse';
 
-const ConsultItem = ({data}) => {
+const MainItem = ({data}) => {
     return (
-        <div>
+        <div style={{width: '100%'}} >
             <h2>{data.title}</h2>
             <p>{data.description}</p>
-            <p>Стоиомсть: {data.price}p.</p>
-            <Collapse toggle__text='Подробнее о курсе' >
+            <p>Стоимость: {data.price}p.</p>
+            <Collapse toggle__text='Подробнее' >
                 <p>Video</p>
-                <i><a href={data.link} target='blank'>Перейти на сайт курса</a></i>
+                <i><a href={data.link} target='blank'>Перейти на сайт</a></i>
             </Collapse>
         </div>
     );
 }
 
-export default ConsultItem;
+export default MainItem;

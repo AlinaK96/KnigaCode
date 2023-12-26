@@ -11,6 +11,7 @@ import Input from '../UI/input/Input';
 import SupportItem from '../blocks/support/supportBlock';
 
 const Home = () => {
+  
   const token = localStorage.getItem('token')
 
   const HOME_URL = 'http://172.30.9.164/profile'
@@ -44,7 +45,7 @@ const Home = () => {
             console.log(response);
           } catch (error) {
               if(error.response?.status !== 200) {
-               // window.location.href = '/login'
+                window.location.href = '/login'
             }  
             console.error(error);
           }
@@ -69,20 +70,20 @@ const Home = () => {
         fetchData();
       }, []);
 
-      useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await axios.get(USER_URL);
-            console.log(response.data);
-          } catch (error) {
-              if(error.response?.status === 404){
-                setErrMsg('Ничего не найдено');
-              }
-              console.error(error);
-            }
-          };
-          fetchData();
-      }, []);
+      // useEffect(() => {
+      //   const fetchData = async () => {
+      //     try {
+      //       const response = await axios.get(USER_URL);
+      //       console.log(response.data);
+      //     } catch (error) {
+      //         if(error.response?.status === 404){
+      //           setErrMsg('Ничего не найдено');
+      //         }
+      //         console.error(error);
+      //       }
+      //     };
+      //     fetchData();
+      // }, []);
 
     const filter = (e) => {
         const keyword = e.target.value;

@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import axios from "axios";
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
@@ -8,6 +9,13 @@ import ExtraItem from "../blocks/items/ExtraItem";
 import MainItem from "../blocks/items/MainItem";
 
 const Consultation = () => {
+
+    const CONSULTATION_URL = ''
+    const EXTRA_CONSULTATION_URL = ''
+    //const [consultation, setConsultation] = useState([])
+    //const [extraConsultation, setExtaConsultation] = useState([])
+
+    const [errMsg, setErrMsg] = useState('')
 
     const [extraConsultation, setExtaConsultation] = useState([
         {title: 'Название консультации', price: '1200', link: 'https://you.com/', description: 'Описание консультации'},
@@ -24,6 +32,24 @@ const Consultation = () => {
         {title: 'Название консультации', price: '1200', link: 'https://you.com/', description: 'Описание консультации', video: ''},
         {title: 'Название консультации', price: '1200', link: 'https://you.com/', description: 'Описание консультации', video: ''},
     ])
+
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //              const response = await axios.get(CONSULTATION_URL);
+    //              setConsultation(response.data);
+    //                const extra__response = await axios.get(EXTRA_CONSULTATION_URL);
+    //                setExtaConsultation(extra__response.data);
+    //         } catch (error) {
+    //             if(error.response?.status === 404){
+    //                 setErrMsg('Ничего не найдено');
+    //             }
+    //             console.error(error);
+    //         }
+    //     };
+    
+    //     fetchData();
+    // }, []);
 
     return (
             <>

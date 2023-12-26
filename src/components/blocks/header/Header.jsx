@@ -5,19 +5,16 @@ import Logo from './book.svg'
 import User from './user.svg'
 import CustomLink from '../../UI/customLink/customLink';
 
-
-
 const Header = () => {
 
     const headerLinks = [
-        {id: '/author', title: 'О системе', link: '/author'},
-        {id: '/calculate', title: 'Калькулятор', link: '/'},
-        {id: '/match', title: 'Совместимость', link: '/match'},
-        {id: '/plot', title: 'Сценарии', link: '/plot'},
-        {id: '/name', title: 'Подбор имени', link: '/name'},
-        {id: '/forecast', title: 'Карта дня', link: '/forecast'},
-        {id: '/archive', title: 'Картотека', link: '/archive'},
-
+      {id: '/author', title: 'О системе', link: '/author'},
+      {id: '/calculate', title: 'Калькулятор', link: '/'},
+      {id: '/match', title: 'Совместимость', link: '/match'},
+      {id: '/plot', title: 'Сценарии', link: '/plot'},
+      {id: '/name', title: 'Подбор имени', link: '/name'},
+      {id: '/forecast', title: 'Карта дня', link: '/forecast'},
+      {id: '/archive', title: 'Картотека', link: '/archive'},
     ]
 
     return (

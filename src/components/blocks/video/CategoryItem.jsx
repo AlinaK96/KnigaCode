@@ -35,8 +35,8 @@ const CategoryItem = ({ category, onToggle, isCollapsed, sublink }) => {
             <hr />
             {!isCollapsed && (
                 <ul>
-                {subcategories.map((subcategory, index) => (
-                    <li key={index} onClick={(e) => openVideo(e)}>{subcategory.title}</li>))}
+                    {subcategories.map((subcategory, index) => (
+                        <li key={index} onClick={(e) => openVideo(e)}>{subcategory.title}</li>))}
                     {subcategories.length === 0 && <span><i>Подкатегорий пока нет</i></span> }
                 </ul>
                 

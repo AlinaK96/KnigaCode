@@ -29,6 +29,10 @@
     width: 40vw;
 }
 
+.CategoryItem span{
+    cursor: pointer;
+}
+
 .CategoryItem h3{
     margin: 0;
 }

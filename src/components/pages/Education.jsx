@@ -37,6 +37,7 @@ const Education = () => {
             <Header />
             <div className="content">
                 <InfoHead content='Видео-курсы' />
+                {/* isStudent */}
                 <div className="book">
                     <div className="leftPage">
                         <Input 

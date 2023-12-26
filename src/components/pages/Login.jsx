@@ -25,8 +25,8 @@ const Login = () => {
 		setErrMsg('');
 	}, [user, pwd]);
 
-	const handleSubmit = async () => {
-
+	const handleSubmit = async (e) => {
+		e.preventDefault()
 		try {
 			const response = await axios.post(
 				LOGIN_URL,
@@ -38,7 +38,6 @@ const Login = () => {
 					headers: { 'Content-Type': 'application/json' }
 				}
 			);
-			console.log(response);
 			const accessToken = response?.data?.accessToken;
 			setToken(response?.data?.accessToken)
 			localStorage.setItem('token', accessToken)
@@ -47,8 +46,7 @@ const Login = () => {
 			setUser('');
 			setPwd('');
 			setSuccess(true);	
-			// window.location.href = '/profile'
-
+			window.location.href = '/profile'
 		} catch (err) {
 			if (!err?.response) {
 				setErrMsg('Ошибка сервера');
