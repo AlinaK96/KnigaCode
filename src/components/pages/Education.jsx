@@ -14,9 +14,8 @@ const Education = () => {
     const isStudent = true
 
     const VIDEO_URL = 'http://172.30.9.164/video/category/get'
-    const [errMsg, setErrMsg] = useState('')
+    const [videoCategory, setVideoCategory] = useState([])
 
-    const [videoCategory, setVideoCategory] = useState([{}])
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -26,9 +25,6 @@ const Education = () => {
                 // const data = await video.json()
                 // setVideo(data)
             } catch (error) {
-                if(error.videoCategory?.status === 404){
-                    setErrMsg('Ничего не найдено');
-                }
                 console.error(error);
             }
         };

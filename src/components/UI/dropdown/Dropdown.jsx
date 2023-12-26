@@ -14,9 +14,8 @@ function Dropdown({ handleOptionChange, option }) {
     <div>
         <select value={selectedOption} onChange={handleChange}>
             {option.map((item, index) => 
-                <option key={index} value={item.title}>{item.title}</option>
+              <option key={index} value={item.title}>{item.title}</option>
             )}
-
         </select>    
     
     </div>

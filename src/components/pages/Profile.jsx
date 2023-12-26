@@ -11,13 +11,13 @@ import Input from '../UI/input/Input';
 import SupportItem from '../blocks/support/supportBlock';
 
 const Home = () => {
-  
+
   const token = localStorage.getItem('token')
 
   const HOME_URL = 'http://172.30.9.164/profile'
   const LOGOUT_URL = 'http://172.30.9.164/profile/logout'
   const SUPPORT_URL = 'http://172.30.9.164/support/get'
-  const USER_URL = ''
+  const USER_URL = 'http://172.30.9.164/'
 
   const [role, setRole] = useState('Студент')
   const [username, setUsername] = useState('Иван')
@@ -37,36 +37,30 @@ const Home = () => {
         const fetchData = async () => {
           try {
             const response = await axios.get(HOME_URL, { 
-            headers: {
-                Authorization: `Bearer ${token}`,
-              },
-                
+              headers: {Authorization: `Bearer ${token}`},
             });
-            console.log(response);
           } catch (error) {
               if(error.response?.status !== 200) {
                 window.location.href = '/login'
-            }  
-            console.error(error);
-          }
-        };
-      
+              }  
+              console.error(error);
+            }
+          };
         fetchData();
       }, []);
 
       useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(SUPPORT_URL);
-                setSupport(response.data);
+              const response = await axios.get(SUPPORT_URL);
+              setSupport(response.data);
             } catch (error) {
                 if(error.response?.status === 404){
-                    setErrMsg('Ничего не найдено');
+                  setErrMsg('Ничего не найдено');
                 }
                 console.error(error);
-            }
-        };
-    
+              }
+          };
         fetchData();
       }, []);
 
@@ -88,36 +82,31 @@ const Home = () => {
     const filter = (e) => {
         const keyword = e.target.value;
         if (keyword !== '') {
-            const results = support.filter((item) => {
-            return item.question.toLowerCase().startsWith(keyword.toLowerCase());
+          const results = support.filter((item) => {
+          return item.question.toLowerCase().startsWith(keyword.toLowerCase());
         });
-            setfoundItem(results);
+          setfoundItem(results);
         } else {
-            setfoundItem(support);
+          setfoundItem(support);
         }
         setSearchLine(keyword);
     };
 
     const Logout = async () => {
         try {
-            const response = await fetch(LOGOUT_URL, {
-            method: "GET",
-              headers: {
-                "Authorization": `Bearer ${token},`,
-              },
-            })
-              window.location.href = '/login'
-        } catch (err){
+          const response = await fetch(LOGOUT_URL, {
+          method: "GET",
+            headers: {"Authorization": `Bearer ${token},`},
+          })
+            window.location.href = '/login'
+          } catch (err){
             console.log(err);
-        }
-        
-    }
+          }
+      }
 
     function updateData(){
       //axios.get(`http://172.30.9.164/profile/add?username=${username}&familyname=${familyname}&lastname=${lastname}&birthday=${birthday}&phone=${phone}&email=${email}`)
     }
-
-
 
     return (
       <>

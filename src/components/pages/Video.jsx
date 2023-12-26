@@ -4,17 +4,15 @@ import classes from '../blocks/video/Video.module.css'
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
-
 import InfoHead from "../UI/infoHead/infoHead";
 import Input from '../UI/input/Input'
-import VideoBlock from "../blocks/video/VideoBlock";
 
+import VideoBlock from "../blocks/video/VideoBlock";
 import CategoryList from "../blocks/video/CategoryList";
 
 const Video = () => {
 
     const VIDEO_URL = 'http://172.30.9.164/video/category/get'
-    const [errMsg, setErrMsg] = useState('')
 
     const [videoCategory, setVideoCategory] = useState([{}])
 
@@ -30,9 +28,6 @@ const Video = () => {
                 const data = await video.json()
                 setVideo(data)
             } catch (error) {
-                if(error.videoCategory?.status === 404){
-                    setErrMsg('Ничего не найдено');
-                }
                 console.error(error);
             }
         };
@@ -59,7 +54,7 @@ const Video = () => {
                         <VideoBlock video={video} key={index} />
                     )}
                     
-                    {videoCategory.length === 0 && <div>{errMsg}</div>}
+                    {videoCategory.length === 0 && <div>Видео пока нет</div>}
                 </div>
             </div>
         </div>

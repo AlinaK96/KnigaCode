@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import axios from '../../api/axios';
 
-const USER_REGEX = /^[A-Za-zА-Яа-я][A-Za-zА-Яа-я0-9-_]{3,23}$/;
-const PWD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,24}$/;
-const REGISTER_URL = '/profile/registration';
 
 const Register = () => {
+
+	const USER_REGEX = /^[A-Za-zА-Яа-я][A-Za-zА-Яа-я0-9-_]{3,23}$/;
+	const PWD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,24}$/;
+	const REGISTER_URL = '/profile/registration';
 	
 	const userRef = useRef();
 	const errRef = useRef();
@@ -63,10 +64,7 @@ const Register = () => {
 					'id': Date.now(),
 					'username': user,
 					'password': pwd
-				}),
-				{
-					headers: { 'Content-Type': 'application/json' },
-				}
+				}),{headers: { 'Content-Type': 'application/json' }}
 			);
 			const accessToken = response?.data?.accessToken;
 			setToken(response?.data?.accessToken)
