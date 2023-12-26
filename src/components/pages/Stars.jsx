@@ -7,6 +7,7 @@ import CategoryList from "../blocks/video/CategoryList";
 
 import Input from "../UI/input/Input";
 import InfoHead from "../UI/infoHead/infoHead";
+import StarsItem from "../blocks/rightPage/StarsItem";
 
 const Stars = () => {
     const STARS_URL = 'http://172.30.9.164/stars/category/get'
@@ -44,7 +45,9 @@ const Stars = () => {
                     <CategoryList category={starsCategory} sublink='stars'/>
                 </div>
 
-                <div className="rightPage"></div>
+                <div className="rightPage">
+                    <StarsItem />
+                </div>
             </div>
         </div>
         <Footer />

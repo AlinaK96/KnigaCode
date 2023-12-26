@@ -6,6 +6,7 @@ import Footer from "../blocks/footer/Footer";
 import CategoryList from "../blocks/video/CategoryList";
 import InfoHead from "../UI/infoHead/infoHead";
 import Input from "../UI/input/Input";
+import BookItem from "../blocks/rightPage/BookItem";
 
 
 const Book = () => {
@@ -46,7 +47,9 @@ const Book = () => {
                         <CategoryList category={bookCategory} sublink='book'/>
 
                     </div>
-                    <div className="rightPage"></div>
+                    <div className="rightPage">
+                        <BookItem />
+                    </div>
                 </div>
             </div>
             <Footer />

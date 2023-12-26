@@ -217,7 +217,9 @@ const Home = () => {
                                 <SupportItem item={item} key={index} ></SupportItem> 
                             ))) : foundItem.map((item, index) => (
                                 <SupportItem item={item} key={index} ></SupportItem>))}
-                        
+
+                        {foundItem.length === 0 && support.length === 0 && 
+                          <p><i>Ничего не найдено...</i></p>}
                     </div>
 
             </div>
