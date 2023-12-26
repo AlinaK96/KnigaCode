@@ -3,10 +3,11 @@ import axios from '../../api/axios';
 
 import AuthContext from '../../context/AuthProvider';
 
-const LOGIN_URL = '/profile/auth';
 
 const Login = () => {
 	
+	const LOGIN_URL = '/profile/auth';
+
 	const { setAuth } = useContext(AuthContext);
 	const userRef = useRef();
 	const errRef = useRef();
@@ -34,9 +35,7 @@ const Login = () => {
 					'username': user,
 					'password': pwd
 				}),
-				{
-					headers: { 'Content-Type': 'application/json' }
-				}
+				{ headers: { 'Content-Type': 'application/json' }}
 			);
 			const accessToken = response?.data?.accessToken;
 			setToken(response?.data?.accessToken)
@@ -64,9 +63,7 @@ const Login = () => {
 						ref={errRef}
 						className={errMsg ? 'errmsg' : 'offscreen'}
 						aria-live="assertive"
-					>
-						{errMsg}
-					</p>
+					> {errMsg} </p>
 					<h1>Войти</h1>
 					<form onSubmit={handleSubmit}>
 						<label htmlFor="username">Имя пользователя:</label>
@@ -88,13 +85,13 @@ const Login = () => {
 							value={pwd}
 							required
 						/>
-						<button
-							className='customBtn'
-						>Войти</button>
+						<button className='customBtn'>Войти</button>
 					</form>
-						<span className="line">
-							<a href="/register"> Нет аккаунта? <br></br>Зарегистрироваться</a>
-						</span>
+
+					<span className="line">
+						<a href="/register"> Нет аккаунта? <br></br>Зарегистрироваться</a>
+					</span>
+					
 				</section>
 		</div>
 	);

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 import Header from '../blocks/header/Header';
@@ -9,6 +10,8 @@ import Input from '../UI/input/Input';
 import CategoryList from "../blocks/video/CategoryList";
 
 const Education = () => {
+
+    const isStudent = true
 
     const VIDEO_URL = 'http://172.30.9.164/video/category/get'
     const [errMsg, setErrMsg] = useState('')
@@ -37,18 +40,23 @@ const Education = () => {
             <Header />
             <div className="content">
                 <InfoHead content='Видео-курсы' />
-                {/* isStudent */}
-                <div className="book">
-                    <div className="leftPage">
-                        <Input 
-                            type='search'
-                            placeholder='Поиск...'
-                            className='search'
-                        />
-                        <CategoryList category={videoCategory} sublink='study__video' />
+                {!isStudent ? 
+                    <div className='noAccess'>
+                        <p>Для получения доступа необходимо приобрести курс</p>
+                        <i><NavLink to='/study' className='link' > посмотреть список доступных курсов</NavLink></i>
+                    </div> :
+                    <div className="book">
+                        <div className="leftPage">
+                            <Input 
+                                type='search'
+                                placeholder='Поиск...'
+                                className='search'
+                            />
+                            <CategoryList category={videoCategory} sublink='study__video' />
+                        </div>
+                        <div className="rightPage"></div>
                     </div>
-                    <div className="rightPage"></div>
-                </div>
+                }
             </div>
             <Footer />
         </>

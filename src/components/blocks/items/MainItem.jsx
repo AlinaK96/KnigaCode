@@ -9,7 +9,7 @@ const MainItem = ({data}) => {
             <p>{data.description}</p>
             <p>Стоимость: {data.price}p.</p>
             <Collapse toggle__text='Подробнее' >
-                <p>Video</p>
+                <p>{data.videolink}</p>
                 <i><a href={data.link} target='blank'>Перейти на сайт</a></i>
             </Collapse>
         </div>
