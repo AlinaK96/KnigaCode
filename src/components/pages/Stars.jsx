@@ -44,7 +44,7 @@ const Stars = () => {
                 </div>
 
                 <div className="rightPage">
-                    <StarsItem />
+                    {/* <StarsItem /> */}
                 </div>
             </div>
         </div>

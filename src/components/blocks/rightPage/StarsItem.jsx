@@ -1,9 +1,10 @@
 import React from 'react'
 
-const StarsItem = () => {
+const StarsItem = ({data}) => {
     return (
         <div>
-            Stars
+            {data.number}
+            {data.name}
         </div>
     );
 }

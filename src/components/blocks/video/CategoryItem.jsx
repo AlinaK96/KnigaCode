@@ -19,12 +19,6 @@ const CategoryItem = ({ category, onToggle, isCollapsed, sublink }) => {
     function openVideo(e) {
         const filteredCat = e.target.innerText;
         localStorage.setItem('filteredCat', filteredCat)
-        // const fetchData = async () => {
-        //     const response = await fetch(`http://172.30.9.164/video/get?subcategory=${filteredCat}`);
-        //     const data = await response.json()
-        //     console.log(data);
-        // };
-        // fetchData()
     }
 
     return (

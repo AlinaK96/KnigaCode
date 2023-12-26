@@ -48,7 +48,7 @@ const Book = () => {
 
                     </div>
                     <div className="rightPage">
-                        <BookItem />
+                        <BookItem  />
                     </div>
                 </div>
             </div>
