@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import axios from "axios";
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
@@ -9,21 +10,26 @@ import MainItem from "../blocks/items/MainItem";
 
 const Study = () => {
 
-    const [extraStudy, setExtaStudy] = useState([
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
-    ])
+    const STUDY_URL = 'http://172.30.9.164/study/get?level=main'
+    const EXTRA_STUDY_URL = 'http://172.30.9.164/study/get?level=extra'
 
-    const [study, setStudy] = useState([
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
-    ])
+    const [extraStudy, setExtaStudy] = useState([])
+    const [study, setStudy] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(STUDY_URL);
+                setStudy(response.data);
+                const extra__response = await axios.get(EXTRA_STUDY_URL);
+                setExtaStudy(extra__response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        
+        fetchData();
+    }, []);
 
     return (
             <>

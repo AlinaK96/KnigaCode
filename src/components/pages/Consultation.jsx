@@ -15,8 +15,6 @@ const Consultation = () => {
     const [consultation, setConsultation] = useState([])
     const [extraConsultation, setExtaConsultation] = useState([])
 
-    const [errMsg, setErrMsg] = useState('')
-
     useEffect(() => {
         const fetchData = async () => {
             try {
