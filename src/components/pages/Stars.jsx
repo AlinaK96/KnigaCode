@@ -33,7 +33,7 @@ const Stars = () => {
         <>
         <Header />
         <div className="content">
-            <InfoHead content='Звёзды' />
+            <InfoHead content='Знаменитости' />
             <div className="book">
                 <div className="leftPage">
                     <Input 

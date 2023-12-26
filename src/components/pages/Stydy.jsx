@@ -15,11 +15,9 @@ const Study = () => {
         {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
         {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
         {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса'},
     ])
 
     const [study, setStudy] = useState([
-        {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
         {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
         {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
         {title: 'Название курса', price: '1200', link: 'https://you.com/', description: 'Описание курса', video: ''},
