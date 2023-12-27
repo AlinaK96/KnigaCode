@@ -24,7 +24,6 @@ const Archive = () => {
                         <p><i><NavLink to='/study' className='link' > посмотреть список доступных курсов</NavLink></i></p>
                     </div>  : 
                     <div >
-                        <h3>Архив</h3>
                         <Table />
                     </div> 
                 }
