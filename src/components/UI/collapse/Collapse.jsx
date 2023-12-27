@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import classes from './collapse.module.css'
 
-const Collapse = ({children, toggle__text}) => {
+const Collapse = ({children}) => {
     
-    const [open, setOPen] = useState(false);
+    const [open, setOPen] = useState(true);
     const toggle = () => {setOPen(!open)};
+
+    let toggle__text
+    if (open) {toggle__text = <span> свернуть</span>;} else {toggle__text = <span> посмотреть</span>}
 
     return (
         <div>

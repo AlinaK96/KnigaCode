@@ -1,6 +1,7 @@
 .info__header{
     width: 90%;
     background-image: url('../../../../public/img/png/fon_l.jpg');
+    background-color: #9d673b;
     color: var(--baseFont);
     font-size: 28px;
     font-weight: 700;
