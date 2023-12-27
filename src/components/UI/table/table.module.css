@@ -1,0 +1,31 @@
+.page-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.custom__table {
+    width: 100%;
+    text-align: center;
+}
+
+.custom__table th, .custom__table td {
+    width: auto;
+    max-width: none;
+    padding: 10px;
+    font-size: 18px;
+    color: var(--baseFont);
+}
+
+.custom__table td{
+    background-color: var(--baseBackground);
+    color: var(--baseFont);
+}
+
+.custom__table td img,
+.custom__table th img{
+    width: 30px;
+    cursor: pointer;
+}

@@ -4,6 +4,9 @@ import Button from '../button/Button';
 
 const Popup = () => {
     const [showPopup, setShowPopup] = useState(false);
+
+    const [title, setTitle] = useState('Заголовок');
+    const [content, setContent] = useState('Текст уведомления');
     
     useEffect(() => {
         const lastPopupTime = localStorage.getItem('lastPopupTime');
@@ -33,8 +36,8 @@ const Popup = () => {
                     <div className='popupContent'>
                         <img src="/img/png/5.jpg" alt="Анонс" width='150' height='200' />
                         <div>
-                            <h3>Заголовок</h3>
-                            <p>Текст уведомления</p>
+                            <h3>{title}</h3>
+                            <p>{content}</p>
                         </div>
                     </div>
 

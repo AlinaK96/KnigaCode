@@ -18,8 +18,8 @@ const Name = () => {
                 {(!isStudent && !isRegistered) ? 
                     <div className='noAccess'>
                         <p>Для получения доступа необходимо приобрести курс или зарегистрироваться</p>
-                        <p><i><NavLink to='/study' className='link' > посмотреть список доступных курсов</NavLink></i></p>
                         <p><i><NavLink to='/register' className='link' > зарегистрироваться / войти в аккаунт</NavLink></i></p>
+                        <p><i><NavLink to='/study' className='link' > посмотреть список доступных курсов</NavLink></i></p>
                     </div>  : 
                     <div className="book">
                         <div className="leftPage">
