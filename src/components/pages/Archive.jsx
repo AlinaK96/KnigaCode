@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import classes from './styles/arch.module.css'
 
 import Header from '../blocks/header/Header';
 import Footer from '../blocks/footer/Footer';
