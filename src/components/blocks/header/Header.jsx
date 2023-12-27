@@ -1,11 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Logo from './book.svg'
-import User from './user.svg'
 import CustomLink from '../../UI/customLink/customLink';
+import InfoHead from '../../UI/infoHead/infoHead';
 
-const Header = () => {
+const Header = ({content}) => {
 
     const headerLinks = [
       {id: '/author', title: 'О системе', link: '/author'},
@@ -18,9 +17,10 @@ const Header = () => {
     ]
 
     return (
+      <nav>
         <div className='header'>
             <NavLink to='/'> 
-              <img src={Logo} alt="главная" title='Главная' />
+              <img src='/img/svg/book.svg' alt="главная" title='Главная' />
             </NavLink>
 
             {headerLinks.map((link) =>
@@ -28,10 +28,13 @@ const Header = () => {
             )}
 
             <NavLink to='/profile'> 
-              <img src={User} alt="Профиль" title='Профиль' />
+              <img src='/img/svg/user.svg' alt="Профиль" title='Профиль' />
               <span style={{visibility:'hidden'}}>Профиль</span>
             </NavLink>
-        </div>
+          </div>
+
+          <InfoHead content={content} />
+        </nav>
     );
 }
 

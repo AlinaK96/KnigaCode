@@ -1,3 +1,9 @@
+nav{
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
 .header,
 .footer{
     box-sizing: border-box;

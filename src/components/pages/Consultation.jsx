@@ -3,7 +3,6 @@ import axios from "axios";
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
-import InfoHead from "../UI/infoHead/infoHead";
 
 import ExtraItem from "../blocks/items/ExtraItem";
 import MainItem from "../blocks/items/MainItem";
@@ -32,9 +31,8 @@ const Consultation = () => {
 
     return (
             <>
-                <Header />
+                <Header content='Консультации' />
                 <div className="content">
-                    <InfoHead content='Консультации' />
                     <div className="book">
                         <div className="leftPage">
                             <h2>Основные</h2>

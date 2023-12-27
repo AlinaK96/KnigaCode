@@ -4,7 +4,6 @@ import axios from "axios";
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
 import CategoryList from "../blocks/video/CategoryList";
-import InfoHead from "../UI/infoHead/infoHead";
 import Input from "../UI/input/Input";
 import BookItem from "../blocks/rightPage/BookItem";
 
@@ -33,9 +32,8 @@ const Book = () => {
 
     return (
         <>
-            <Header />
+            <Header content='Книга' />
             <div className="content">
-                <InfoHead content='Книга' />
                 <div className="book">
                     <div className="leftPage">
                         <Input 

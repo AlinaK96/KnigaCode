@@ -6,9 +6,8 @@ import Footer from "../blocks/footer/Footer";
 const Plot = () => {
     return (
         <>
-            <Header />
+            <Header content='Сценарии' />
             <div className="content">
-                Сценарии
             </div>
             <Footer />
         </>

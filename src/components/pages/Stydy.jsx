@@ -3,7 +3,6 @@ import axios from "axios";
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
-import InfoHead from "../UI/infoHead/infoHead";
 
 import ExtraItem from "../blocks/items/ExtraItem";
 import MainItem from "../blocks/items/MainItem";
@@ -33,9 +32,8 @@ const Study = () => {
 
     return (
             <>
-                <Header />
+                <Header content='Обучение' />
                 <div className="content">
-                    <InfoHead content='Обучение' />
                     <div className="book">
                         <div className="leftPage">
                             <h2>Основные курсы</h2>

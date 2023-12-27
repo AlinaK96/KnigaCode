@@ -3,7 +3,6 @@ import classes from './styles/calc.module.css'
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
-import InfoHead from "../UI/infoHead/infoHead";
 import Input from "../UI/input/Input";
 import Button from "../UI/button/Button";
 
@@ -28,9 +27,8 @@ const Calculation = () => {
 
     return (
             <>
-                <Header />
+                <Header content='Тайны личного кода' />
                 <div className="content">
-                    <InfoHead content='Тайны личного кода' />
                     {/* <div className={classes.calculate}>
                         <div className={classes.calcInput}>
                             <Input 

@@ -4,7 +4,6 @@ import classes from '../blocks/video/Video.module.css'
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
-import InfoHead from "../UI/infoHead/infoHead";
 import Input from '../UI/input/Input'
 
 import VideoBlock from "../blocks/video/VideoBlock";
@@ -36,9 +35,8 @@ const Video = () => {
 
     return (
         <>
-        <Header />
+        <Header content='Видео'/>
         <div className="content">
-            <InfoHead content='Видео' />
             <div className="book">
                 <div className="leftPage">
                     <Input 

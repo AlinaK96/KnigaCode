@@ -4,7 +4,6 @@ import classes from './styles/profile.module.css'
 
 import Header from '../blocks/header/Header'
 import Footer from '../blocks/footer/Footer';
-import InfoHead from '../UI/infoHead/infoHead';
 import Button from '../UI/button/Button';
 import Input from '../UI/input/Input';
 
@@ -110,10 +109,9 @@ const Home = () => {
 
     return (
       <>
-        <Header />
+        <Header content='Личный кабинет' />
         <div className="content">
           <div className='header__addBtn'>
-            <InfoHead content='Личный кабинет' />
             <Button 
               className='customBtn'
               onClick={Logout}

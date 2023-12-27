@@ -4,7 +4,6 @@ import axios from "axios";
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
 import Input from "../UI/input/Input";
-import InfoHead from "../UI/infoHead/infoHead";
 
 import StarsItem from "../blocks/rightPage/StarsItem";
 import CategoryList from "../blocks/video/CategoryList";
@@ -30,9 +29,8 @@ const Stars = () => {
 
     return (
         <>
-        <Header />
+        <Header content='Знаменитости' />
         <div className="content">
-            <InfoHead content='Знаменитости' />
             <div className="book">
                 <div className="leftPage">
                     <Input 

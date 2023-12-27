@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import Header from '../blocks/header/Header';
 import Footer from '../blocks/footer/Footer';
-import InfoHead from '../UI/infoHead/infoHead';
 
 import Input from '../UI/input/Input';
 import CategoryList from "../blocks/video/CategoryList";
@@ -33,9 +32,8 @@ const Education = () => {
 
     return (
         <>
-            <Header />
+            <Header content='Видео-курсы' />
             <div className="content">
-                <InfoHead content='Видео-курсы' />
                 {!isStudent ? 
                     <div className='noAccess'>
                         <p>Для получения доступа необходимо приобрести курс</p>

@@ -6,9 +6,8 @@ import Footer from "../blocks/footer/Footer";
 const Forecast = () => {
     return (
         <>
-            <Header />
+            <Header content='Карта дня' />
             <div className="content">
-                Forecast
             </div>
             <Footer />
         </>

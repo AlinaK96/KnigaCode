@@ -6,9 +6,8 @@ import Footer from "../blocks/footer/Footer";
 const Math = () => {
     return (
         <>
-            <Header />
+            <Header content='Совместимость' />
             <div className="content">
-                Match
             </div>
             <Footer />
         </>
