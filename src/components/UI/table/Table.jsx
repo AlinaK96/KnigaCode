@@ -54,13 +54,17 @@ const Table = () => {
         setTableData(updatedTableData);
     };
 
+    function seeCalc(item) {
+        console.log(item);
+    }
+
     return (
         <div className={classes.page__container}>
             <table className={classes.custom__table}>
             <thead>
                 <tr>
                     {tableHeaders.map((header) => (
-                        <th key={header.id} style={{ backgroundColor: header.backgroundColor }}>
+                        <th key={header.id} style={{ backgroundColor: header.backgroundColor }} >
                         {header.name}
                         </th>
                     ))}
@@ -71,7 +75,7 @@ const Table = () => {
             </thead>
             <tbody>
                 {tableData.map((row) => (
-                <tr key={row.id}>
+                <tr key={row.id} onClick={() => seeCalc(row.id)}>
                     <td>{row.firstName}</td>
                     <td>{row.lastName}</td>
                     <td>{row.middleName}</td>

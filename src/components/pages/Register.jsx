@@ -123,6 +123,7 @@ const Register = () => {
 							aria-describedby="uidnote"
 							onFocus={() => setUserFocus(true)}
 							onBlur={() => setUserFocus(false)}
+							placeholder='Имя'
 						/>
 						<p
 							id="uidnote"
@@ -155,6 +156,7 @@ const Register = () => {
 							aria-describedby="pwdnote"
 							onFocus={() => setPwdFocus(true)}
 							onBlur={() => setPwdFocus(false)}
+							placeholder='Пароль'
 						/>
 						<p
 							id="pwdnote"
@@ -187,6 +189,7 @@ const Register = () => {
 							aria-describedby="confirmnote"
 							onFocus={() => setMatchFocus(true)}
 							onBlur={() => setMatchFocus(false)}
+							placeholder='Повторите пароль'
 						/>
 						<p
 							id="confirmnote"

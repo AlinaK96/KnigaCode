@@ -57,7 +57,7 @@ section {
 	font-size: 22px;
 	width: 100%;
 	max-width: 450px;
-	min-height: 400px;
+	min-height: 450px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;

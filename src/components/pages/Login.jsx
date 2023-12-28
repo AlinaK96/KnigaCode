@@ -75,6 +75,7 @@ const Login = () => {
 							onChange={(e) => setUser(e.target.value)}
 							value={user}
 							required
+							placeholder='Имя'
 						/>
 
 						<label htmlFor="password">Пароль:</label>
@@ -84,6 +85,7 @@ const Login = () => {
 							onChange={(e) => setPwd(e.target.value)}
 							value={pwd}
 							required
+							placeholder='Пароль'
 						/>
 						<button className='customBtn'>Войти</button>
 					</form>
