@@ -22,9 +22,7 @@ const Archive = () => {
                         <p><i><NavLink to='/register' className='link' > зарегистрироваться / войти в аккаунт</NavLink></i></p>
                         <p><i><NavLink to='/study' className='link' > посмотреть список доступных курсов</NavLink></i></p>
                     </div>  : 
-                    <div >
                         <Table />
-                    </div> 
                 }
 
             </div>

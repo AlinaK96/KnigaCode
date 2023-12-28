@@ -22,7 +22,7 @@ import Video from './components/pages/Video'
 import Education from './components/pages/Education';
 import Almanac from './components/pages/Almanac';
 
-
+import VideoPage from './components/pages/Test';
 
 function App() {
 
@@ -49,6 +49,10 @@ function App() {
 					<Route path="/stars" element={<Stars />} />
 					<Route path="/video" element={<Video />} /> 
 					<Route path="/edu" element={<Education />} />
+
+
+					<Route path="/test" element={<VideoPage />} />
+
 				</Routes>
 			</Router>
 		</main>
