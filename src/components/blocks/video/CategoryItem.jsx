@@ -8,8 +8,9 @@ const CategoryItem = ({ category, onToggle, isCollapsed, sublink }) => {
     useEffect(() => {
         const fetchData = async () => {
             if (category.title){
-            const response = await fetch(`http://172.30.9.164/${sublink}/category/subcategory/get?category=${category.title}`);
+            const response = await fetch(`http://172.30.9.164/${sublink}/${category.title}/subcategory/get`);
             const data = await response.json();
+            console.log(data);
             setSubcategories(data)}
         };
         fetchData()
@@ -18,7 +19,18 @@ const CategoryItem = ({ category, onToggle, isCollapsed, sublink }) => {
     function openVideo(e) {
         const filteredCat = e.target.innerText;
         localStorage.setItem('filteredCat', filteredCat)
+        const fetchData = async () => {
+            try {
+                const video = await fetch(`http://172.30.9.164/video/${filteredCat}/video_get`);
+                const data = await video.json()
+                console.log(data)
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
     }
+
 
     return (
         <>

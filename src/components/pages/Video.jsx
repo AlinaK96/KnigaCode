@@ -15,6 +15,7 @@ const Video = () => {
 
     const [videoCategory, setVideoCategory] = useState([])
     const currentVideo = localStorage.getItem('filteredCat')
+    const page = 'video'
     const [video, setVideo] = useState([])
 
     useEffect(() => {
@@ -22,7 +23,7 @@ const Video = () => {
             try {
                 const videoCategory = await axios.get(VIDEO_URL);
                 setVideoCategory(videoCategory.data);
-                const video = await fetch(`http://172.30.9.164/video/get?subcategory=${currentVideo}`);
+                const video = await fetch(`http://172.30.9.164/video/${currentVideo}/video_get`);
                 const data = await video.json()
                 setVideo(data)
             } catch (error) {

@@ -13,6 +13,8 @@ const Home = () => {
 
   const token = localStorage.getItem('token')
 
+  const [isAuth, setIsAuth] = useState(false)
+
   const HOME_URL = 'http://172.30.9.164/profile'
   const LOGOUT_URL = 'http://172.30.9.164/profile/logout'
   const SUPPORT_URL = 'http://172.30.9.164/support/get'
@@ -38,6 +40,7 @@ const Home = () => {
             const response = await axios.get(HOME_URL, { 
               headers: {Authorization: `Bearer ${token}`},
             });
+            setIsAuth(true)
           } catch (error) {
               if(error.response?.status !== 200) {
                 window.location.href = '/login'
@@ -109,114 +112,117 @@ const Home = () => {
 
     return (
       <>
-        <Header content='Личный кабинет' />
-        <div className="content">
-          <div className='header__addBtn'>
-            <Button 
-              className='customBtn'
-              onClick={Logout}
-            ><span>Выйти из профиля</span>
-            </Button>
-          </div>
-
-          <div className="book">
-            <div className="leftPage">
-              <h2>Личные данные</h2>
-              <div className={classes.profile}>
-                <div className={classes.profileItem}>
-                  <p>Статус: </p> <span>{role}</span>
-                </div>
-                <div className={classes.profileItem}>
-                  <p>Фамилия: </p> 
-                  <Input 
-                    type='text'
-                    value={familyname}
-                    onChange={(e) => setFamilyname(e.target.value)}
-                    required={true}
-                  ></Input>
-                </div>
-                <div className={classes.profileItem}>
-                  <p>Имя: </p> 
-                  <Input 
-                    type='text'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required={true}
-                  ></Input>
-                </div>
-                <div className={classes.profileItem}>
-                  <p>Отчество: </p> 
-                  <Input 
-                    type='text'
-                    value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
-                    required={true}
-                  ></Input>
-                </div>
-                <div className={classes.profileItem}>
-                  <p>Дата рождения: </p> 
-                  <Input 
-                    type='date'
-                    value={birthday}
-                    onChange={(e) => setBirthday(e.target.value)}
-                    required={true}
-                  ></Input>
-                </div>
-                <div className={classes.profileItem}>
-                  <p>Телефон: </p> 
-                  <Input 
-                    type='number'
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    required={true}
-                  ></Input>
-                </div>
-                <div className={classes.profileItem}>
-                  <p>Почта: </p> 
-                  <Input 
-                    type='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required={true}
-                  ></Input>
-                </div>
-
+        {isAuth ? 
+        <div>
+          <Header content='Личный кабинет' />
+          <div className="content">
+              <div className='header__addBtn'>
                 <Button 
                   className='customBtn'
-                  onClick={updateData}
-                >
-                  <span>Обновить</span>
+                  onClick={Logout}
+                ><span>Выйти из профиля</span>
                 </Button>
               </div>
-            </div>
-            <div className="rightPage">
-              <h2>Поддержка</h2>
-              <div className='header__addBtn'>
-                    <Input 
-                        type='search'
-                        placeholder='Найти вопрос...'
-                        onChange={(e) => filter(e)}
-                    />
-                    <a href="https://you.com/" target="blank" className="customLink">Задать вопрос</a>
-                </div>
-                    <div>
-                        {foundItem.length === 0 ? 
-                            (support.map((item, index) => (
-                                <SupportItem item={item} key={index} ></SupportItem> 
-                            ))) : foundItem.map((item, index) => (
-                                <SupportItem item={item} key={index} ></SupportItem>))}
 
-                        {foundItem.length === 0 && support.length === 0 && 
-                          <p><i>Ничего не найдено...</i></p>}
+              <div className="book">
+                <div className="leftPage">
+                  <h2>Личные данные</h2>
+                  <div className={classes.profile}>
+                    <div className={classes.profileItem}>
+                      <p>Статус: </p> <span>{role}</span>
+                    </div>
+                    <div className={classes.profileItem}>
+                      <p>Фамилия: </p> 
+                      <Input 
+                        type='text'
+                        value={familyname}
+                        onChange={(e) => setFamilyname(e.target.value)}
+                        required={true}
+                      ></Input>
+                    </div>
+                    <div className={classes.profileItem}>
+                      <p>Имя: </p> 
+                      <Input 
+                        type='text'
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required={true}
+                      ></Input>
+                    </div>
+                    <div className={classes.profileItem}>
+                      <p>Отчество: </p> 
+                      <Input 
+                        type='text'
+                        value={lastname}
+                        onChange={(e) => setLastname(e.target.value)}
+                        required={true}
+                      ></Input>
+                    </div>
+                    <div className={classes.profileItem}>
+                      <p>Дата рождения: </p> 
+                      <Input 
+                        type='date'
+                        value={birthday}
+                        onChange={(e) => setBirthday(e.target.value)}
+                        required={true}
+                      ></Input>
+                    </div>
+                    <div className={classes.profileItem}>
+                      <p>Телефон: </p> 
+                      <Input 
+                        type='number'
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        required={true}
+                      ></Input>
+                    </div>
+                    <div className={classes.profileItem}>
+                      <p>Почта: </p> 
+                      <Input 
+                        type='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required={true}
+                      ></Input>
                     </div>
 
-            </div>
+                    <Button 
+                      className='customBtn'
+                      onClick={updateData}
+                    >
+                      <span>Обновить</span>
+                    </Button>
+                  </div>
+                </div>
+                <div className="rightPage">
+                  <h2>Поддержка</h2>
+                  <div className='header__addBtn'>
+                        <Input 
+                            type='search'
+                            placeholder='Найти вопрос...'
+                            onChange={(e) => filter(e)}
+                        />
+                        <a href="https://you.com/" target="blank" className="customLink">Задать вопрос</a>
+                    </div>
+                        <div>
+                            {foundItem.length === 0 ? 
+                                (support.map((item, index) => (
+                                    <SupportItem item={item} key={index} ></SupportItem> 
+                                ))) : foundItem.map((item, index) => (
+                                    <SupportItem item={item} key={index} ></SupportItem>))}
 
-          </div>
+                            {foundItem.length === 0 && support.length === 0 && 
+                              <p><i>Ничего не найдено...</i></p>}
+                        </div>
 
+                </div>
+
+              </div>
           </div>
           <Footer />
-        </>
+        </div>
+        : <p></p> }
+      </>
     );
 }
 
