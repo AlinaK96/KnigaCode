@@ -36,12 +36,14 @@ const Consultation = () => {
                     <div className="book">
                         <div className="leftPage">
                             <h2>Основные</h2>
+                            {consultation.length === 0 && <p><i>Пока нет доступных консультаций</i></p> }
                             {consultation.map( (item, index) => 
                                 <MainItem data={item} key={index} />
                             )}
                         </div>
                         <div className="rightPage">
                             <h2>Дополнительные</h2>
+                            {consultation.length === 0 && <p><i>Пока нет доступных консультаций</i></p> }
                             {extraConsultation.map((item, index) => 
                                 <ExtraItem data={item} key={index} />
                             )}

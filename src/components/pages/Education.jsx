@@ -46,7 +46,10 @@ const Education = () => {
                                 placeholder='Поиск...'
                                 className='search'
                             />
-                            <CategoryList category={videoCategory} sublink='study__video' />
+                            {videoCategory.length === 0 ? 
+                                <p><i>Здесь пока ничего нет</i></p> :
+                                <CategoryList category={videoCategory} sublink='study__video' />
+                            }
                         </div>
                         <div className="rightPage"></div>
                     </div>

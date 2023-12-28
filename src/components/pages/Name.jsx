@@ -7,7 +7,7 @@ import Footer from "../blocks/footer/Footer";
 const Name = () => {
 
     const isStudent = false
-    const isRegistered = false
+    const isRegistered = true
 
     return (
         <>

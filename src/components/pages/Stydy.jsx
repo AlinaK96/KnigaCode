@@ -37,12 +37,14 @@ const Study = () => {
                     <div className="book">
                         <div className="leftPage">
                             <h2>Основные курсы</h2>
+                            {study.length === 0 && <p><i>Пока нет доступных курсов</i></p> }
                             {study.map( (item, index) => 
                                 <MainItem data={item} key={index} />
                             )}
                         </div>
                         <div className="rightPage">
                             <h2>Дополнительные курсы</h2>
+                            {extraStudy.length === 0 && <p><i>Пока нет доступных курсов</i></p> }
                             {extraStudy.map((item, index) => 
                                 <ExtraItem data={item} key={index} />
                             )}

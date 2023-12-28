@@ -11,7 +11,7 @@ import BookItem from "../blocks/rightPage/BookItem";
 const Book = () => {
     const BOOK_URL = 'http://172.30.9.164/book/category/get'
 
-    const [bookCategory, setBookCategory] = useState([{}])
+    const [bookCategory, setBookCategory] = useState([])
     const [errMsg, setErrMsg] = useState('')
 
     useEffect(() => {
@@ -42,11 +42,13 @@ const Book = () => {
                             className='search'
                         />
                         
-                        <CategoryList category={bookCategory} sublink='book'/>
-
+                        {bookCategory.length === 0 ? 
+                            <p><i>Здесь пока ничего нет</i></p> :
+                            <CategoryList category={bookCategory} sublink='book'/>
+                        }
                     </div>
                     <div className="rightPage">
-                        <BookItem  />
+                        {/* <BookItem  /> */}
                     </div>
                 </div>
             </div>

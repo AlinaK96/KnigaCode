@@ -4,7 +4,6 @@ import classes from './Video.module.css'
 const CategoryItem = ({ category, onToggle, isCollapsed, sublink }) => {
 
     const [subcategories, setSubcategories] = useState([]);
-    localStorage.setItem('filteredCat', 'Миссия 1 - “У меня всё под контролем”')
 
     useEffect(() => {
         const fetchData = async () => {

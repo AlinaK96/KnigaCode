@@ -13,7 +13,7 @@ const Stars = () => {
 
     const STARS_URL = 'http://172.30.9.164/stars/category/get'
 
-    const [starsCategory, setStarsCategory] = useState([{}])
+    const [starsCategory, setStarsCategory] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,7 +38,11 @@ const Stars = () => {
                         placeholder='Поиск...'
                         className='search'
                     />
-                    <CategoryList category={starsCategory} sublink='stars'/>
+
+                    {starsCategory.length === 0 ? 
+                        <p><i>Здесь пока ничего нет</i></p> :
+                        <CategoryList category={starsCategory} sublink='stars'/>
+                    }
                 </div>
 
                 <div className="rightPage">

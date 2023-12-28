@@ -13,10 +13,9 @@ const Video = () => {
 
     const VIDEO_URL = 'http://172.30.9.164/video/category/get'
 
-    const [videoCategory, setVideoCategory] = useState([{}])
-
+    const [videoCategory, setVideoCategory] = useState([])
     const currentVideo = localStorage.getItem('filteredCat')
-    const [video, setVideo] = useState([{}])
+    const [video, setVideo] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -44,7 +43,11 @@ const Video = () => {
                         placeholder='Поиск...'
                         className={classes.search}
                     />
-                    <CategoryList category={videoCategory} sublink='video' />
+
+                    {videoCategory.length === 0 ? 
+                        <p><i>Здесь пока ничего нет</i></p> :
+                        <CategoryList category={videoCategory} sublink='video' />
+                    } 
                 </div>
 
                 <div className="rightPage">

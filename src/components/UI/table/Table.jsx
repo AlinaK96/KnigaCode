@@ -60,45 +60,48 @@ const Table = () => {
 
     return (
         <div className={classes.page__container}>
-            <table className={classes.custom__table}>
-            <thead>
-                <tr>
-                    {tableHeaders.map((header) => (
-                        <th key={header.id} style={{ backgroundColor: header.backgroundColor }} >
-                        {header.name}
-                        </th>
-                    ))}
-                    <th>
-                        <img src="/img/svg/edit.svg" alt="edit" />
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                {tableData.map((row) => (
-                <tr key={row.id} onClick={() => seeCalc(row.id)}>
-                    <td>{row.firstName}</td>
-                    <td>{row.lastName}</td>
-                    <td>{row.middleName}</td>
-                    <td>{row.day}</td>
-                    <td>{row.month}</td>
-                    <td>{row.year}</td>
-                    <td>{row.mission1}</td>
-                    <td>{row.mission2}</td>
-                    <td>{row.cry1}</td>
-                    <td>{row.cry2}</td>
-                    <td>{row.sense1}</td>
-                    <td>{row.sense2}</td>
-                    <td>{row.mask1}</td>
-                    <td>{row.mask2}</td>
-                    <td>{row.resourse1}</td>
-                    <td>{row.resourse2}</td>
-                    <td onClick={() => handleDeleteRow(row.id)}>
-                        <img src="/img/svg/bin.svg" alt="bin" />
-                    </td>
-                </tr>
-                ))}
-            </tbody>
-            </table>
+            {tableData.length === 0 ? 
+                <h2 style={{ color: 'white'}} >Здесь будет храниться история ваших расчётов</h2> : 
+                <table className={classes.custom__table}>
+                    <thead>
+                        <tr>
+                            {tableHeaders.map((header) => (
+                                <th key={header.id} style={{ backgroundColor: header.backgroundColor }} >
+                                {header.name}
+                                </th>
+                            ))}
+                            <th>
+                                <img src="/img/svg/edit.svg" alt="edit" />
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableData.map((row) => (
+                            <tr key={row.id} onClick={() => seeCalc(row.id)}>
+                                <td>{row.firstName}</td>
+                                <td>{row.lastName}</td>
+                                <td>{row.middleName}</td>
+                                <td>{row.day}</td>
+                                <td>{row.month}</td>
+                                <td>{row.year}</td>
+                                <td>{row.mission1}</td>
+                                <td>{row.mission2}</td>
+                                <td>{row.cry1}</td>
+                                <td>{row.cry2}</td>
+                                <td>{row.sense1}</td>
+                                <td>{row.sense2}</td>
+                                <td>{row.mask1}</td>
+                                <td>{row.mask2}</td>
+                                <td>{row.resourse1}</td>
+                                <td>{row.resourse2}</td>
+                                <td onClick={() => handleDeleteRow(row.id)}>
+                                    <img src="/img/svg/bin.svg" alt="bin" />
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            }
         </div>
     );
 };
