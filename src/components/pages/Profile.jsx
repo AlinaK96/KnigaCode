@@ -14,11 +14,6 @@ const Home = () => {
   const token = localStorage.getItem('token')
   const [isAuth, setIsAuth] = useState(false)
 
-  const HOME_URL = 'http://172.30.9.164/profile'
-  const LOGOUT_URL = 'http://172.30.9.164/profile/logout'
-  const SUPPORT_URL = 'http://172.30.9.164/support/get'
-  // const USER_URL = 'http://172.30.9.164/user'
-  // const USER_UPDATE = 'http://172.30.9.164/user'
 
   const [role, setRole] = useState('')
   const [username, setUsername] = useState('')
@@ -28,6 +23,10 @@ const Home = () => {
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
 
+  const HOME_URL = 'http://172.30.9.164/profile'
+  const LOGOUT_URL = 'http://172.30.9.164/profile/logout'
+  const SUPPORT_URL = 'http://172.30.9.164/support/get'
+  // const USER_UPDATE = 'http://172.30.9.164/user' 
 
   const [support, setSupport] = useState([])
   const [foundItem, setfoundItem] = useState(support);
@@ -40,11 +39,18 @@ const Home = () => {
             const response = await axios.get(HOME_URL, { 
               headers: {Authorization: `Bearer ${token}`},
             });
-            setIsAuth(true)
             console.log(response);
+            setIsAuth(true)
+            setRole(response.data.role)
+            setUsername(response.data.username)
+            setFamilyname(response.data.familyname)
+            setLastname(response.data.lastname)
+            setBirthday(response.data.birthday)
+            setPhone(response.data.phone)
+            setEmail(response.data.email)
           } catch (error) {
               if(error.response?.status !== 200) {
-                //window.location.href = '/login'
+                window.location.href = '/login'
               }  
               console.error(error);
             }
@@ -66,28 +72,6 @@ const Home = () => {
           };
         fetchData();
       }, []);
-
-      // useEffect(() => {
-      //   const fetchData = async () => {
-      //     try {
-      //       const response = await axios.get(USER_URL);
-      //       console.log(response.data);
-              // setRole()
-              // setUsername()
-              // setFamilyname()
-              // setLastname()
-              // setBirthday()
-              // setPhone()
-              // setEmail()
-      //     } catch (error) {
-      //         if(error.response?.status === 404){
-      //           setErrMsg('Ничего не найдено');
-      //         }
-      //         console.error(error);
-      //       }
-      //     };
-      //     fetchData();
-      // }, []);
 
     const filter = (e) => {
         const keyword = e.target.value;
@@ -112,12 +96,12 @@ const Home = () => {
           } catch (err){
             console.log(err);
           }
-      }
+    }
 
     function updateData(){
-      const newData = { username: username, lastname: lastname, familyname: familyname, birthday: birthday, phone: phone, email:email };
+      let newData = { username: username, lastname: lastname, familyname: familyname, birthday: birthday, phone: phone, email:email };
       
-    //   axios.put(USER_UPDATE, newData)
+    //axios.put(USER_UPDATE, newData)
     //     .then(response => {
     //       console.log('Успешно отправлен PUT-запрос', response);
     //     })
