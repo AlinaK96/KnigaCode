@@ -7,6 +7,8 @@ import Table from '../UI/table/Table';
 
 
 const Archive = () => {
+    const token = localStorage.getItem('token')
+    const role = localStorage.getItem('role')
 
     const isStudent = true
     const isRegistered = false

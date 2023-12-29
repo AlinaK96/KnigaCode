@@ -12,21 +12,21 @@ import SupportItem from '../blocks/support/supportBlock';
 const Home = () => {
 
   const token = localStorage.getItem('token')
-
   const [isAuth, setIsAuth] = useState(false)
 
   const HOME_URL = 'http://172.30.9.164/profile'
   const LOGOUT_URL = 'http://172.30.9.164/profile/logout'
   const SUPPORT_URL = 'http://172.30.9.164/support/get'
-  const USER_URL = 'http://172.30.9.164/'
+  // const USER_URL = 'http://172.30.9.164/user'
+  // const USER_UPDATE = 'http://172.30.9.164/user'
 
-  const [role, setRole] = useState('Студент')
-  const [username, setUsername] = useState('Иван')
-  const [lastname, setLastname] = useState('Иванович')
-  const [familyname, setFamilyname] = useState('Иванов')
-  const [birthday, setBirthday] = useState('1996-10-10')
-  const [phone, setPhone] = useState('9541664864')
-  const [email, setEmail] = useState('Fifkngf@tgfu.ru')
+  const [role, setRole] = useState('')
+  const [username, setUsername] = useState('')
+  const [lastname, setLastname] = useState('')
+  const [familyname, setFamilyname] = useState('')
+  const [birthday, setBirthday] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
 
 
   const [support, setSupport] = useState([])
@@ -41,9 +41,10 @@ const Home = () => {
               headers: {Authorization: `Bearer ${token}`},
             });
             setIsAuth(true)
+            console.log(response);
           } catch (error) {
               if(error.response?.status !== 200) {
-                window.location.href = '/login'
+                //window.location.href = '/login'
               }  
               console.error(error);
             }
@@ -71,6 +72,13 @@ const Home = () => {
       //     try {
       //       const response = await axios.get(USER_URL);
       //       console.log(response.data);
+              // setRole()
+              // setUsername()
+              // setFamilyname()
+              // setLastname()
+              // setBirthday()
+              // setPhone()
+              // setEmail()
       //     } catch (error) {
       //         if(error.response?.status === 404){
       //           setErrMsg('Ничего не найдено');
@@ -98,7 +106,7 @@ const Home = () => {
         try {
           const response = await fetch(LOGOUT_URL, {
           method: "GET",
-            headers: {"Authorization": `Bearer ${token},`},
+            headers: {Authorization: `Bearer ${token}`},
           })
             window.location.href = '/login'
           } catch (err){
@@ -107,7 +115,15 @@ const Home = () => {
       }
 
     function updateData(){
-      //axios.get(`http://172.30.9.164/profile/add?username=${username}&familyname=${familyname}&lastname=${lastname}&birthday=${birthday}&phone=${phone}&email=${email}`)
+      const newData = { username: username, lastname: lastname, familyname: familyname, birthday: birthday, phone: phone, email:email };
+      
+    //   axios.put(USER_UPDATE, newData)
+    //     .then(response => {
+    //       console.log('Успешно отправлен PUT-запрос', response);
+    //     })
+    //     .catch(error => {
+    //       console.error('Ошибка при отправке PUT-запроса', error);
+    //     });
     }
 
     return (
@@ -116,7 +132,7 @@ const Home = () => {
         <div>
           <Header content='Личный кабинет' />
           <div className="content">
-              <div className='header__addBtn'>
+              <div className={classes.logoutBtn}>
                 <Button 
                   className='customBtn'
                   onClick={Logout}
@@ -138,6 +154,7 @@ const Home = () => {
                         value={familyname}
                         onChange={(e) => setFamilyname(e.target.value)}
                         required={true}
+                        placeholder='Фамилия'
                       ></Input>
                     </div>
                     <div className={classes.profileItem}>
@@ -147,6 +164,7 @@ const Home = () => {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required={true}
+                        placeholder='Имя'
                       ></Input>
                     </div>
                     <div className={classes.profileItem}>
@@ -156,6 +174,7 @@ const Home = () => {
                         value={lastname}
                         onChange={(e) => setLastname(e.target.value)}
                         required={true}
+                        placeholder='Отчество'
                       ></Input>
                     </div>
                     <div className={classes.profileItem}>
@@ -174,6 +193,7 @@ const Home = () => {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         required={true}
+                        placeholder='Телефон'
                       ></Input>
                     </div>
                     <div className={classes.profileItem}>
@@ -183,6 +203,7 @@ const Home = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required={true}
+                        placeholder='Почта'
                       ></Input>
                     </div>
 

@@ -4,21 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import axios from '../../api/axios';
 
+const EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const PWD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,24}$/;
 
 const Register = () => {
 
-	const USER_REGEX = /^[A-Za-zА-Яа-я][A-Za-zА-Яа-я0-9-_]{3,23}$/;
-	const PWD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,24}$/;
 	const REGISTER_URL = '/profile/registration';
 	
 	const userRef = useRef();
 	const errRef = useRef();
 
-	const [user, setUser] = useState('');
+	const [email, setEmail] = useState('');
 	const [token, setToken] = useState('');
 
-	const [validName, setValidName] = useState(false);
-	const [userFocus, setUserFocus] = useState(false);
+	const [validEmail, setValidEmail] = useState(false);
+	const [emailFocus, setEmailFocus] = useState(false);
 
 	const [pwd, setPwd] = useState('');
 	const [validPwd, setValidPwd] = useState(false);
@@ -36,8 +36,8 @@ const Register = () => {
 	}, []);
 
 	useEffect(() => {
-		setValidName(USER_REGEX.test(user));
-	}, [user]);
+		setValidEmail(EMAIL_REGEX.test(email));
+	}, [email]);
 
 	useEffect(() => {
 		setValidPwd(PWD_REGEX.test(pwd));
@@ -46,15 +46,15 @@ const Register = () => {
 
 	useEffect(() => {
 		setErrMsg('');
-	}, [user, pwd, matchPwd]);
+	}, [email, pwd, matchPwd]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const v1 = USER_REGEX.test(user);
+		const v1 = EMAIL_REGEX.test(email);
 		const v2 = PWD_REGEX.test(pwd);
 		if (!v1 || !v2) {
-			setErrMsg('Invalid Entry');
+			setErrMsg('Ошибка входа');
 			return;
 		}
 		try {
@@ -62,7 +62,7 @@ const Register = () => {
 				REGISTER_URL,
 				JSON.stringify({
 					'id': Date.now(),
-					'username': user,
+					'email': email,
 					'password': pwd
 				}),{headers: { 'Content-Type': 'application/json' }}
 			);
@@ -72,7 +72,7 @@ const Register = () => {
 			const roles = response?.data?.roles;
 			localStorage.setItem('role', roles)
 			setSuccess(true);
-			setUser('');
+			setEmail('');
 			setPwd('');
 			setMatchPwd('');
 			window.location.href = '/'
@@ -100,36 +100,34 @@ const Register = () => {
 					</p>
 					<h1>Регистрация</h1>
 					<form onSubmit={handleSubmit}>
-						<label htmlFor="username">
-							Имя пользователя:
+						<label htmlFor="email">
+							Почта:
 							<FontAwesomeIcon
 								icon={faCheck}
-								className={validName ? 'valid' : 'hide'}
+								className={validEmail ? 'valid' : 'hide'}
 							/>
 							<FontAwesomeIcon
 								icon={faTimes}
-								className={validName || !user ? 'hide' : 'invalid'}
+								className={validEmail || !email ? 'hide' : 'invalid'}
 							/>
 						</label>
 						<input
 							type="text"
-							id="username"
+							id="email"
 							ref={userRef}
 							autoComplete="off"
-							onChange={(e) => setUser(e.target.value)}
-							value={user}
+							onChange={(e) => setEmail(e.target.value)}
+							value={email}
 							required
-							aria-invalid={validName ? 'false' : 'true'}
+							aria-invalid={validEmail ? 'false' : 'true'}
 							aria-describedby="uidnote"
-							onFocus={() => setUserFocus(true)}
-							onBlur={() => setUserFocus(false)}
-							placeholder='Имя'
+							onFocus={() => setEmailFocus(true)}
+							onBlur={() => setEmailFocus(false)}
+							placeholder='Почта'
 						/>
 						<p
 							id="uidnote"
-							className={
-								userFocus && user && !validName ? 'instructions' : 'offscreen'
-							}
+							className={emailFocus && email && !validEmail ? 'instructions' : 'offscreen'}
 						>
 							<FontAwesomeIcon icon={faInfoCircle} />
 							От 4 до 24 символов.
@@ -193,9 +191,7 @@ const Register = () => {
 						/>
 						<p
 							id="confirmnote"
-							className={
-								matchFocus && !validMatch ? 'instructions' : 'offscreen'
-							}
+							className={matchFocus && !validMatch ? 'instructions' : 'offscreen'}
 						>
 							<FontAwesomeIcon icon={faInfoCircle} />
 							Пароли не совпадают
@@ -203,13 +199,12 @@ const Register = () => {
 
 						<button
 							className='customBtn register'
-							disabled={!validName || !validPwd || !validMatch ? true : false}
+							disabled={!validEmail || !validPwd || !validMatch ? true : false}
 						>
 							Зарегистрироваться
 						</button>
 					</form>
 					<p>
-
 						<span className="line">
 							<a href="/login">Войти в аккаунт</a>
 						</span>

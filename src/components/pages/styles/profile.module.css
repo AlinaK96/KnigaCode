@@ -26,3 +26,7 @@ button{
     width: 400px;
 }
 
+.logoutBtn{
+    position: relative;
+    left: 50px;
+}

@@ -5,6 +5,8 @@ import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
 
 const Name = () => {
+    const token = localStorage.getItem('token')
+    const role = localStorage.getItem('role')
 
     const isStudent = false
     const isRegistered = true

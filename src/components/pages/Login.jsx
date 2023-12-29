@@ -12,7 +12,7 @@ const Login = () => {
 	const userRef = useRef();
 	const errRef = useRef();
 
-	const [user, setUser] = useState('');
+	const [email, setEmail] = useState('');
 	const [pwd, setPwd] = useState('');
 	const [errMsg, setErrMsg] = useState('');
 	const [success, setSuccess] = useState(false);
@@ -24,7 +24,7 @@ const Login = () => {
 
 	useEffect(() => {
 		setErrMsg('');
-	}, [user, pwd]);
+	}, [email, pwd]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
@@ -32,7 +32,7 @@ const Login = () => {
 			const response = await axios.post(
 				LOGIN_URL,
 				JSON.stringify({ 
-					'username': user,
+					'email': email,
 					'password': pwd
 				}),
 				{ headers: { 'Content-Type': 'application/json' }}
@@ -41,8 +41,8 @@ const Login = () => {
 			setToken(response?.data?.accessToken)
 			localStorage.setItem('token', accessToken)
 			const roles = response?.data?.roles;
-			setAuth({ user, pwd, roles, accessToken });
-			setUser('');
+			setAuth({ user: email, pwd, roles, accessToken });
+			setEmail('');
 			setPwd('');
 			setSuccess(true);	
 			window.location.href = '/profile'
@@ -50,8 +50,10 @@ const Login = () => {
 			if (!err?.response) {
 				setErrMsg('Ошибка сервера');
 			} else if (err.response?.status === 401) {
-				setErrMsg('Неверный логин или пароль');
-			}  
+				setErrMsg('Неверный пароль');
+			} else if (err.response?.status === 402) {
+				setErrMsg('Неверный email');
+			}
 			errRef.current.focus();
 		}
 	};
@@ -66,16 +68,16 @@ const Login = () => {
 					> {errMsg} </p>
 					<h1>Войти</h1>
 					<form onSubmit={handleSubmit}>
-						<label htmlFor="username">Имя пользователя:</label>
+						<label htmlFor="email">Почта:</label>
 						<input
 							type="text"
-							id="username"
+							id="email"
 							ref={userRef}
 							autoComplete="off"
-							onChange={(e) => setUser(e.target.value)}
-							value={user}
+							onChange={(e) => setEmail(e.target.value)}
+							value={email}
 							required
-							placeholder='Имя'
+							placeholder='Почта'
 						/>
 
 						<label htmlFor="password">Пароль:</label>

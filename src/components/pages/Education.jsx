@@ -10,6 +10,10 @@ import CategoryList from "../blocks/video/CategoryList";
 
 const Education = () => {
 
+
+    const token = localStorage.getItem('token')
+    const role = localStorage.getItem('role')
+
     const isStudent = true
 
     const VIDEO_URL = 'http://172.30.9.164/video/category/get'

@@ -8,6 +8,9 @@ import Button from "../UI/button/Button";
 
 const Calculation = () => {
 
+    const token = localStorage.getItem('token')
+    const role = localStorage.getItem('role')
+
     const [username, setUsername] = useState('Иван')
     const [lastname, setLastname] = useState('Иванович')
     const [familyname, setFamilyname] = useState('Иванов')
