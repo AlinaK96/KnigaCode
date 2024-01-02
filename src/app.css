@@ -220,3 +220,8 @@ select:-webkit-autofill:focus {
 	color: var(--scroll);
 	font-weight: 800;
 }
+
+.plainBG{
+	background-color: var(--baseBackground);
+	color: var(--baseFont);
+}
