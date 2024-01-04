@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import axios from "axios";
+import axios from '../../api/axios';
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
@@ -9,7 +9,7 @@ import BookItem from "../blocks/rightPage/BookItem";
 
 
 const Book = () => {
-    const BOOK_URL = 'http://172.30.9.164/book/category/get'
+    const BOOK_URL = '/book/category/get'
 
     const [bookCategory, setBookCategory] = useState([])
     const [errMsg, setErrMsg] = useState('')

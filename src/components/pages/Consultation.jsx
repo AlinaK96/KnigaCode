@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import axios from "axios";
+import axios from '../../api/axios';
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
@@ -9,8 +9,8 @@ import MainItem from "../blocks/items/MainItem";
 
 const Consultation = () => {
 
-    const CONSULTATION_URL = 'http://172.30.9.164/consultation/get?level=main'
-    const EXTRA_CONSULTATION_URL = 'http://172.30.9.164/consultation/get?level=extra'
+    const CONSULTATION_URL = '/consultation/get?level=main'
+    const EXTRA_CONSULTATION_URL = '/consultation/get?level=extra'
     const [consultation, setConsultation] = useState([])
     const [extraConsultation, setExtaConsultation] = useState([])
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import axios from "axios";
+import axios from '../../api/axios';
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
@@ -11,7 +11,7 @@ import CategoryList from "../blocks/video/CategoryList";
 
 const Stars = () => {
 
-    const STARS_URL = 'http://172.30.9.164/stars/category/get'
+    const STARS_URL = '/stars/category/get'
 
     const [starsCategory, setStarsCategory] = useState([])
 

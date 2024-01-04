@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from '../../api/axios';
 
 import Header from '../blocks/header/Header';
 import Footer from '../blocks/footer/Footer';

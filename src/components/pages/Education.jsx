@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../api/axios';
 
 import Header from '../blocks/header/Header';
 import Footer from '../blocks/footer/Footer';
@@ -16,7 +16,7 @@ const Education = () => {
 
     const isStudent = true
 
-    const VIDEO_URL = 'http://172.30.9.164/video/category/get'
+    const VIDEO_URL = '/video/category/get'
     const [videoCategory, setVideoCategory] = useState([])
 
     useEffect(() => {

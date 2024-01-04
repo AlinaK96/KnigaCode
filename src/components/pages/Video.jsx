@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import axios from "axios";
+import axios from '../../api/axios';
 import classes from '../blocks/video/Video.module.css'
 
 import Header from "../blocks/header/Header";
@@ -11,7 +11,7 @@ import CategoryList from "../blocks/video/CategoryList";
 
 const Video = () => {
 
-    const VIDEO_URL = 'http://172.30.9.164/video/category/get'
+    const VIDEO_URL = '/video/category/get'
 
     const [videoCategory, setVideoCategory] = useState([])
     const currentVideo = localStorage.getItem('filteredCat')

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 import { NavLink } from 'react-router-dom';
-import axios from "axios";
+import axios from '../../api/axios';
 
 import classes from './styles/match.module.css'
 
@@ -12,7 +12,7 @@ import Button from "../UI/button/Button";
 
 const Name = () => {
 
-    const MATCHNAME_URL = 'http://109.171.3.245:8080/calculation/selection';
+    const MATCHNAME_URL = '/calculation/selection';
 
     const token = localStorage.getItem('token')
     const role = localStorage.getItem('role')
@@ -23,9 +23,9 @@ const Name = () => {
 
     const [list, setList] = useState([])
 
-    const [mission, setMission] = useState('1')
-    const [familyname, setFamilyname] = useState('Сидоров')
-    const [data, setData] = useState('Маша')
+    const [mission, setMission] = useState('')
+    const [familyname, setFamilyname] = useState('')
+    const [data, setData] = useState('')
     const [userSearch, setUserSearch] = useState('')
     const [gender, setGender] = useState('')
 
@@ -48,7 +48,6 @@ const Name = () => {
     const chooseGender = (option) => {
         setGender(option);
     };
-
 
     const searchName = async () => {
 		try {
@@ -92,64 +91,80 @@ const Name = () => {
                         <p><i><NavLink to='/register' className='link' > зарегистрироваться / войти в аккаунт</NavLink></i></p>
                         <p><i><NavLink to='/study' className='link' > посмотреть список доступных курсов</NavLink></i></p>
                     </div>  : 
-                    <div className="plainBG">
-                        <div className={classes.name__match}>
-                            <div>
-                                <p>Миссия: </p> 
-                                <Input 
-                                    type='number'
-                                    value={mission}
-                                    onChange={(e) => setMission(e.target.value)}
-                                    required={true}
-                                    placeholder='Миссия'
-                                ></Input>
-                                <p>Фамилия: </p> 
-                                <Input 
-                                    type='text'
-                                    value={familyname}
-                                    onChange={(e) => setFamilyname(e.target.value)}
-                                    required={true}
-                                    placeholder='Фамилия'
-                                ></Input>
-                                <p>Подобрать имя или отчество: </p> 
-                                <Dropdown handleOptionChange={chooseSearch} option={searchOption} />
-                                <Input 
-                                    type='text'
-                                    value={data}
-                                    onChange={(e) => setData(e.target.value)}
-                                    required={true}
-                                    placeholder='Введите данные'
-                                ></Input>
-                                <Dropdown handleOptionChange={chooseGender} option={genderDrop}/>
+                    <div>
+                        <h3 style={{textAlign: 'center', color: 'white', marginBottom: '10px'}} >Подбор имени - важная часть в жизни человека. Если у родителей карты с разными основными числами, то его лучше предоставить специалисту</h3>
+                        <div className="book">
+                            <div className="leftPage">
+                                <div className={classes.match}>
+                                    <div className={classes.matchItem}>
+                                        <p>Миссия:</p>
+                                        <Input 
+                                            type='number'
+                                            value={mission}
+                                            onChange={(e) => setMission(e.target.value)}
+                                            required={true}
+                                            placeholder='Миссия'
+                                        ></Input>
+                                    </div>
 
-                                <Button 
-                                    className='customBtn'
-                                    onClick={searchName}
-                                >
-                                    <span>Подобрать</span>
-                                </Button>
+                                    <div className={classes.matchItem}>
+                                        <p>Фамилия:</p>
+                                        <Input 
+                                            type='text'
+                                            value={familyname}
+                                            onChange={(e) => setFamilyname(e.target.value)}
+                                            required={true}
+                                            placeholder='Фамилия'
+                                        ></Input>
+                                    </div>
 
-                                <Button 
-                                    className='customBtn'
-                                    onClick={cleanData}
-                                >
-                                    <span>Сбросить</span>
-                                </Button>
+                                    <div className={classes.matchItem}>
+                                        <p>Подобрать имя или отчество: </p>
+                                        <Dropdown handleOptionChange={chooseSearch} option={searchOption} />
+                                    </div>
+                                        <Input 
+                                            type='text'
+                                            value={data}
+                                            onChange={(e) => setData(e.target.value)}
+                                            required={true}
+                                            placeholder='Введите данные'
+                                        ></Input>
+                                    
+                                    <div className={classes.matchItem}>
+                                        <p>Выберите пол</p>
+                                        <Dropdown handleOptionChange={chooseGender} option={genderDrop}/>
+                                    </div>
+
+                                    <Button 
+                                        className='customBtn'
+                                        onClick={searchName}
+                                    >
+                                        <span>Подобрать</span>
+                                    </Button>
+
+                                    <Button 
+                                        className='customBtn'
+                                        onClick={cleanData}
+                                    >
+                                        <span>Сбросить</span>
+                                    </Button>
+                                </div>
                             </div>
-                            <div>
-                                <p>Подбор имени - важная часть в жизни человека</p>
-                                <p>Если у родителей карты с разными основными числами, то подбор имени лучше предоставить специалисту</p>
+                            <div className="rightPage">
+                                {list.length !== 0 ?
+                                    <div>
+                                        <h3 style={{textAlign: 'center', marginBottom: '10px'}} >Список, удовлетворяющий поиск</h3>
+                                        {errMsg}
+                                        <div className={classes.result}>
+                                            {list.map((item, index) => 
+                                                <p key={index} className={classes.result} >{item.value}</p>
+                                            )}
+                                        </div>
+                                    </div>
+                                    : <h4><i>Здесь будут результаты поиска</i></h4>
+                                }
                             </div>
                         </div>
-
-                        {list.length !== 0 &&
-                        <div>
-                            <h3>Список, удовлетворяющий поиск</h3>
-                            {errMsg}
-                            {list.map((item, index) => 
-                                <p key={index}>{item.value}</p>
-                            )}
-                        </div>}
                     </div>
                 }
 

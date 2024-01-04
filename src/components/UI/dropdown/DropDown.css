@@ -5,7 +5,7 @@ select{
     font-size: 16sspx;
     padding: 5px;
     border-radius: 4px;
-    background-color: white;
+    background-color: var(--inputBg);
 }
 
 select > option:checked { 

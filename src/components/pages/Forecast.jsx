@@ -1,4 +1,5 @@
 import React from "react"
+import axios from '../../api/axios';
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";

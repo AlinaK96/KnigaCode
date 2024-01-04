@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import axios from "axios";
+import axios from '../../api/axios';
 
 import Header from "../blocks/header/Header";
 import Footer from "../blocks/footer/Footer";
@@ -9,8 +9,8 @@ import MainItem from "../blocks/items/MainItem";
 
 const Study = () => {
 
-    const STUDY_URL = 'http://172.30.9.164/study/get?level=main'
-    const EXTRA_STUDY_URL = 'http://172.30.9.164/study/get?level=extra'
+    const STUDY_URL = '/study/get?level=main'
+    const EXTRA_STUDY_URL = '/study/get?level=extra'
 
     const [extraStudy, setExtaStudy] = useState([])
     const [study, setStudy] = useState([])

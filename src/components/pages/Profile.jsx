@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios'
+import axios from '../../api/axios';
 import classes from './styles/profile.module.css'
 
 import Header from '../blocks/header/Header'
@@ -23,9 +23,11 @@ const Home = () => {
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
 
-  const HOME_URL = 'http://172.30.9.164/profile'
-  const LOGOUT_URL = 'http://172.30.9.164/profile/logout'
-  const SUPPORT_URL = 'http://172.30.9.164/support/get'
+  //const HOME_URL = 'http://172.30.9.164/profile'
+  const HOME_URL = '/profile'
+  
+  const LOGOUT_URL = '/logout'
+  const SUPPORT_URL = '/support/get'
   // const USER_UPDATE = 'http://172.30.9.164/user' 
 
   const [support, setSupport] = useState([])
