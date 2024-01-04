@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BookItem = () => {
+const BookItem = ({data}) => {
     return (
         <div>
             <h2>title</h2>

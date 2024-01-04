@@ -23,12 +23,9 @@ const Home = () => {
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
 
-  //const HOME_URL = 'http://172.30.9.164/profile'
   const HOME_URL = '/profile'
-  
   const LOGOUT_URL = '/logout'
   const SUPPORT_URL = '/support/get'
-  // const USER_UPDATE = 'http://172.30.9.164/user' 
 
   const [support, setSupport] = useState([])
   const [foundItem, setfoundItem] = useState(support);
@@ -131,7 +128,8 @@ const Home = () => {
                   <h2>Личные данные</h2>
                   <div className={classes.profile}>
                     <div className={classes.profileItem}>
-                      <p>Статус: </p> <span>{role}</span>
+                      <p>Статус: </p> 
+                      {role === 'AuthUser' ? <span><i>Зарегистрированный пользователь</i></span> : <span><i>Студент</i></span> }
                     </div>
                     <div className={classes.profileItem}>
                       <p>Фамилия: </p> 
