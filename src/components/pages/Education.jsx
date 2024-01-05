@@ -36,7 +36,7 @@ const Education = () => {
 
     return (
         <>
-            <Header content='Видео-курсы' />
+            <Header content='ВИДЕО-КУРСЫ' />
             <div className="content">
                 {!isStudent ? 
                     <div className='noAccess'>

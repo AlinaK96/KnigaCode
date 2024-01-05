@@ -9,7 +9,7 @@ const Almanac = () => {
 
     return (
         <>
-            <Header content='Альманах'/>
+            <Header content='АЛЬМАНАХ'/>
             <div className="content">
                 <div className="book">
                 </div>

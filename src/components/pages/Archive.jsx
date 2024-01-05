@@ -16,7 +16,7 @@ const Archive = () => {
 
     return (
         <>
-            <Header content='Картотека' />
+            <Header content='КАРТОТЕКА' />
             <div className="content">
                 
                 {(!isStudent && !isRegistered) ? 

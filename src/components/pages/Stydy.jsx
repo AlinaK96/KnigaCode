@@ -32,7 +32,7 @@ const Study = () => {
 
     return (
             <>
-                <Header content='Обучение' />
+                <Header content='ОБУЧЕНИЕ' />
                 <div className="content">
                     <div className="book">
                         <div className="leftPage">

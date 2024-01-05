@@ -32,7 +32,7 @@ const Book = () => {
 
     return (
         <>
-            <Header content='Книга' />
+            <Header content='КНИГА' />
             <div className="content">
                 <div className="book">
                     <div className="leftPage">

@@ -10,7 +10,7 @@ const Plot = () => {
 
     return (
         <>
-            <Header content='Сценарии' />
+            <Header content='СЦЕНАРИИ' />
             <div className="content">
             </div>
             <Footer />

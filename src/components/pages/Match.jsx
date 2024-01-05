@@ -11,7 +11,7 @@ const Math = () => {
 
     return (
         <>
-            <Header content='Совместимость' />
+            <Header content='СОВМЕСТИМОСТЬ' />
             <div className="content">
             </div>
             <Footer />

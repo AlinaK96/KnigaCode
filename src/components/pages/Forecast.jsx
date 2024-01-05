@@ -10,7 +10,7 @@ const Forecast = () => {
 
     return (
         <>
-            <Header content='Карта дня' />
+            <Header content='КАРТА ДНЯ' />
             <div className="content">
             </div>
             <Footer />

@@ -113,7 +113,7 @@ const Home = () => {
       <>
         {isAuth ? 
         <div>
-          <Header content='Личный кабинет' />
+          <Header content='ЛИЧНЫЙ КАБИНЕТ' />
           <div className="content">
               <div className={classes.logoutBtn}>
                 <Button 

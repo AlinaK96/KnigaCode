@@ -84,7 +84,7 @@ const Name = () => {
 
     return (
         <>
-            <Header content='Подбор имени'/>
+            <Header content='ПОДБОР ИМЕНИ'/>
             <div className="content">
                 {(!isStudent && !isRegistered) ? 
                     <div className='noAccess'>

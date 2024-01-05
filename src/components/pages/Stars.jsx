@@ -29,7 +29,7 @@ const Stars = () => {
 
     return (
         <>
-        <Header content='Знаменитости' />
+        <Header content='ЗНАМЕНИТОСТИ' />
         <div className="content">
             <div className="book">
                 <div className="leftPage">

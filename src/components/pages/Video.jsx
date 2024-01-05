@@ -35,7 +35,7 @@ const Video = () => {
 
     return (
         <>
-        <Header content='Видео'/>
+        <Header content='ВИДЕО'/>
         <div className="content">
             <div className="book">
                 <div className="leftPage">

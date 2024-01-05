@@ -6,7 +6,7 @@ import Footer from "../blocks/footer/Footer";
 const Author = () => {
     return (
         <>
-            <Header content='О системе ТАЙНЫ ЛИЧНОГО КОДА и об авторе' />
+            <Header content='О СИСТЕМЕ ТАЙНЫ ЛИЧНОГО КОДА И ОБ АВТОРЕ' />
             <div className="content">
                 <div className="book">
                     <div className="leftPage">

@@ -31,7 +31,7 @@ const Consultation = () => {
 
     return (
             <>
-                <Header content='Консультации' />
+                <Header content='КОНСУЛЬТАЦИИ' />
                 <div className="content">
                     <div className="book">
                         <div className="leftPage">

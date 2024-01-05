@@ -31,7 +31,7 @@ const Calculation = () => {
 
     return (
             <>
-                <Header content='Тайны личного кода' />
+                <Header content='ТАЙНЫ ЛИЧНОГО КОДА' />
                 <div className="content">
                      <div className={classes.calculate}>
                         <div className={classes.calcInput}>
