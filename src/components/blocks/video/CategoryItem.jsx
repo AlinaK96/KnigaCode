@@ -8,7 +8,7 @@ const CategoryItem = ({ category, onToggle, isCollapsed, sublink }) => {
     useEffect(() => {
         const fetchData = async () => {
             if (category.title){
-            const response = await fetch(`http://109.171.3.245:8080/${sublink}/${category.title}/subcategory/get`);
+            const response = await fetch(`http://172.30.9.164/${sublink}/${category.title}/subcategory/get`);
             const data = await response.json();
             setSubcategories(data)}
         };
@@ -20,7 +20,7 @@ const CategoryItem = ({ category, onToggle, isCollapsed, sublink }) => {
         localStorage.setItem('filteredCat', filteredCat)
         const fetchData = async () => {
             try {
-                const video = await fetch(`http://109.171.3.245:8080/video/${filteredCat}/video_get`);
+                const video = await fetch(`http://172.30.9.164/video/${filteredCat}/video_get`);
                 const data = await video.json()
                 console.log(data)
             } catch (error) {

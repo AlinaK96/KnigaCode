@@ -78,6 +78,7 @@ const Name = () => {
         setMission('')
         setFamilyname('')
         setData('')
+        setList([])
     }
 
 

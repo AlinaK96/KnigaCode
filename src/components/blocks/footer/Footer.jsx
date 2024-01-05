@@ -6,13 +6,13 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => {
 
     const footerLinks = [
-        {id: 'consultaion', title: 'Консультация', link: '/consultaion'},
-        {id: 'study', title: 'Обучение', link: '/study'},
-        {id: 'book', title: 'Книга', link: '/book'},
-        {id: 'almanac', title: 'Альманах', link: '/almanac'},
-        {id: 'stars', title: 'Знаменитости', link: '/stars'},
-        {id: 'video', title: 'Видео', link: '/video'},
-        {id: 'edu', title: 'Курсы', link: '/edu'},
+        {id: 'consultaion', title: 'КОНСУЛЬТАЦИИ', link: '/consultaion'},
+        {id: 'study', title: 'ОБУЧЕНИЕ', link: '/study'},
+        {id: 'book', title: 'КНИГА', link: '/book'},
+        {id: 'almanac', title: 'АЛЬМАНАХ', link: '/almanac'},
+        {id: 'stars', title: 'ЗНАМЕНИТОСТИ', link: '/stars'},
+        {id: 'video', title: 'ВИДЕО', link: '/video'},
+        {id: 'edu', title: 'КУРСЫ', link: '/edu'},
     ]
 
     return (

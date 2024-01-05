@@ -33,7 +33,7 @@ const Calculation = () => {
             <>
                 <Header content='Тайны личного кода' />
                 <div className="content">
-                    {/* <div className={classes.calculate}>
+                     <div className={classes.calculate}>
                         <div className={classes.calcInput}>
                             <Input 
                                 type='text'
@@ -97,7 +97,7 @@ const Calculation = () => {
                         </div>
                         <div className={classes.krug}>
                         </div>
-                    </div> */}
+                    </div> 
 
                 </div>
                 <Footer />

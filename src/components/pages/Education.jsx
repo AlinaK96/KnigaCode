@@ -14,25 +14,25 @@ const Education = () => {
     const token = localStorage.getItem('token')
     const role = localStorage.getItem('role')
 
-    const isStudent = true
+    const isStudent = false
 
     const VIDEO_URL = '/video/category/get'
     const [videoCategory, setVideoCategory] = useState([])
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const videoCategory = await axios.get(VIDEO_URL);
-                setVideoCategory(videoCategory.data);
-                // const video = await fetch(`http://172.30.9.164/video/get?subcategory=${currentVideo}`);
-                // const data = await video.json()
-                // setVideo(data)
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchData();
-        }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const videoCategory = await axios.get(VIDEO_URL);
+    //             setVideoCategory(videoCategory.data);
+    //             // const video = await fetch(`http://172.30.9.164/video/get?subcategory=${currentVideo}`);
+    //             // const data = await video.json()
+    //             // setVideo(data)
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //     };
+    //     fetchData();
+    //     }, []);
 
     return (
         <>
