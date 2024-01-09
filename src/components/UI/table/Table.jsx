@@ -8,14 +8,14 @@ const Table = () => {
     //const [tableData, setTableData] = useState([])
 
     const [tableData, setTableData] = useState([
-        { id: 1, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission1: 6, mission2: 7, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
-        { id: 2, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission1: 6, mission2: 7, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
-        { id: 3, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission1: 6, mission2: 7, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
-        { id: 4, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission1: 6, mission2: 7, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
-        { id: 5, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission1: 6, mission2: 7, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
-        { id: 6, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission1: 6, mission2: 7, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
-        { id: 7, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission1: 6, mission2: 7, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
-        { id: 8, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission1: 6, mission2: 7, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
+        { id: 1, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission: 6, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
+        { id: 2, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission: 6, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
+        { id: 3, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission: 6, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
+        { id: 4, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission: 6, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
+        { id: 5, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission: 6, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
+        { id: 6, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission: 6, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
+        { id: 7, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission: 6, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
+        { id: 8, firstName: 'Фамилия', lastName: 'Имя', middleName: 'Отчество', day: 15, month: 7, year: 1990, mission: 6, cry1: 8, cry2: 1, sense1: 3, sense2: 6, mask1: 7, mask2:9, resourse1: 3, resourse2: 4 },
     ]);
 
     // useEffect(() => {
@@ -37,8 +37,7 @@ const Table = () => {
         { id: 4, name: 'день', backgroundColor: '#efde72' },
         { id: 5, name: 'месяц', backgroundColor: '#efde72' },
         { id: 6, name: 'год', backgroundColor: '#efde72' },
-        { id: 7, name: 'МИССИЯ 1', backgroundColor: '#b2d384' },
-        { id: 8, name: 'МИССИЯ 2', backgroundColor: '#b2d384' },
+        { id: 7, name: 'МИССИЯ', backgroundColor: '#b2d384' },
         { id: 9, name: 'ПЛАЧ', backgroundColor: '#af3303' },
         { id: 10, name: 'ПЛАЧ', backgroundColor: '#af3303' },
         { id:11, name: 'СУТЬ', backgroundColor: '#af3303' },
@@ -84,8 +83,7 @@ const Table = () => {
                                 <td>{row.day}</td>
                                 <td>{row.month}</td>
                                 <td>{row.year}</td>
-                                <td>{row.mission1}</td>
-                                <td>{row.mission2}</td>
+                                <td>{row.mission}</td>
                                 <td>{row.cry1}</td>
                                 <td>{row.cry2}</td>
                                 <td>{row.sense1}</td>
