@@ -11,7 +11,6 @@ const Header = ({content}) => {
       {id: '/calculate', title: 'КАЛЬКУЛЯТОР', link: '/'},
       {id: '/match', title: 'СОВМЕСТИМОСТЬ', link: '/match'},
       {id: '/plot', title: 'СЦЕНАРИИ', link: '/plot'},
-      // {id: '/name', title: 'ПОДБОР ИМЕНИ', link: '/name'},
       {id: '/forecast', title: 'КАРТА ДНЯ', link: '/forecast'},
       {id: '/archive', title: 'КАРТОТЕКА', link: '/archive'},
       {id: '/profile', title: ' ПРОФИЛЬ', link: '/profile'},

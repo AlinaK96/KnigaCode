@@ -26,6 +26,7 @@ const Home = () => {
   const HOME_URL = '/profile'
   const LOGOUT_URL = '/profile/logout'
   const SUPPORT_URL = '/support/get'
+  const USER_UPDATE = '/profile/update'
 
   const [support, setSupport] = useState([])
   const [foundItem, setfoundItem] = useState(support);
@@ -85,21 +86,11 @@ const Home = () => {
     };
 
     const Logout = async () => {
-        // try {
-        //   const response = await fetch('http://172.30.9.164/logout', {
-        //   method: "GET",
-        //     headers: {Authorization: `Bearer ${token}`},
-        //   })
-        //     console.log(response);
-        //    //window.location.href = '/login'
-        //   } catch (err){
-        //     console.log(err);
-        //   }
         try{
           const response = await axios.get(LOGOUT_URL, {
             headers: {Authorization: `Bearer ${token}`},
           })
-          console.log(response);
+          window.location.href = '/login'
         } catch (error){
           console.log(error);
         }
@@ -107,14 +98,17 @@ const Home = () => {
 
     function updateData(){
       let newData = { username: username, lastname: lastname, familyname: familyname, birthday: birthday, phone: phone, email:email };
+      console.log(birthday);
       
-    //axios.put(USER_UPDATE, newData)
-    //     .then(response => {
-    //       console.log('Успешно отправлен PUT-запрос', response);
-    //     })
-    //     .catch(error => {
-    //       console.error('Ошибка при отправке PUT-запроса', error);
-    //     });
+      axios.put(USER_UPDATE, newData, {
+        headers: {Authorization: `Bearer ${token}`}
+      })
+        .then(response => {
+          console.log('Успешно отправлен PUT-запрос', response);
+        })
+        .catch(error => {
+          console.error('Ошибка при отправке PUT-запроса', error);
+        });
     }
 
     return (
@@ -123,14 +117,6 @@ const Home = () => {
         <div>
           <Header content='ЛИЧНЫЙ КАБИНЕТ' />
           <div className="content">
-              <div className={classes.logoutBtn}>
-                <Button 
-                  className='customBtn'
-                  onClick={Logout}
-                ><span>Выйти из профиля</span>
-                </Button>
-              </div>
-
               <div className="book">
                 <div className="leftPage">
                   <h2>Личные данные</h2>
@@ -204,6 +190,12 @@ const Home = () => {
                       onClick={updateData}
                     >
                       <span>Обновить</span>
+                    </Button>
+                  
+                    <Button 
+                      className='customBtn'
+                      onClick={Logout}
+                    ><span>Выйти из профиля</span>
                     </Button>
                   </div>
                 </div>

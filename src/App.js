@@ -9,7 +9,6 @@ import Author from './components/pages/Author';
 import Calculation from './components/pages/Calculation'
 import Match from './components/pages/Match'
 import Plot from './components/pages/Plot'
-// import Name from './components/pages/Name'
 import Forecast from './components/pages/Forecast'
 
 //footer
@@ -36,7 +35,6 @@ function App() {
 					<Route path="/" element={<Calculation />} />
 					<Route path="/match" element={<Match />} />
 					<Route path="/plot" element={<Plot />} />
-					{/* <Route path="/name" element={<Name />} /> */}
 					<Route path="/forecast" element={<Forecast />} />
 					<Route path="/archive" element={<Archive />} />
 

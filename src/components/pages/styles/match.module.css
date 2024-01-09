@@ -8,15 +8,45 @@
     align-items: center;
 }
 
+.page{
+    display: flex;
+
+}
 
 .match{
-    width: 100%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+.match p{
+    color: var(--baseFont);    
+}
+
+.match input,
+.match select {
+    width: 300px;
+}
+
 .result{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.calculate{
+    background-color: var(--baseBackground);
+    margin: 0 30px;
+    border-radius: 20px;
+    padding: 20px;
+    color: var(--baseFont);
+}
+
+.noBook{
+    display: flex; 
+	justify-content: space-evenly; 
+}
+
+.nameList{
+    width: 50%;
 }
