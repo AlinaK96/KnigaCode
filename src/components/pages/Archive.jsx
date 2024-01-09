@@ -9,7 +9,7 @@ import Table from '../UI/table/Table';
 
 const Archive = () => {
 
-    const VARIFY_URL = '/calculation'
+    const VARIFY_URL = '/role'
     const token = localStorage.getItem('token')
 	const [errMsg, setErrMsg] = useState('');
 

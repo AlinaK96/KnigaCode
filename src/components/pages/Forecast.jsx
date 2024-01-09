@@ -6,7 +6,7 @@ import Footer from "../blocks/footer/Footer";
 
 const Forecast = () => {
 
-    const VARIFY_URL = '/calculation'
+    const VARIFY_URL = '/role'
 
     const token = localStorage.getItem('token')
     const [role, setRole] = useState('notAuth')

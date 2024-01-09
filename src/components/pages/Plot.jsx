@@ -11,7 +11,7 @@ import Name from "../blocks/items/Name";
 
 const Plot = () => {
 
-    const VARIFY_URL = '/calculation'
+    const VARIFY_URL = '/role'
 
     const token = localStorage.getItem('token')
     const [role, setRole] = useState('notAuth')

@@ -9,7 +9,8 @@ import Button from "../UI/button/Button";
 
 const Calculation = () => {
 
-    const VARIFY_URL = '/calculation'
+    const VARIFY_URL = '/role'
+    const CALCULATE_URL = '/calculation'
 
     const token = localStorage.getItem('token')
     const [errMsg, setErrMsg] = useState('')
@@ -40,10 +41,33 @@ const Calculation = () => {
     const [lastname, setLastname] = useState('Иванович')
     const [familyname, setFamilyname] = useState('Иванов')
     const [birthday, setBirthday] = useState('10')
-    const [mounth, setMounth] = useState('октябрь')
+    const [mounth, setMounth] = useState('10')
     const [year, setYear] = useState('2005')
 
-    function Calculate(){}
+    const Calculate = async () =>{
+        try {
+			const response = await axios.post(
+				CALCULATE_URL,
+				JSON.stringify({
+                    'name': username,
+                    'familyname': familyname,
+                    'lastname': lastname,
+                    'birtday': birthday,
+                    'mounth': mounth,
+                    'year': year
+				}),{headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }}
+			);
+            console.log(response);
+			
+		} catch (err) {
+            if (err.response?.status === 401) {
+				window.location.href = '/login'
+			} else if (err.response?.status === 500) {
+				setErrMsg('Неверный ввод данных');
+			}
+        } 
+    }
+
     function reset(){
         setUsername('')
         setLastname('')
@@ -104,7 +128,7 @@ const Calculation = () => {
                                         placeholder='день рождения'
                                     />
                                     <Input 
-                                        type='text'
+                                        type='number'
                                         value={mounth}
                                         onChange={(e) => setMounth(e.target.value)}
                                         required={true}
@@ -137,7 +161,7 @@ const Calculation = () => {
 
                         </div>
                         
-                        
+                        <h3 style={{textAlign: 'center'}} >{errMsg}</h3>
                         <div className={classes.krug}>
                         </div>
                     </div> 
