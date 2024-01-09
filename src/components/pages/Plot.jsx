@@ -35,8 +35,6 @@ const Plot = () => {
     }, []);
 
 
-
-
     return (
         <>
             <Header content='СЦЕНАРИИ' />

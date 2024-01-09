@@ -55,7 +55,6 @@
 }
 
 input{
-    /* width: 90%; */
     outline: none;
     border-radius: 5px;
     border: 1px solid var(--border-primary);
@@ -66,7 +65,7 @@ input{
 }
 
 input:disabled{
-    background: var(--inputBackground);
+    background: rgb(228, 222, 189);
 }
 
 input[type="number"] {

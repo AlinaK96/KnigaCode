@@ -32,6 +32,7 @@
 .result{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+	color: var(--baseFont) !important;
 }
 
 .calculate{
@@ -48,5 +49,14 @@
 }
 
 .nameList{
-    width: 50%;
+    box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 65%;
+	color: var(--baseFont);
+	font-size: 22px;
+	align-items: center;
+	overflow: auto;
+	height: 550px;
 }

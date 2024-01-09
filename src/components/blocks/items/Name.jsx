@@ -13,23 +13,31 @@ const Name = () => {
 
     const token = localStorage.getItem('token')
 	const [errMsg, setErrMsg] = useState('');
+    const [isDisabled, setIsDisabled] = useState(true)
 
     const [list, setList] = useState([])
 
     const [mission, setMission] = useState('')
     const [familyname, setFamilyname] = useState('')
+
+    const [placeholder, setPlaceholder] = useState('')
     const [data, setData] = useState('')
     const [userSearch, setUserSearch] = useState('')
     const [gender, setGender] = useState('')
 
     const searchOption = [
-        { title: 'Выберите один вариант'},
-        { title: 'Подобрать имя', value: 'name'},
-        { title: 'Пободрать отчество', value: 'lastname' }
+        { title: 'Выберите один вариант', name: ''},
+        { title: 'Подобрать имя', value: 'name', name: 'Введите отчество'},
+        { title: 'Пободрать отчество', value: 'lastname', name: 'Введите имя' }
     ];
 
-    const chooseSearch = (option) => {
+    const chooseSearch = (option, item) => {
         setUserSearch(option);
+        setPlaceholder(item)
+        setIsDisabled(false)
+        if (item === ''){
+            setIsDisabled(true)
+        }
     };
 
     const genderDrop = [
@@ -74,6 +82,21 @@ const Name = () => {
         setList([])
     }
 
+    const validateFamName = (e) => {
+        const inputValue = e.target.value;
+        const russianRegex = /^[а-яёА-ЯЁ\s]+$/;
+        if (russianRegex.test(inputValue) || inputValue === '') {
+            setFamilyname(inputValue);
+        }
+    };
+    
+    const validateData = (e) => {
+        const inputValue = e.target.value;
+        const russianRegex = /^[а-яёА-ЯЁ\s]+$/;
+        if (russianRegex.test(inputValue) || inputValue === '') {
+            setData(inputValue);
+        }
+    };
 
     return (
         <>
@@ -97,7 +120,7 @@ const Name = () => {
                             <Input 
                                 type='text'
                                 value={familyname}
-                                onChange={(e) => setFamilyname(e.target.value)}
+                                onChange={validateFamName}
                                 required={true}
                                 placeholder='Фамилия'
                             ></Input>
@@ -108,13 +131,14 @@ const Name = () => {
                             <Dropdown handleOptionChange={chooseSearch} option={searchOption} />
                         </div>
                         <div className={classes.matchItem}>
-                            {userSearch === 'lastname' ? <p>Введите имя</p> : <p>Введите отчество:</p> }
+                            <p>{placeholder}</p>
                             <Input 
                                 type='text'
                                 value={data}
-                                onChange={(e) => setData(e.target.value)}
+                                onChange={validateData}
                                 required={true}
-                                placeholder='Введите данные'
+                                placeholder={placeholder}
+                                disabled={isDisabled}
                             ></Input>
                         </div>
                         <div className={classes.matchItem}>
@@ -140,7 +164,7 @@ const Name = () => {
                     <div className={classes.nameList}>
                         {list.length !== 0 ?
                             <div>
-                                <h3 style={{ marginBottom: '10px'}} >Список, удовлетворяющий поиск</h3>
+                                <h4 style={{ marginBottom: '10px'}} >Список, удовлетворяющий поиск</h4>
                                 {errMsg}
                                 <div className={classes.result}>
                                     {list.map((item, index) => 

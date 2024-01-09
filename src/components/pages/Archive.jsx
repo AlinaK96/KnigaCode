@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from '../../api/axios';
 
@@ -8,18 +8,35 @@ import Table from '../UI/table/Table';
 
 
 const Archive = () => {
-    const token = localStorage.getItem('token')
-    const role = localStorage.getItem('role')
 
-    const isStudent = true
-    const isRegistered = false
+    const VARIFY_URL = '/calculation'
+    const token = localStorage.getItem('token')
+	const [errMsg, setErrMsg] = useState('');
+
+    const [role, setRole] = useState('notAuth')
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(VARIFY_URL, { 
+                    headers: {Authorization: `Bearer ${token}`},
+                });
+                setRole(response.data.role)
+            } catch (error) {
+                if(error.response?.status !== 200) {
+                    setErrMsg('Ошибка')
+                } 
+                }
+            };
+            fetchData();
+    }, []);
 
     return (
         <>
             <Header content='КАРТОТЕКА' />
             <div className="content">
                 
-                {(!isStudent && !isRegistered) ? 
+                {(!(role === 'AuthUser') && !(role === 'student')) ? 
                     <div className='noAccess'>
                         <p>Для получения доступа необходимо приобрести курс или зарегистрироваться</p>
                         <p><i><NavLink to='/register' className='link' > зарегистрироваться / войти в аккаунт</NavLink></i></p>
