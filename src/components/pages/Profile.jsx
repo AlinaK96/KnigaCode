@@ -24,7 +24,7 @@ const Home = () => {
   const [email, setEmail] = useState('')
 
   const HOME_URL = '/profile'
-  const LOGOUT_URL = '/logout'
+  const LOGOUT_URL = '/profile/logout'
   const SUPPORT_URL = '/support/get'
 
   const [support, setSupport] = useState([])
@@ -85,15 +85,24 @@ const Home = () => {
     };
 
     const Logout = async () => {
-        try {
-          const response = await fetch(LOGOUT_URL, {
-          method: "GET",
+        // try {
+        //   const response = await fetch('http://172.30.9.164/logout', {
+        //   method: "GET",
+        //     headers: {Authorization: `Bearer ${token}`},
+        //   })
+        //     console.log(response);
+        //    //window.location.href = '/login'
+        //   } catch (err){
+        //     console.log(err);
+        //   }
+        try{
+          const response = await axios.get(LOGOUT_URL, {
             headers: {Authorization: `Bearer ${token}`},
           })
-            window.location.href = '/login'
-          } catch (err){
-            console.log(err);
-          }
+          console.log(response);
+        } catch (error){
+          console.log(error);
+        }
     }
 
     function updateData(){

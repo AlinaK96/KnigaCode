@@ -14,7 +14,8 @@ const Video = () => {
     const VIDEO_URL = '/video/category/get'
 
     const [videoCategory, setVideoCategory] = useState([])
-    const currentVideo = localStorage.getItem('filteredCat')
+    //const currentVideo = localStorage.getItem('filteredCat')
+    const currentVideo = ('Миссия 1 - “У меня всё под контролем”')
     const page = 'video'
     const [video, setVideo] = useState([])
 
@@ -23,7 +24,7 @@ const Video = () => {
             try {
                 const videoCategory = await axios.get(VIDEO_URL);
                 setVideoCategory(videoCategory.data);
-                const video = await fetch(`http://172.30.9.164/video/${currentVideo}/video_get`);
+                const video = await fetch(`http://172.30.9.164/video/${currentVideo}/video`);
                 const data = await video.json()
                 setVideo(data)
             } catch (error) {

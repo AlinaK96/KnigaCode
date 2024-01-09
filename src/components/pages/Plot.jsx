@@ -19,8 +19,8 @@ const Plot = () => {
     const [role, setRole] = useState('')
     const [errMsg, setErrMsg] = useState('');
 
-    const isStudent = false
-    const isRegistered = true
+    const isStudent = true
+    const isRegistered = false
 
     const [list, setList] = useState([])
 
@@ -56,6 +56,7 @@ const Plot = () => {
                 const response = await axios.get(VARIFY_URL, { 
                     headers: {Authorization: `Bearer ${token}`},
                 });
+                console.log(response);
                 setRole(response.data.role)
             } catch (error) {
                 if(error.response?.status !== 200) {
@@ -79,7 +80,7 @@ const Plot = () => {
                     'data' : data
 
 				}),
-				{ headers: { 'Content-Type': 'application/json' }}
+				{ headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`}}
 			);
             setList(response.data);
             console.log(response.data);
@@ -104,12 +105,16 @@ const Plot = () => {
         <>
             <Header content='СЦЕНАРИИ' />
             <div className="content">
+                {(!isStudent || !isRegistered)? 
+                <div className='noAccess'>
+                    <p>Для получения доступа к просчёту сценариев необходимо приобрести курс или зарегистрироваться</p>
+                    <p><i><NavLink to='/register' className='link' > зарегистрироваться / войти в аккаунт</NavLink></i></p>
+                    <p><i><NavLink to='/study' className='link' > посмотреть список доступных курсов</NavLink></i></p>
+                </div>  : 
+                <p>doddd</p>
+                }
                 {(!isStudent && !isRegistered) ? 
-                    <div className='noAccess'>
-                        <p>Для получения доступа необходимо приобрести курс или зарегистрироваться</p>
-                        <p><i><NavLink to='/register' className='link' > зарегистрироваться / войти в аккаунт</NavLink></i></p>
-                        <p><i><NavLink to='/study' className='link' > посмотреть список доступных курсов</NavLink></i></p>
-                    </div>  : 
+                    <div></div>  : 
                     <div>
                         <h3 style={{textAlign: 'center', color: 'white', marginBottom: '10px'}} >Подбор имени - важная часть в жизни человека. Если у родителей карты с разными основными числами, то его лучше предоставить специалисту</h3>
                         <div className="book">
@@ -141,6 +146,8 @@ const Plot = () => {
                                         <p>Подобрать имя или отчество: </p>
                                         <Dropdown handleOptionChange={chooseSearch} option={searchOption} />
                                     </div>
+                                    <div className={classes.matchItem}>
+                                        {userSearch === 'lastname' ? <p>Введите имя</p> : <p>Введите отчество:</p> }
                                         <Input 
                                             type='text'
                                             value={data}
@@ -148,7 +155,7 @@ const Plot = () => {
                                             required={true}
                                             placeholder='Введите данные'
                                         ></Input>
-                                    
+                                    </div>
                                     <div className={classes.matchItem}>
                                         <p>Выберите пол</p>
                                         <Dropdown handleOptionChange={chooseGender} option={genderDrop}/>

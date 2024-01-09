@@ -103,14 +103,14 @@ const Calculation = () => {
                         </div>
                         <div className={classes.calcInput}>
                             <Button 
-                                className='customBtn'
+                                className={classes.calc}
                                 onClick={Calculate}
                             >
                                 <span>Посчитать</span>
                             </Button>
 
                             <Button 
-                                className='customBtn'
+                                className={classes.clean}
                                 onClick={reset}
                             >
                             <span>Сбросить</span>
