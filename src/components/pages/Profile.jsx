@@ -38,7 +38,6 @@ const Home = () => {
             const response = await axios.get(HOME_URL, { 
               headers: {Authorization: `Bearer ${token}`},
             });
-            console.log(response);
             setIsAuth(true)
             setRole(response.data.role)
             setUsername(response.data.username)

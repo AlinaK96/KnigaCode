@@ -1,6 +1,7 @@
 @import './app.css';
 @import './adaptive.css';
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 
 :root{
 	--baseFont: #3C1C0F;

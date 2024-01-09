@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import classes from './styles/calc.module.css'
 import axios from '../../api/axios';
 
@@ -9,8 +9,29 @@ import Button from "../UI/button/Button";
 
 const Calculation = () => {
 
+    const VARIFY_URL = '/calculation'
+
+
     const token = localStorage.getItem('token')
-    const role = localStorage.getItem('role')
+    const [role, setRole] = useState('')
+    const [errMsg, setErrMsg] = useState('')
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(VARIFY_URL, { 
+                    headers: {Authorization: `Bearer ${token}`},
+                });
+                setRole(response.data.role)
+            } catch (error) {
+                if(error.response?.status !== 200) {
+                    setErrMsg('Ошибка')
+                }  
+                console.error(error);
+                }
+            };
+            fetchData();
+    }, []);
 
     const [username, setUsername] = useState('Иван')
     const [lastname, setLastname] = useState('Иванович')
@@ -33,7 +54,7 @@ const Calculation = () => {
             <>
                 <Header content='ТАЙНЫ ЛИЧНОГО КОДА' />
                 <div className="content">
-                     <div className={classes.calculate}>
+                    <div className={classes.calculate}>
                         <div className={classes.calcInput}>
                             <Input 
                                 type='text'

@@ -1,5 +1,5 @@
 .info__header{
-    width: 90%;
+    width: 97%;
     background-image: url('../../../../public/img/png/fon_l.jpg');
     background-color: #9d673b;
     color: var(--baseFont);
@@ -9,6 +9,8 @@
     border-radius: 20px;
     padding: 13px 0;
     margin: 0 auto;
+    font-family: 'Salsa', cursive;
+	font-style: italic;
 }
 
 

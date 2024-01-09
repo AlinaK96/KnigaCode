@@ -11,7 +11,7 @@ const Popup = () => {
     useEffect(() => {
         const lastPopupTime = localStorage.getItem('lastPopupTime');
         const currentTime = new Date().getTime();
-        const oneHour = 60 * 60 * 1000;
+        const oneHour = 86400 * 1000;
 
         if (!lastPopupTime || currentTime - lastPopupTime >= oneHour) {
             setShowPopup(true);

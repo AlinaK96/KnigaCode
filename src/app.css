@@ -8,17 +8,21 @@ nav{
 .footer{
     box-sizing: border-box;
     width: 100%;
+	padding: 25px;
     background-color: var(--baseBackground);
-    box-shadow: 0px 4px 4px 0px var(--baseBackground);
+    box-shadow: 4px 4px 4px 4px var(--baseBackground);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 	color: var(--baseFont);
+	font-family: 'Salsa', cursive;
+	font-style: italic;
 }
 
 .footer{
     position: relative;
     bottom: 0;
+	box-shadow: 4px 4px 4px 4px var(--baseBackground);
 	padding: 15px 0;
 }
 
